@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import net.dries007.tfc.api.util.TFCConstants;
 
+@SuppressWarnings("WeakerAccess")
 @Mod(modid = TFCMetallum.MODID, name = TFCMetallum.NAME, version = TFCMetallum.VERSION, dependencies = "required-after:" + TFCConstants.MOD_ID)
 public class TFCMetallum
 {
