@@ -1,0 +1,15 @@
+[
+  {
+    "modid": "tfcmetallum",
+    "name": "TFC Metallum",
+    "description": "Adds metals, ingots, ores to base TerraFirmaCraft",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "logoFile": "/assets/tfc/textures/gui/logo.png",
+    "authorList": [
+      "DisasterMoo",
+      "UnlimatedStone9"
+    ],
+    "credits": "The TFC dev team for this awesome mod."
+  }
+]

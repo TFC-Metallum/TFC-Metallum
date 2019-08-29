@@ -1,0 +1,82 @@
+# Ore blocks
+tile.tfc.ore.limonite.granite.name=Granite Limonite
+tile.tfc.ore.limonite.diorite.name=Diorite Limonite
+tile.tfc.ore.limonite.gabbro.name=Gabbro Limonite
+tile.tfc.ore.limonite.shale.name=Shale Limonite
+tile.tfc.ore.limonite.claystone.name=Claystone Limonite
+tile.tfc.ore.limonite.rocksalt.name=Rocksalt Limonite
+tile.tfc.ore.limonite.limestone.name=Limestone Limonite
+tile.tfc.ore.limonite.conglomerate.name=Conglomerate Limonite
+tile.tfc.ore.limonite.dolomite.name=Dolomite Limonite
+tile.tfc.ore.limonite.chert.name=Chert Limonite
+tile.tfc.ore.limonite.chalk.name=Chalk Limonite
+tile.tfc.ore.limonite.rhyolite.name=Rhyolite Limonite
+tile.tfc.ore.limonite.basalt.name=Basalt Limonite
+tile.tfc.ore.limonite.andesite.name=Andesite Limonite
+tile.tfc.ore.limonite.dacite.name=Dacite Limonite
+tile.tfc.ore.limonite.quartzite.name=Quartzite Limonite
+tile.tfc.ore.limonite.slate.name=Slate Limonite
+tile.tfc.ore.limonite.phyllite.name=Phyllite Limonite
+tile.tfc.ore.limonite.schist.name=Schist Limonite
+tile.tfc.ore.limonite.gneiss.name=Gneiss Limonite
+tile.tfc.ore.limonite.marble.name=Marble Limonite
+
+# Ore items
+item.tfc.ore.limonite.name=Limonite
+item.tfc.ore.limonite.poor.name=Poor Limonite
+item.tfc.ore.limonite.rich.name=Rich Limonite
+item.tfc.ore.small.limonite.name=Small Limonite
+
+# Metal items
+item.tfc.metal.ingot.wrought_iron.name=Wrought Iron Ingot
+item.tfc.metal.double_ingot.wrought_iron.name=Wrought Iron Double Ingot
+item.tfc.metal.scrap.wrought_iron.name=Wrought Iron Scrap
+item.tfc.metal.dust.wrought_iron.name=Wrought Iron Dust
+item.tfc.metal.nugget.wrought_iron.name=Wrought Iron Nugget
+item.tfc.metal.sheet.wrought_iron.name=Wrought Iron Sheet
+item.tfc.metal.double_sheet.wrought_iron.name=Wrought Iron Double Sheet
+item.tfc.metal.tuyere.wrought_iron.name=Wrought Iron Tuyere
+
+# Metal tools
+item.tfc.metal.pick.wrought_iron.name=Wrought Iron Pickaxe
+item.tfc.metal.pick_head.wrought_iron.name=Wrought Iron Pickaxe Head
+item.tfc.metal.shovel.wrought_iron.name=Wrought Iron Shovel
+item.tfc.metal.shovel_head.wrought_iron.name=Wrought Iron Shovel Head
+item.tfc.metal.axe.wrought_iron.name=Wrought Iron Axe
+item.tfc.metal.axe_head.wrought_iron.name=Wrought Iron Axe Head
+item.tfc.metal.hoe.wrought_iron.name=Wrought Iron Hoe
+item.tfc.metal.hoe_head.wrought_iron.name=Wrought Iron Hoe Head
+item.tfc.metal.chisel.wrought_iron.name=Wrought Iron Chisel
+item.tfc.metal.chisel_head.wrought_iron.name=Wrought Iron Chisel Head
+item.tfc.metal.sword.wrought_iron.name=Wrought Iron Sword
+item.tfc.metal.sword_blade.wrought_iron.name=Wrought Iron Sword Blade
+item.tfc.metal.mace.wrought_iron.name=Wrought Iron Mace
+item.tfc.metal.mace_head.wrought_iron.name=Wrought Iron Mace Head
+item.tfc.metal.saw.wrought_iron.name=Wrought Iron Saw
+item.tfc.metal.saw_blade.wrought_iron.name=Wrought Iron Saw Blade
+item.tfc.metal.shears.wrought_iron.name=Wrought Iron Shears
+item.tfc.metal.shield.wrought_iron.name=Wrought Iron Shield
+item.tfc.metal.javelin.wrought_iron.name=Wrought Iron Javelin
+item.tfc.metal.javelin_head.wrought_iron.name=Wrought Iron Javelin Head
+item.tfc.metal.hammer.wrought_iron.name=Wrought Iron Hammer
+item.tfc.metal.hammer_head.wrought_iron.name=Wrought Iron Hammer Head
+item.tfc.metal.propick.wrought_iron.name=Wrought Iron Prospector's Pickaxe
+item.tfc.metal.propick_head.wrought_iron.name=Wrought Iron Prospector's Pickaxe Head
+item.tfc.metal.knife.wrought_iron.name=Wrought Iron Knife
+item.tfc.metal.knife_blade.wrought_iron.name=Wrought Iron Knife Blade
+item.tfc.metal.scythe.wrought_iron.name=Wrought Iron Scythe
+item.tfc.metal.scythe_blade.wrought_iron.name=Wrought Iron Scythe Blade
+
+item.tfc.metal.lamp.wrought_iron.name=Wrought Iron Lamp
+item.tfc.ceramics.fired.mold.ingot.wrought_iron.name=Unshaped Wrought Iron
+
+# Metal Armors
+item.tfc.metal.chestplate.wrought_iron.name=Wrought Iron Chestplate
+item.tfc.metal.greaves.wrought_iron.name=Wrought Iron Greaves
+item.tfc.metal.boots.wrought_iron.name=Wrought Iron Boots
+item.tfc.metal.helmet.wrought_iron.name=Wrought Iron Helmet
+
+item.tfc.metal.unfinished_chestplate.wrought_iron.name=Unfinished Wrought Iron Chestplate
+item.tfc.metal.unfinished_boots.wrought_iron.name=Unfinished Wrought Iron Boots
+item.tfc.metal.unfinished_helmet.wrought_iron.name=Unfinished Wrought Iron Helmet
+item.tfc.metal.unfinished_greaves.wrought_iron.name=Unfinished Wrought Iron Greaves
