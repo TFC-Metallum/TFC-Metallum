@@ -16,6 +16,8 @@ import net.dries007.tfc.api.registries.TFCRegistryEvent;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Ore;
 import tfcmetallum.TFCMetallum;
+import tfcmetallum.objects.ModArmorMaterials;
+import tfcmetallum.objects.ModToolMaterials;
 
 import static tfcmetallum.TFCMetallum.MODID;
 
@@ -32,7 +34,7 @@ public final class RegistryHandler
     {
         //todo add a config based registration
         event.getRegistry().registerAll(
-                new Metal(ALUMINIUM, Metal.Tier.TIER_IV, true, 0.14f, 660, 0xFFFFFFFF, null, null)
+                new Metal(ALUMINIUM, Metal.Tier.TIER_VI, true, 0.3f, 660, 0xFFD9FBFC, ModToolMaterials.ALUMINIUM, ModArmorMaterials.ALUMINIUM)
         );
     }
 
@@ -42,7 +44,7 @@ public final class RegistryHandler
     {
         //todo add a config based registration
         event.getRegistry().registerAll(
-                new Ore(BAUXITE, ALUMINIUM)
+                new Ore(BAUXITE, ALUMINIUM, false)
         );
     }
 
