@@ -1,7 +1,6 @@
 package tfcmetallum;
 
 import org.apache.logging.log4j.Logger;
-import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -33,7 +32,5 @@ public class TFCMetallum
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 }

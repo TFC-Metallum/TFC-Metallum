@@ -19,50 +19,141 @@ import tfcmetallum.TFCMetallum;
 import tfcmetallum.objects.ModArmorMaterials;
 import tfcmetallum.objects.ModToolMaterials;
 
+import static net.dries007.tfc.types.DefaultMetals.*;
 import static tfcmetallum.TFCMetallum.MODID;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @Mod.EventBusSubscriber(modid = TFCMetallum.MODID)
 public final class RegistryHandler
 {
-
+    //Metals
     public static final ResourceLocation ALUMINIUM = new ResourceLocation(MODID, "aluminium");
+    public static final ResourceLocation ARDITE = new ResourceLocation(MODID, "ardite");
+    public static final ResourceLocation CAST_IRON = new ResourceLocation(MODID, "cast_iron");
+    public static final ResourceLocation COBALT = new ResourceLocation(MODID, "cobalt");
+    public static final ResourceLocation CONSTANTAN = new ResourceLocation(MODID, "constantan");
+    public static final ResourceLocation ELECTRUM = new ResourceLocation(MODID, "electrum");
+    public static final ResourceLocation INVAR = new ResourceLocation(MODID, "invar");
+    public static final ResourceLocation MANYULLIN = new ResourceLocation(MODID, "manyullin");
+    public static final ResourceLocation MITHRIL = new ResourceLocation(MODID, "mithril");
+    public static final ResourceLocation OSMIUM = new ResourceLocation(MODID, "osmium");
+    public static final ResourceLocation TUNGSTEN = new ResourceLocation(MODID, "tungsten");
+    public static final ResourceLocation URANIUM = new ResourceLocation(MODID, "uranium");
+
+    //Ores
+    public static final ResourceLocation NATIVE_MITHRIL = new ResourceLocation(MODID, "native_mithril");
+    public static final ResourceLocation NATIVE_ARDITE = new ResourceLocation(MODID, "native_ardite");
+    public static final ResourceLocation NATIVE_OSMIUM = new ResourceLocation(MODID, "native_osmium");
     public static final ResourceLocation BAUXITE = new ResourceLocation(MODID, "bauxite");
+    public static final ResourceLocation SCHEELITE = new ResourceLocation(MODID, "scheelite");
+    public static final ResourceLocation COBALTITE = new ResourceLocation(MODID, "cobaltite");
+
 
     @SubscribeEvent
     public static void onPreRegisterMetal(TFCRegistryEvent.RegisterPreBlock<Metal> event)
     {
-        //todo add a config based registration
-        event.getRegistry().registerAll(
-                new Metal(ALUMINIUM, Metal.Tier.TIER_VI, true, 0.3f, 660, 0xFFD9FBFC, ModToolMaterials.ALUMINIUM, ModArmorMaterials.ALUMINIUM)
-        );
+        IForgeRegistry<Metal> r = event.getRegistry();
+        if (ModConfig.ALLOY_ADDITIONS.constantan)
+        {
+            r.register(new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFD28874, null, null));
+        }
+        if (ModConfig.ALLOY_ADDITIONS.electrum)
+        {
+            r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
+        }
+        if (ModConfig.METAL_ADDITIONS.castIron)
+        {
+            r.register(new Metal(CAST_IRON, Metal.Tier.TIER_III, true, 0.35f, 1150, 0xFF40444A, null, null));
+        }
+        if (ModConfig.ALLOY_ADDITIONS.invar)
+        {
+            r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFF40444A, null, null));
+        }
+        if (ModConfig.METAL_ADDITIONS.aluminium)
+        {
+            r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_IV, true, 0.3f, 660, 0xFFD9FBFC, ModToolMaterials.ALUMINIUM, ModArmorMaterials.ALUMINIUM));
+        }
+        if (ModConfig.METAL_ADDITIONS.ardite)
+        {
+            r.register(new Metal(ARDITE, Metal.Tier.TIER_IV, true, 0.3f, 1050, 0xFF40444A, null, null));
+        }
+        if (ModConfig.METAL_ADDITIONS.mithril)
+        {
+            r.register(new Metal(MITHRIL, Metal.Tier.TIER_IV, true, 0.22f, 1550, 0xFF8ADAF6, null, null));
+        }
+        if (ModConfig.METAL_ADDITIONS.cobalt)
+        {
+            r.register(new Metal(COBALT, Metal.Tier.TIER_VI, true, 0.3f, 1495, 0xFF6CA6E5, null, null));
+        }
+        if (ModConfig.ALLOY_ADDITIONS.manyullin)
+        {
+            r.register(new Metal(MANYULLIN, Metal.Tier.TIER_VI, true, 0.3f, 1550, 0xFF40444A, null, null));
+        }
+        if (ModConfig.METAL_ADDITIONS.osmium)
+        {
+            r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, null, null));
+        }
+        if (ModConfig.METAL_ADDITIONS.tungsten)
+        {
+            r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF40444A, null, null));
+        }
+        if (ModConfig.METAL_ADDITIONS.uranium)
+        {
+            r.register(new Metal(URANIUM, Metal.Tier.TIER_VI, true, 0.35f, 1132, 0xFF7EA465, null, null));
+        }
     }
 
 
     @SubscribeEvent
     public static void onPreRegisterOre(TFCRegistryEvent.RegisterPreBlock<Ore> event)
     {
-        //todo add a config based registration
-        event.getRegistry().registerAll(
-                new Ore(BAUXITE, ALUMINIUM, false)
-        );
+        IForgeRegistry<Ore> r = event.getRegistry();
+        if (ModConfig.ORE_ADDITIONS.ardite)
+        {
+            r.register(new Ore(NATIVE_ARDITE, ARDITE, true));
+        }
+        if (ModConfig.ORE_ADDITIONS.osmium)
+        {
+            r.register(new Ore(NATIVE_OSMIUM, OSMIUM, true));
+        }
+        if (ModConfig.ORE_ADDITIONS.mithril)
+        {
+            r.register(new Ore(NATIVE_MITHRIL, MITHRIL, true));
+        }
+        if (ModConfig.ORE_ADDITIONS.bauxite)
+        {
+            r.register(new Ore(BAUXITE, ALUMINIUM, false));
+        }
+        if (ModConfig.ORE_ADDITIONS.scheelite)
+        {
+            r.register(new Ore(SCHEELITE, TUNGSTEN, false));
+        }
+        if (ModConfig.ORE_ADDITIONS.cobaltite)
+        {
+            r.register(new Ore(COBALTITE, COBALT, false));
+        }
     }
 
     @SubscribeEvent
     public static void onRegisterAlloyRecipe(RegistryEvent.Register<AlloyRecipe> event)
     {
-        /* todo add alloys here, config based
-        event.getRegistry().registerAll(
-                new AlloyRecipe.Builder(BISMUTH_BRONZE).add(ZINC, 0.2, 0.3).add(COPPER, 0.5, 0.65).add(BISMUTH, 0.1, 0.2).build(),
-                new AlloyRecipe.Builder(BLACK_BRONZE).add(COPPER, 0.5, 0.7).add(SILVER, 0.1, 0.25).add(GOLD, 0.1, 0.25).build(),
-                new AlloyRecipe.Builder(BRONZE).add(COPPER, 0.88, 0.92).add(TIN, 0.08, 0.12).build(),
-                new AlloyRecipe.Builder(BRASS).add(COPPER, 0.88, 0.92).add(ZINC, 0.08, 0.12).build(),
-                new AlloyRecipe.Builder(ROSE_GOLD).add(COPPER, 0.15, 0.3).add(GOLD, 0.7, 0.85).build(),
-                new AlloyRecipe.Builder(STERLING_SILVER).add(COPPER, 0.2, 0.4).add(SILVER, 0.6, 0.8).build(),
-                new AlloyRecipe.Builder(WEAK_STEEL).add(STEEL, 0.5, 0.7).add(NICKEL, 0.15, 0.25).add(BLACK_BRONZE, 0.15, 0.25).build(),
-                new AlloyRecipe.Builder(WEAK_BLUE_STEEL).add(BLACK_STEEL, 0.5, 0.55).add(STEEL, 0.2, 0.25).add(BISMUTH_BRONZE, 0.1, 0.15).add(STERLING_SILVER, 0.1, 0.15).build(),
-                new AlloyRecipe.Builder(WEAK_RED_STEEL).add(BLACK_STEEL, 0.5, 0.55).add(STEEL, 0.2, 0.25).add(BRASS, 0.1, 0.15).add(ROSE_GOLD, 0.1, 0.15).build()
-        );*/
+        IForgeRegistry<AlloyRecipe> r = event.getRegistry();
+        if (ModConfig.ALLOY_ADDITIONS.constantan)
+        {
+            r.register(new AlloyRecipe.Builder(CONSTANTAN).add(COPPER, 0.4, 0.6).add(NICKEL, 0.4, 0.6).build());
+        }
+        if (ModConfig.ALLOY_ADDITIONS.electrum)
+        {
+            r.register(new AlloyRecipe.Builder(ELECTRUM).add(GOLD, 0.4, 0.6).add(SILVER, 0.4, 0.6).build());
+        }
+        if (ModConfig.ALLOY_ADDITIONS.invar)
+        {
+            r.register(new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build());
+        }
+        if (ModConfig.ALLOY_ADDITIONS.manyullin && ModConfig.METAL_ADDITIONS.cobalt && ModConfig.METAL_ADDITIONS.ardite)
+        {
+            r.register(new AlloyRecipe.Builder(MANYULLIN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
+        }
     }
 
     @SubscribeEvent
