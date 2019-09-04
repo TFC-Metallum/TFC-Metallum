@@ -46,7 +46,6 @@ public final class RegistryHandler
     public static final ResourceLocation NATIVE_OSMIUM = new ResourceLocation(MODID, "native_osmium");
     public static final ResourceLocation BAUXITE = new ResourceLocation(MODID, "bauxite");
     public static final ResourceLocation SCHEELITE = new ResourceLocation(MODID, "scheelite");
-    public static final ResourceLocation PITCHBLENDE = new ResourceLocation(MODID, "pitchblende");
     public static final ResourceLocation COBALTITE = new ResourceLocation(MODID, "cobaltite");
 
 
@@ -128,10 +127,6 @@ public final class RegistryHandler
         if (ModConfig.ORE_ADDITIONS.scheelite)
         {
             r.register(new Ore(SCHEELITE, TUNGSTEN, false));
-        }
-        if (ModConfig.ORE_ADDITIONS.pitchblende)
-        {
-            r.register(new Ore(PITCHBLENDE, URANIUM, false));
         }
         if (ModConfig.ORE_ADDITIONS.cobaltite)
         {

@@ -109,10 +109,6 @@ public final class ModConfig
         @Config.Name("Osmium")
         public boolean osmium = true;
 
-        @Config.Comment("Register Pitchblende")
-        @Config.Name("Pitchblende")
-        public boolean pitchblende = true;
-
         @Config.Comment("Register Mithril")
         @Config.Name("Mithril")
         public boolean mithril = true;
