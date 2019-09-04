@@ -36,11 +36,28 @@ zipfolder('assets_backups/{}.zip'.format(int(time.time())), 'src/main/resources/
 os.chdir('src/main/resources/assets/tfc/')
 
 ORE_TYPES = {
+    'native_ardite': True,
+    'native_osmium': True,
+    'native_mithril': True,
     'bauxite': True,
+    'scheelite': True,
+    'pitchblende': True,
+    'cobaltite': True,
 }
 
 METAL_TYPES = {
     'aluminium': True,
+    'constantan': False,
+    'tungsten': True,
+    'cobalt': True,
+    'ardite': True,
+    'manyullin': True,
+    'osmium': True,
+    'invar': True,
+    'electrum': False,
+    'cast_iron': False,
+    'mithril': True,
+    'uranium': False,
 }  # + unknown
 
 METAL_ITEMS = {
