@@ -35,6 +35,29 @@ zipfolder('assets_backups/{}.zip'.format(int(time.time())), 'src/main/resources/
 
 os.chdir('src/main/resources/assets/tfc/')
 
+ROCK_TYPES = [
+    'granite',
+    'diorite',
+    'gabbro',
+    'shale',
+    'claystone',
+    'rocksalt',
+    'limestone',
+    'conglomerate',
+    'dolomite',
+    'chert',
+    'chalk',
+    'rhyolite',
+    'basalt',
+    'andesite',
+    'dacite',
+    'quartzite',
+    'slate',
+    'phyllite',
+    'schist',
+    'gneiss',
+    'marble',
+]
 ORE_TYPES = {
     'native_ardite': True,
     'native_osmium': True,
@@ -232,6 +255,15 @@ for key in METAL_TYPES:
         "up": {"true": {"submodel": {"up": {"model": "tfc:sheet"}}}, "false": {}},
         "down": {"true": {"submodel": {"down": {"model": "tfc:sheet", "x": 180}}}, "false": {}}
     })
+    
+# ROCK STUFF
+for rock_type in ROCK_TYPES:
+    # ORES
+    for block_type in ORE_TYPES:
+        blockstate(('ore', block_type, rock_type), 'tfc:ore', textures={
+            ('all', 'particle'): 'tfc:blocks/stonetypes/raw/%s' % rock_type,
+            'overlay': 'tfc:blocks/ores/%s' % block_type,
+        })
 
 
 #   _____ _
