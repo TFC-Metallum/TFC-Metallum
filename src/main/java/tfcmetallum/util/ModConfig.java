@@ -23,68 +23,84 @@ public final class ModConfig
 
     public static class MetalAdditions
     {
+        @Config.RequiresMcRestart
         @Config.Comment("Register Aluminium")
         @Config.Name("Aluminium")
         public boolean aluminium = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Ardite")
         @Config.Name("Ardite")
         public boolean ardite = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Cobalt")
         @Config.Name("Cobalt")
         public boolean cobalt = true;
 
+        /*
+        @Config.RequiresMcRestart
         @Config.Comment("Register Cast Iron")
         @Config.Name("Cast Iron")
-        public boolean castIron = true;
+        public boolean castIron = true;*/
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Titanium")
         @Config.Name("Titanium")
         public boolean titanium = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Tungsten")
         @Config.Name("Tungsten")
         public boolean tungsten = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Uranium")
         @Config.Name("Uranium")
         public boolean uranium = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Thorium")
         @Config.Name("Thorium")
         public boolean thorium = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Osmium")
         @Config.Name("Osmium")
         public boolean osmium = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Mithril")
         @Config.Name("Mithril")
         public boolean mithril = true;
-
-        //todo add more metals
     }
 
     public static class AlloyAdditions
     {
+        @Config.RequiresMcRestart
         @Config.Comment("Register Invar")
         @Config.Name("Invar")
         public boolean invar = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Manyullin")
         @Config.Name("Manyullin")
         public boolean manyullin = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Constantan")
         @Config.Name("Constantan")
         public boolean constantan = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Electrum")
         @Config.Name("Electrum")
         public boolean electrum = true;
 
-        //todo add more alloys
+        @Config.RequiresMcRestart
+        @Config.Comment("Register Tungsten Steel")
+        @Config.Name("Tungsten Steel")
+        public boolean tungstenSteel = true;
     }
 
     public static class OreAdditions
@@ -93,9 +109,9 @@ public final class ModConfig
         @Config.Name("Bauxite")
         public boolean bauxite = true;
 
-        @Config.Comment("Register Scheelite")
-        @Config.Name("Scheelite")
-        public boolean scheelite = true;
+        @Config.Comment("Register Wolframite")
+        @Config.Name("Wolframite")
+        public boolean wolframite = true;
 
         @Config.Comment("Register Native Ardite")
         @Config.Name("Ardite")
@@ -108,11 +124,5 @@ public final class ModConfig
         @Config.Comment("Register Native Osmium")
         @Config.Name("Osmium")
         public boolean osmium = true;
-
-        @Config.Comment("Register Mithril")
-        @Config.Name("Mithril")
-        public boolean mithril = true;
-
-        //todo add more ores
     }
 }

@@ -38,6 +38,7 @@ public final class RegistryHandler
     public static final ResourceLocation MITHRIL = new ResourceLocation(MODID, "mithril");
     public static final ResourceLocation OSMIUM = new ResourceLocation(MODID, "osmium");
     public static final ResourceLocation TUNGSTEN = new ResourceLocation(MODID, "tungsten");
+    public static final ResourceLocation TUNGSTEN_STEEL = new ResourceLocation(MODID, "tungsten_steel");
     public static final ResourceLocation URANIUM = new ResourceLocation(MODID, "uranium");
 
     //Ores
@@ -45,7 +46,7 @@ public final class RegistryHandler
     public static final ResourceLocation NATIVE_ARDITE = new ResourceLocation(MODID, "native_ardite");
     public static final ResourceLocation NATIVE_OSMIUM = new ResourceLocation(MODID, "native_osmium");
     public static final ResourceLocation BAUXITE = new ResourceLocation(MODID, "bauxite");
-    public static final ResourceLocation SCHEELITE = new ResourceLocation(MODID, "scheelite");
+    public static final ResourceLocation WOLFRAMITE = new ResourceLocation(MODID, "wolframite");
     public static final ResourceLocation COBALTITE = new ResourceLocation(MODID, "cobaltite");
 
 
@@ -61,13 +62,14 @@ public final class RegistryHandler
         {
             r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
         }
+        /* still not sure about this one
         if (ModConfig.METAL_ADDITIONS.castIron)
         {
             r.register(new Metal(CAST_IRON, Metal.Tier.TIER_III, true, 0.35f, 1150, 0xFF40444A, null, null));
-        }
+        }*/
         if (ModConfig.ALLOY_ADDITIONS.invar)
         {
-            r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFF40444A, null, null));
+            r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFF40444A, ModToolMaterials.INVAR, ModArmorMaterials.INVAR));
         }
         if (ModConfig.METAL_ADDITIONS.aluminium)
         {
@@ -79,23 +81,27 @@ public final class RegistryHandler
         }
         if (ModConfig.METAL_ADDITIONS.mithril)
         {
-            r.register(new Metal(MITHRIL, Metal.Tier.TIER_IV, true, 0.22f, 1550, 0xFF8ADAF6, null, null));
+            r.register(new Metal(MITHRIL, Metal.Tier.TIER_IV, true, 0.35f, 1550, 0xFF8ADAF6, ModToolMaterials.MITHRIL, ModArmorMaterials.MITHRIL));
         }
         if (ModConfig.METAL_ADDITIONS.cobalt)
         {
-            r.register(new Metal(COBALT, Metal.Tier.TIER_VI, true, 0.3f, 1495, 0xFF6CA6E5, null, null));
+            r.register(new Metal(COBALT, Metal.Tier.TIER_VI, true, 0.3f, 1495, 0xFF6CA6E5, ModToolMaterials.COBALT, ModArmorMaterials.COBALT));
         }
         if (ModConfig.ALLOY_ADDITIONS.manyullin)
         {
-            r.register(new Metal(MANYULLIN, Metal.Tier.TIER_VI, true, 0.3f, 1550, 0xFF40444A, null, null));
+            r.register(new Metal(MANYULLIN, Metal.Tier.TIER_VI, true, 0.3f, 1550, 0xFF40444A, ModToolMaterials.MANYULLIN, ModArmorMaterials.MANYULLIN));
         }
         if (ModConfig.METAL_ADDITIONS.osmium)
         {
-            r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, null, null));
+            r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ModToolMaterials.OSMIUM, ModArmorMaterials.OSMIUM));
         }
         if (ModConfig.METAL_ADDITIONS.tungsten)
         {
-            r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF40444A, null, null));
+            r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF40444A, ModToolMaterials.TUNGSTEN, ModArmorMaterials.TUNGSTEN));
+        }
+        if (ModConfig.ALLOY_ADDITIONS.tungstenSteel)
+        {
+            r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ModToolMaterials.TUNGSTEN_STEEL, ModArmorMaterials.TUNGSTEN_STEEL));
         }
         if (ModConfig.METAL_ADDITIONS.uranium)
         {
@@ -116,17 +122,13 @@ public final class RegistryHandler
         {
             r.register(new Ore(NATIVE_OSMIUM, OSMIUM, true));
         }
-        if (ModConfig.ORE_ADDITIONS.mithril)
-        {
-            r.register(new Ore(NATIVE_MITHRIL, MITHRIL, true));
-        }
         if (ModConfig.ORE_ADDITIONS.bauxite)
         {
             r.register(new Ore(BAUXITE, ALUMINIUM, false));
         }
-        if (ModConfig.ORE_ADDITIONS.scheelite)
+        if (ModConfig.ORE_ADDITIONS.wolframite)
         {
-            r.register(new Ore(SCHEELITE, TUNGSTEN, false));
+            r.register(new Ore(WOLFRAMITE, TUNGSTEN, false));
         }
         if (ModConfig.ORE_ADDITIONS.cobaltite)
         {
@@ -153,6 +155,10 @@ public final class RegistryHandler
         if (ModConfig.ALLOY_ADDITIONS.manyullin && ModConfig.METAL_ADDITIONS.cobalt && ModConfig.METAL_ADDITIONS.ardite)
         {
             r.register(new AlloyRecipe.Builder(MANYULLIN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
+        }
+        if (ModConfig.ALLOY_ADDITIONS.tungstenSteel && ModConfig.METAL_ADDITIONS.tungsten)
+        {
+            r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.4, 0.6).add(STEEL, 0.4, 0.6).build());
         }
     }
 
