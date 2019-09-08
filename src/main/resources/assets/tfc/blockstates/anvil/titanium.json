@@ -4,8 +4,8 @@
   "defaults": {
     "model": "tfc:anvil",
     "textures": {
-      "all": "tfc:blocks/metal/osmium",
-      "particle": "tfc:blocks/metal/osmium"
+      "all": "tfc:blocks/metal/titanium",
+      "particle": "tfc:blocks/metal/titanium"
     }
   },
   "variants": {
