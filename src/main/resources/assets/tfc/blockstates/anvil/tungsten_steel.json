@@ -4,8 +4,8 @@
   "defaults": {
     "model": "tfc:anvil",
     "textures": {
-      "all": "tfc:blocks/metal/ardite",
-      "particle": "tfc:blocks/metal/ardite"
+      "all": "tfc:blocks/metal/tungsten_steel",
+      "particle": "tfc:blocks/metal/tungsten_steel"
     }
   },
   "variants": {
