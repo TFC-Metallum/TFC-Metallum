@@ -23,68 +23,82 @@ public final class ModConfig
 
     public static class MetalAdditions
     {
+        @Config.RequiresMcRestart
         @Config.Comment("Register Aluminium")
         @Config.Name("Aluminium")
         public boolean aluminium = true;
 
+        @Config.RequiresMcRestart
+        @Config.Comment("Register Antimony")
+        @Config.Name("Antimony")
+        public boolean antimony = true;
+
+        @Config.RequiresMcRestart
         @Config.Comment("Register Ardite")
         @Config.Name("Ardite")
         public boolean ardite = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Cobalt")
         @Config.Name("Cobalt")
         public boolean cobalt = true;
 
-        @Config.Comment("Register Cast Iron")
-        @Config.Name("Cast Iron")
-        public boolean castIron = true;
-
+        @Config.RequiresMcRestart
         @Config.Comment("Register Titanium")
         @Config.Name("Titanium")
         public boolean titanium = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Tungsten")
         @Config.Name("Tungsten")
         public boolean tungsten = true;
 
-        @Config.Comment("Register Uranium")
-        @Config.Name("Uranium")
-        public boolean uranium = true;
-
-        @Config.Comment("Register Thorium")
-        @Config.Name("Thorium")
-        public boolean thorium = true;
-
+        @Config.RequiresMcRestart
         @Config.Comment("Register Osmium")
         @Config.Name("Osmium")
         public boolean osmium = true;
 
-        @Config.Comment("Register Mithril")
-        @Config.Name("Mithril")
-        public boolean mithril = true;
+        /* todo This is here so if TFC at some point removes it, we add it ourselves
+        @Config.Comment("Register Platinum")
+        @Config.Name("Platinum")
+        public boolean platinum = false;
 
-        //todo add more metals
+        @Config.Comment("Register Lead")
+        @Config.Name("Lead")
+        public boolean lead = false;*/
     }
 
     public static class AlloyAdditions
     {
+        @Config.RequiresMcRestart
         @Config.Comment("Register Invar")
         @Config.Name("Invar")
         public boolean invar = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Manyullin")
         @Config.Name("Manyullin")
         public boolean manyullin = true;
 
+        @Config.RequiresMcRestart
+        @Config.Comment("Register Mithril")
+        @Config.Name("Mithril")
+        public boolean mithril = true;
+
+        @Config.RequiresMcRestart
         @Config.Comment("Register Constantan")
         @Config.Name("Constantan")
         public boolean constantan = true;
 
+        @Config.RequiresMcRestart
         @Config.Comment("Register Electrum")
         @Config.Name("Electrum")
         public boolean electrum = true;
 
-        //todo add more alloys
+        @Config.RequiresMcRestart
+        @Config.Comment("Register Tungsten Steel")
+        @Config.Name("Tungsten Steel")
+        public boolean tungstenSteel = true;
     }
 
     public static class OreAdditions
@@ -93,9 +107,9 @@ public final class ModConfig
         @Config.Name("Bauxite")
         public boolean bauxite = true;
 
-        @Config.Comment("Register Scheelite")
-        @Config.Name("Scheelite")
-        public boolean scheelite = true;
+        @Config.Comment("Register Wolframite")
+        @Config.Name("Wolframite")
+        public boolean wolframite = true;
 
         @Config.Comment("Register Native Ardite")
         @Config.Name("Ardite")
@@ -109,10 +123,42 @@ public final class ModConfig
         @Config.Name("Osmium")
         public boolean osmium = true;
 
-        @Config.Comment("Register Mithril")
-        @Config.Name("Mithril")
-        public boolean mithril = true;
+        @Config.Comment("Register Stibnite")
+        @Config.Name("Stibnite")
+        public boolean stibnite = true;
 
-        //todo add more ores
+        /* todo This is here so if TFC at some point removes it, we add it ourselves
+        @Config.Comment("Register Pitchblende")
+        @Config.Name("Pitchblende")
+        public boolean pitchblende = false;
+
+        @Config.Comment("Register Native Platinum")
+        @Config.Name("Platinum")
+        public boolean platinum = false;
+
+        @Config.Comment("Register Galena")
+        @Config.Name("Galena")
+        public boolean galena = false;*/
+
+        //todo change to false after all textures have been provided (default not add this unless modpack author wants it)
+        @Config.Comment("Register Thorianite")
+        @Config.Name("Thorianite")
+        public boolean thorianite = true;
+
+        @Config.Comment("Register Chromite")
+        @Config.Name("Chromite")
+        public boolean chromite = true;
+
+        @Config.Comment("Register Pyrolusite")
+        @Config.Name("Pyrolusite")
+        public boolean pyrolusite = true;
+
+        @Config.Comment("Register Magnesite")
+        @Config.Name("Magnesite")
+        public boolean magnesite = true;
+
+        @Config.Comment("Register Boron")
+        @Config.Name("Boron")
+        public boolean boron = true;
     }
 }
