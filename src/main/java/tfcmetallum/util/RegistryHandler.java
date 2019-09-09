@@ -28,6 +28,7 @@ public final class RegistryHandler
 {
     //Metals
     public static final ResourceLocation ALUMINIUM = new ResourceLocation(MODID, "aluminium");
+    public static final ResourceLocation ALUMINIUM_BRASS = new ResourceLocation(MODID, "aluminium_brass");
     public static final ResourceLocation ANTIMONY = new ResourceLocation(MODID, "antimony");
     public static final ResourceLocation ARDITE = new ResourceLocation(MODID, "ardite");
     public static final ResourceLocation COBALT = new ResourceLocation(MODID, "cobalt");
@@ -94,6 +95,10 @@ public final class RegistryHandler
         {
             r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_IV, true, 0.3f, 660, 0xFFD9FBFC, ModToolMaterials.ALUMINIUM, ModArmorMaterials.ALUMINIUM));
         }
+        if (ModConfig.ALLOY_ADDITIONS.aluminiumBrass)
+        {
+            r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_IV, true, 0.3f, 630, 0xFFDCDABE, null, null));
+        }
         if (ModConfig.METAL_ADDITIONS.ardite)
         {
             r.register(new Metal(ARDITE, Metal.Tier.TIER_IV, true, 0.3f, 1050, 0xFF40444A, null, null));
@@ -142,7 +147,7 @@ public final class RegistryHandler
         {
             r.register(new Ore(STIBNITE, ANTIMONY, true));
         }
-        /*if (ModConfig.ORE_ADDITIONS.platinum)
+        /*if (ModConfig.ORE_ADDITIONS.platinum) //todo add these if base TFC removes them
         {
             r.register(new Ore(NATIVE_PLATINUM, PLATINUM, true));
         }*/
@@ -167,7 +172,7 @@ public final class RegistryHandler
 
         // Ores without metals registered inside TFC
         // (since they would be ingot only and needs processing machines to get, which is provided by other technical mods)
-        /*if (ModConfig.ORE_ADDITIONS.pitchblende)
+        /*if (ModConfig.ORE_ADDITIONS.pitchblende) //todo only if base TFC removes it
         {
             r.register(new Ore(PITCHBLENDE));
         }*/
@@ -213,37 +218,17 @@ public final class RegistryHandler
         {
             r.register(new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build());
         }
+        if (ModConfig.ALLOY_ADDITIONS.aluminiumBrass && ModConfig.METAL_ADDITIONS.aluminium)
+        {
+            r.register(new AlloyRecipe.Builder(ALUMINIUM_BRASS).add(ALUMINIUM, 0.65, 0.85).add(COPPER, 0.15, 0.35).build());
+        }
         if (ModConfig.ALLOY_ADDITIONS.manyullin && ModConfig.METAL_ADDITIONS.cobalt && ModConfig.METAL_ADDITIONS.ardite)
         {
             r.register(new AlloyRecipe.Builder(MANYULLIN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
         }
         if (ModConfig.ALLOY_ADDITIONS.tungstenSteel && ModConfig.METAL_ADDITIONS.tungsten)
         {
-            r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.4, 0.6).add(STEEL, 0.4, 0.6).build());
+            r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build());
         }
-    }
-
-    @SubscribeEvent
-    public static void registerBlocks(RegistryEvent.Register<Block> event)
-    {
-        IForgeRegistry<Block> registry = event.getRegistry();
-
-        //todo register blocks
-    }
-
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event)
-    {
-        IForgeRegistry<Item> registry = event.getRegistry();
-
-        //todo register items
-    }
-
-    private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer)
-    {
-        ItemBlock itemBlock = producer.apply(block);
-        //noinspection ConstantConditions
-        itemBlock.setRegistryName(block.getRegistryName());
-        return itemBlock;
     }
 }
