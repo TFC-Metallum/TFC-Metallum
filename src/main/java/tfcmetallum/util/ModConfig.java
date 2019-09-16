@@ -71,6 +71,11 @@ public final class ModConfig
     public static class AlloyAdditions
     {
         @Config.RequiresMcRestart
+        @Config.Comment("Register Aluminium Brass")
+        @Config.Name("Aluminium Brass")
+        public boolean aluminiumBrass = true;
+
+        @Config.RequiresMcRestart
         @Config.Comment("Register Invar")
         @Config.Name("Invar")
         public boolean invar = true;
