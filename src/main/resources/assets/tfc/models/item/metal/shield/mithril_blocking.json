@@ -1,8 +1,8 @@
 {
   "credit": "Made with Blockbench",
   "textures": {
-    "texture": "tfc:items/metal/shield/wrought_iron",
-    "particle": "tfc:items/metal/shield/wrought_iron"
+    "texture": "tfc:items/metal/shield/mithril",
+    "particle": "tfc:items/metal/shield/mithril"
   },
   "elements": [
     {
@@ -3123,24 +3123,24 @@
     "firstperson_righthand": {
       "rotation": [
         0,
-        -75,
+        -15,
         15
       ],
       "translation": [
-        4,
-        -3,
+        2,
+        -2.5,
         0
       ]
     },
     "firstperson_lefthand": {
       "rotation": [
         0,
-        -75,
+        -15,
         15
       ],
       "translation": [
-        4,
-        -3,
+        2,
+        -2.5,
         0
       ]
     },
@@ -3182,13 +3182,5 @@
         2
       ]
     }
-  },
-  "overrides": [
-    {
-      "predicate": {
-        "blocking": 1
-      },
-      "model": "tfc:item/metal/shield/wrought_iron_blocking"
-    }
-  ]
+  }
 }
