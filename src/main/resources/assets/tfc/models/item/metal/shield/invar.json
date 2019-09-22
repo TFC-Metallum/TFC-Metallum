@@ -1,8 +1,8 @@
 {
   "credit": "Made with Blockbench",
   "textures": {
-    "texture": "tfc:items/metal/shield/wrought_iron",
-    "particle": "tfc:items/metal/shield/wrought_iron"
+    "texture": "tfc:items/metal/shield/invar",
+    "particle": "tfc:items/metal/shield/invar"
   },
   "elements": [
     {
@@ -3123,24 +3123,24 @@
     "firstperson_righthand": {
       "rotation": [
         0,
-        -15,
+        -75,
         15
       ],
       "translation": [
-        2,
-        -2.5,
+        4,
+        -3,
         0
       ]
     },
     "firstperson_lefthand": {
       "rotation": [
         0,
-        -15,
+        -75,
         15
       ],
       "translation": [
-        2,
-        -2.5,
+        4,
+        -3,
         0
       ]
     },
@@ -3182,5 +3182,13 @@
         2
       ]
     }
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "tfc:item/metal/shield/invar_blocking"
+    }
+  ]
 }
