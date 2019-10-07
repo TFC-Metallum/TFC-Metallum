@@ -1082,5 +1082,33 @@ item.tfc.metal.unfinished_boots.tungsten_steel.name=Unfinished Tungsten Steel Bo
 item.tfc.metal.unfinished_helmet.tungsten_steel.name=Unfinished Tungsten Steel Helmet
 item.tfc.metal.unfinished_greaves.tungsten_steel.name=Unfinished Tungsten Steel Greaves
 
-#Metal Anvils
+# Metal Anvils
 item.tfc.metal.anvil.tungsten_steel.name=Tungsten Steel Anvil
+
+# Metal types
+tfc.types.metal.aluminium=Aluminium
+tfc.types.metal.aluminium_brass=Aluminium Brass
+tfc.types.metal.antimony=Antimony
+tfc.types.metal.ardite=Ardite
+tfc.types.metal.cobalt=Cobalt
+tfc.types.metal.constantan=Constantan
+tfc.types.metal.electrum=Electrum
+tfc.types.metal.invar=Invar
+tfc.types.metal.manyullin=Manyullin
+tfc.types.metal.mithril=Mithril
+tfc.types.metal.osmium=Osmium
+tfc.types.metal.tungsten=Tungsten
+tfc.types.metal.tungsten_steel=Tungsten Steel
+
+# Config
+config.tfcmetallum=TFC-Metallum
+config.tfcmetallum.tooltip=Settings for TFC-Metallum
+
+config.tfcmetallum.metal_additions=Metal Additions
+config.tfcmetallum.metal_additions.tooltip=Enable/Disable specific metals
+
+config.tfcmetallum.alloy_additions=Alloy Additions
+config.tfcmetallum.alloy_additions.tooltip=Enable/Disable specific alloys
+
+config.tfcmetallum.ore_additions=Ore Additions
+config.tfcmetallum.ore_additions.tooltip=Enable/Disable specific ores
