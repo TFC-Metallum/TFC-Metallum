@@ -29,7 +29,7 @@ minecraft {
 }
 
 dependencies {
-    compile files("libs/TerraFirmaCraft-MC1.12.2-0.22.2.62-deobf.jar")
+    compile files("libs/TerraFirmaCraft-MC1.12.2-0.24.5.82-deobf.jar")
 }
 
 processResources {

@@ -1,10 +1,5 @@
 package tfcmetallum.util;
 
-import java.util.function.Function;
-
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,8 +11,8 @@ import net.dries007.tfc.api.registries.TFCRegistryEvent;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Ore;
 import tfcmetallum.TFCMetallum;
-import tfcmetallum.objects.ModArmorMaterials;
-import tfcmetallum.objects.ModToolMaterials;
+import tfcmetallum.objects.ArmorMaterialsTFCM;
+import tfcmetallum.objects.ToolMaterialsTFCM;
 
 import static net.dries007.tfc.types.DefaultMetals.*;
 import static tfcmetallum.TFCMetallum.MODID;
@@ -67,15 +62,15 @@ public final class RegistryHandler
     public static void onPreRegisterMetal(TFCRegistryEvent.RegisterPreBlock<Metal> event)
     {
         IForgeRegistry<Metal> r = event.getRegistry();
-        if (ModConfig.METAL_ADDITIONS.antimony)
+        if (ConfigTFCM.METAL_ADDITIONS.antimony)
         {
             r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null));
         }
-        if (ModConfig.ALLOY_ADDITIONS.constantan)
+        if (ConfigTFCM.ALLOY_ADDITIONS.constantan)
         {
             r.register(new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFD28874, null, null));
         }
-        if (ModConfig.ALLOY_ADDITIONS.electrum)
+        if (ConfigTFCM.ALLOY_ADDITIONS.electrum)
         {
             r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
         }
@@ -83,49 +78,49 @@ public final class RegistryHandler
         {
             r.register(new Metal(LEAD, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null)); // todo change these values accordingly if added
         }*/
-        if (ModConfig.ALLOY_ADDITIONS.mithril)
+        if (ConfigTFCM.ALLOY_ADDITIONS.mithril)
         {
-            r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ModToolMaterials.MITHRIL, ModArmorMaterials.MITHRIL));
+            r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL));
         }
-        if (ModConfig.ALLOY_ADDITIONS.invar)
+        if (ConfigTFCM.ALLOY_ADDITIONS.invar)
         {
-            r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFF40444A, ModToolMaterials.INVAR, ModArmorMaterials.INVAR));
+            r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFF40444A, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR));
         }
-        if (ModConfig.METAL_ADDITIONS.aluminium)
+        if (ConfigTFCM.METAL_ADDITIONS.aluminium)
         {
-            r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_IV, true, 0.3f, 660, 0xFFD9FBFC, ModToolMaterials.ALUMINIUM, ModArmorMaterials.ALUMINIUM));
+            r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_IV, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
         }
-        if (ModConfig.ALLOY_ADDITIONS.aluminiumBrass)
+        if (ConfigTFCM.ALLOY_ADDITIONS.aluminiumBrass)
         {
             r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_IV, true, 0.3f, 630, 0xFFDCDABE, null, null));
         }
-        if (ModConfig.METAL_ADDITIONS.ardite)
+        if (ConfigTFCM.METAL_ADDITIONS.ardite)
         {
             r.register(new Metal(ARDITE, Metal.Tier.TIER_IV, true, 0.3f, 1050, 0xFF40444A, null, null));
         }
-        if (ModConfig.METAL_ADDITIONS.cobalt)
+        if (ConfigTFCM.METAL_ADDITIONS.cobalt)
         {
-            r.register(new Metal(COBALT, Metal.Tier.TIER_VI, true, 0.3f, 1495, 0xFF6CA6E5, ModToolMaterials.COBALT, ModArmorMaterials.COBALT));
+            r.register(new Metal(COBALT, Metal.Tier.TIER_VI, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));
         }
-        if (ModConfig.ALLOY_ADDITIONS.manyullin)
+        if (ConfigTFCM.ALLOY_ADDITIONS.manyullin)
         {
-            r.register(new Metal(MANYULLIN, Metal.Tier.TIER_VI, true, 0.3f, 1550, 0xFF40444A, ModToolMaterials.MANYULLIN, ModArmorMaterials.MANYULLIN));
+            r.register(new Metal(MANYULLIN, Metal.Tier.TIER_VI, true, 0.3f, 1550, 0xFF40444A, ToolMaterialsTFCM.MANYULLIN, ArmorMaterialsTFCM.MANYULLIN));
         }
-        if (ModConfig.METAL_ADDITIONS.osmium)
+        if (ConfigTFCM.METAL_ADDITIONS.osmium)
         {
-            r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ModToolMaterials.OSMIUM, ModArmorMaterials.OSMIUM));
+            r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM));
         }
-        if (ModConfig.METAL_ADDITIONS.titanium)
+        if (ConfigTFCM.METAL_ADDITIONS.titanium)
         {
-            r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ModToolMaterials.TITANIUM, ModArmorMaterials.TITANIUM));
+            r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM));
         }
-        if (ModConfig.METAL_ADDITIONS.tungsten)
+        if (ConfigTFCM.METAL_ADDITIONS.tungsten)
         {
-            r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF40444A, ModToolMaterials.TUNGSTEN, ModArmorMaterials.TUNGSTEN));
+            r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF40444A, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
         }
-        if (ModConfig.ALLOY_ADDITIONS.tungstenSteel)
+        if (ConfigTFCM.ALLOY_ADDITIONS.tungstenSteel)
         {
-            r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ModToolMaterials.TUNGSTEN_STEEL, ModArmorMaterials.TUNGSTEN_STEEL));
+            r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL));
         }
     }
 
@@ -135,15 +130,15 @@ public final class RegistryHandler
     {
         IForgeRegistry<Ore> r = event.getRegistry();
         //  Ores which *could* be melted directly if it's temperature is met
-        if (ModConfig.ORE_ADDITIONS.ardite)
+        if (ConfigTFCM.ORE_ADDITIONS.ardite)
         {
             r.register(new Ore(NATIVE_ARDITE, ARDITE, true));
         }
-        if (ModConfig.ORE_ADDITIONS.osmium)
+        if (ConfigTFCM.ORE_ADDITIONS.osmium)
         {
             r.register(new Ore(NATIVE_OSMIUM, OSMIUM, true));
         }
-        if (ModConfig.ORE_ADDITIONS.stibnite)
+        if (ConfigTFCM.ORE_ADDITIONS.stibnite)
         {
             r.register(new Ore(STIBNITE, ANTIMONY, true));
         }
@@ -157,15 +152,15 @@ public final class RegistryHandler
         }*/
 
         // Ores which we add tools, armor and textures inside TFC realm, but can't be melted directly (processing by other mods required)
-        if (ModConfig.ORE_ADDITIONS.bauxite)
+        if (ConfigTFCM.ORE_ADDITIONS.bauxite)
         {
             r.register(new Ore(BAUXITE, ALUMINIUM, false));
         }
-        if (ModConfig.ORE_ADDITIONS.wolframite)
+        if (ConfigTFCM.ORE_ADDITIONS.wolframite)
         {
             r.register(new Ore(WOLFRAMITE, TUNGSTEN, false));
         }
-        if (ModConfig.ORE_ADDITIONS.cobaltite)
+        if (ConfigTFCM.ORE_ADDITIONS.cobaltite)
         {
             r.register(new Ore(COBALTITE, COBALT, false));
         }
@@ -176,23 +171,23 @@ public final class RegistryHandler
         {
             r.register(new Ore(PITCHBLENDE));
         }*/
-        if (ModConfig.ORE_ADDITIONS.thorianite)
+        if (ConfigTFCM.ORE_ADDITIONS.thorianite)
         {
             r.register(new Ore(THORIANITE));
         }
-        if (ModConfig.ORE_ADDITIONS.chromite)
+        if (ConfigTFCM.ORE_ADDITIONS.chromite)
         {
             r.register(new Ore(CHROMITE));
         }
-        if (ModConfig.ORE_ADDITIONS.pyrolusite)
+        if (ConfigTFCM.ORE_ADDITIONS.pyrolusite)
         {
             r.register(new Ore(PYROLUSITE));
         }
-        if (ModConfig.ORE_ADDITIONS.magnesite)
+        if (ConfigTFCM.ORE_ADDITIONS.magnesite)
         {
             r.register(new Ore(MAGNESITE));
         }
-        if (ModConfig.ORE_ADDITIONS.boron)
+        if (ConfigTFCM.ORE_ADDITIONS.boron)
         {
             r.register(new Ore(BORON));
         }
@@ -202,31 +197,31 @@ public final class RegistryHandler
     public static void onRegisterAlloyRecipe(RegistryEvent.Register<AlloyRecipe> event)
     {
         IForgeRegistry<AlloyRecipe> r = event.getRegistry();
-        if (ModConfig.ALLOY_ADDITIONS.constantan)
+        if (ConfigTFCM.ALLOY_ADDITIONS.constantan)
         {
             r.register(new AlloyRecipe.Builder(CONSTANTAN).add(COPPER, 0.4, 0.6).add(NICKEL, 0.4, 0.6).build());
         }
-        if (ModConfig.ALLOY_ADDITIONS.electrum)
+        if (ConfigTFCM.ALLOY_ADDITIONS.electrum)
         {
             r.register(new AlloyRecipe.Builder(ELECTRUM).add(GOLD, 0.4, 0.6).add(SILVER, 0.4, 0.6).build());
         }
-        if (ModConfig.ALLOY_ADDITIONS.mithril && ModConfig.METAL_ADDITIONS.antimony)
+        if (ConfigTFCM.ALLOY_ADDITIONS.mithril && ConfigTFCM.METAL_ADDITIONS.antimony)
         {
             r.register(new AlloyRecipe.Builder(MITHRIL).add(COPPER, 0.88, 0.92).add(ANTIMONY, 0.08, 0.12).build());
         }
-        if (ModConfig.ALLOY_ADDITIONS.invar)
+        if (ConfigTFCM.ALLOY_ADDITIONS.invar)
         {
             r.register(new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build());
         }
-        if (ModConfig.ALLOY_ADDITIONS.aluminiumBrass && ModConfig.METAL_ADDITIONS.aluminium)
+        if (ConfigTFCM.ALLOY_ADDITIONS.aluminiumBrass && ConfigTFCM.METAL_ADDITIONS.aluminium)
         {
             r.register(new AlloyRecipe.Builder(ALUMINIUM_BRASS).add(ALUMINIUM, 0.65, 0.85).add(COPPER, 0.15, 0.35).build());
         }
-        if (ModConfig.ALLOY_ADDITIONS.manyullin && ModConfig.METAL_ADDITIONS.cobalt && ModConfig.METAL_ADDITIONS.ardite)
+        if (ConfigTFCM.ALLOY_ADDITIONS.manyullin && ConfigTFCM.METAL_ADDITIONS.cobalt && ConfigTFCM.METAL_ADDITIONS.ardite)
         {
             r.register(new AlloyRecipe.Builder(MANYULLIN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
         }
-        if (ModConfig.ALLOY_ADDITIONS.tungstenSteel && ModConfig.METAL_ADDITIONS.tungsten)
+        if (ConfigTFCM.ALLOY_ADDITIONS.tungstenSteel && ConfigTFCM.METAL_ADDITIONS.tungsten)
         {
             r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build());
         }
