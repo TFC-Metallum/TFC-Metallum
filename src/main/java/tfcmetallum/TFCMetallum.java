@@ -40,6 +40,5 @@ public class TFCMetallum
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-        VeinLoader.INSTANCE.postInit();
     }
 }

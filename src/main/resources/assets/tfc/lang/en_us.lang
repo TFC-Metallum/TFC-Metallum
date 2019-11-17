@@ -1099,3 +1099,18 @@ tfc.types.metal.mithril=Mithril
 tfc.types.metal.osmium=Osmium
 tfc.types.metal.tungsten=Tungsten
 tfc.types.metal.tungsten_steel=Tungsten Steel
+
+#Fluids
+fluid.constantan=Molten Constantan
+fluid.electrum=Molten Electrum
+fluid.mithril=Molten Mithril
+fluid.invar=Molten Invar
+fluid.aluminium=Molten Aluminium
+fluid.aluminium_brass=Molten Aluminium Brass
+fluid.ardite=Molten Ardite
+fluid.cobalt=Molten Cobalt
+fluid.manyullin=Molten Manyullin
+fluid.osmium=Molten Osmium
+fluid.titanium=Molten Titanium
+fluid.tungsten=Molten Tungsten
+fluid.tungsten_steel=Molten Tungsten Steel
