@@ -21,6 +21,7 @@ public class TFCMetallum
     public static final String SIGNING_KEY = "@FINGERPRINT@";
 
     private static Logger logger;
+    private static boolean signedBuild = true;
 
     public static Logger getLog()
     {
@@ -30,7 +31,10 @@ public class TFCMetallum
     @EventHandler
     public void onFingerprintViolation(FMLFingerprintViolationEvent event)
     {
-        logger.warn("Invalid fingerprint detected! This means this jar file has been modified externally and is not supported");
+        if (!event.isDirectory())
+        {
+            signedBuild = false;
+        }
     }
 
     @EventHandler
@@ -38,6 +42,10 @@ public class TFCMetallum
     {
         logger = event.getModLog();
         VeinLoader.INSTANCE.preInit(event.getModConfigurationDirectory());
+        if (!signedBuild)
+        {
+            logger.error("INVALID FINGERPRINT DETECTED! This means this jar file has been compromised and are not supported.");
+        }
     }
 
     @EventHandler

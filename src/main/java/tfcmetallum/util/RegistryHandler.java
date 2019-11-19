@@ -31,7 +31,7 @@ public final class RegistryHandler
     public static final ResourceLocation ELECTRUM = new ResourceLocation(MOD_ID, "electrum");
     public static final ResourceLocation INVAR = new ResourceLocation(MOD_ID, "invar");
     //public static final ResourceLocation LEAD = new ResourceLocation(MOD_ID, "lead");
-    public static final ResourceLocation MANYULLIN = new ResourceLocation(MOD_ID, "manyullin");
+    public static final ResourceLocation MANYULLYN = new ResourceLocation(MOD_ID, "manyullyn");
     public static final ResourceLocation MITHRIL = new ResourceLocation(MOD_ID, "mithril");
     public static final ResourceLocation OSMIUM = new ResourceLocation(MOD_ID, "osmium");
     //public static final ResourceLocation PLATINUM = new ResourceLocation(MOD_ID, "platinum");
@@ -75,7 +75,7 @@ public final class RegistryHandler
         r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_IV, true, 0.3f, 630, 0xFFDCDABE, null, null));
         r.register(new Metal(ARDITE, Metal.Tier.TIER_IV, true, 0.3f, 1050, 0xFF40444A, null, null));
         r.register(new Metal(COBALT, Metal.Tier.TIER_VI, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));
-        r.register(new Metal(MANYULLIN, Metal.Tier.TIER_VI, true, 0.3f, 1550, 0xFF40444A, ToolMaterialsTFCM.MANYULLIN, ArmorMaterialsTFCM.MANYULLIN));
+        r.register(new Metal(MANYULLYN, Metal.Tier.TIER_VI, true, 0.3f, 1550, 0xFF40444A, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
         r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM));
         r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM));
         r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF40444A, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
@@ -127,7 +127,7 @@ public final class RegistryHandler
         r.register(new AlloyRecipe.Builder(MITHRIL).add(COPPER, 0.88, 0.92).add(ANTIMONY, 0.08, 0.12).build());
         r.register(new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build());
         r.register(new AlloyRecipe.Builder(ALUMINIUM_BRASS).add(ALUMINIUM, 0.65, 0.85).add(COPPER, 0.15, 0.35).build());
-        r.register(new AlloyRecipe.Builder(MANYULLIN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
+        r.register(new AlloyRecipe.Builder(MANYULLYN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
         r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build());
     }
 }
