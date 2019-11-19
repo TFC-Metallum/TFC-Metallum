@@ -8,11 +8,10 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-import net.dries007.tfc.api.util.TFCConstants;
 import tfcmetallum.util.VeinLoader;
 
 @SuppressWarnings("WeakerAccess")
-@Mod(modid = TFCMetallum.MODID, name = TFCMetallum.NAME, version = TFCMetallum.VERSION, dependencies = "required-after:" + TFCConstants.MOD_ID, certificateFingerprint = TFCMetallum.SIGNING_KEY)
+@Mod(modid = TFCMetallum.MODID, name = TFCMetallum.NAME, version = TFCMetallum.VERSION, dependencies = "required-after:tfc", certificateFingerprint = TFCMetallum.SIGNING_KEY)
 public class TFCMetallum
 {
     public static final String MODID = "tfcmetallum";
