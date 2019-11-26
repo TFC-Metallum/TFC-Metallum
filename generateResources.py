@@ -88,7 +88,7 @@ METAL_TYPES = {
     'aluminium_brass': True,
     'ardite': False,
     'cobalt': True,
-    'manyullin': True,
+    'manyullyn': True,
     'osmium': True,
     'titanium': True,
     'tungsten': True,

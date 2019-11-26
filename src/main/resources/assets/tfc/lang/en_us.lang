@@ -737,63 +737,63 @@ item.tfc.metal.unfinished_greaves.invar.name=Unfinished Invar Greaves
 #Metal Anvils
 item.tfc.metal.anvil.invar.name=Invar Anvil
 
-#Manyullin
+#Manyullyn
 # Metal items
-item.tfc.metal.ingot.manyullin.name=Manyullin Ingot
-item.tfc.metal.double_ingot.manyullin.name=Manyullin Double Ingot
-item.tfc.metal.scrap.manyullin.name=Manyullin Scrap
-item.tfc.metal.dust.manyullin.name=Manyullin Dust
-item.tfc.metal.nugget.manyullin.name=Manyullin Nugget
-item.tfc.metal.sheet.manyullin.name=Manyullin Sheet
-item.tfc.metal.double_sheet.manyullin.name=Manyullin Double Sheet
-item.tfc.metal.tuyere.manyullin.name=Manyullin Tuyere
+item.tfc.metal.ingot.manyullyn.name=Manyullyn Ingot
+item.tfc.metal.double_ingot.manyullyn.name=Manyullyn Double Ingot
+item.tfc.metal.scrap.manyullyn.name=Manyullyn Scrap
+item.tfc.metal.dust.manyullyn.name=Manyullyn Dust
+item.tfc.metal.nugget.manyullyn.name=Manyullyn Nugget
+item.tfc.metal.sheet.manyullyn.name=Manyullyn Sheet
+item.tfc.metal.double_sheet.manyullyn.name=Manyullyn Double Sheet
+item.tfc.metal.tuyere.manyullyn.name=Manyullyn Tuyere
 
 # Metal tools
-item.tfc.metal.pick.manyullin.name=Manyullin Pickaxe
-item.tfc.metal.pick_head.manyullin.name=Manyullin Pickaxe Head
-item.tfc.metal.shovel.manyullin.name=Manyullin Shovel
-item.tfc.metal.shovel_head.manyullin.name=Manyullin Shovel Head
-item.tfc.metal.axe.manyullin.name=Manyullin Axe
-item.tfc.metal.axe_head.manyullin.name=Manyullin Axe Head
-item.tfc.metal.hoe.manyullin.name=Manyullin Hoe
-item.tfc.metal.hoe_head.manyullin.name=Manyullin Hoe Head
-item.tfc.metal.chisel.manyullin.name=Manyullin Chisel
-item.tfc.metal.chisel_head.manyullin.name=Manyullin Chisel Head
-item.tfc.metal.sword.manyullin.name=Manyullin Sword
-item.tfc.metal.sword_blade.manyullin.name=Manyullin Sword Blade
-item.tfc.metal.mace.manyullin.name=Manyullin Mace
-item.tfc.metal.mace_head.manyullin.name=Manyullin Mace Head
-item.tfc.metal.saw.manyullin.name=Manyullin Saw
-item.tfc.metal.saw_blade.manyullin.name=Manyullin Saw Blade
-item.tfc.metal.shears.manyullin.name=Manyullin Shears
-item.tfc.metal.shield.manyullin.name=Manyullin Shield
-item.tfc.metal.javelin.manyullin.name=Manyullin Javelin
-item.tfc.metal.javelin_head.manyullin.name=Manyullin Javelin Head
-item.tfc.metal.hammer.manyullin.name=Manyullin Hammer
-item.tfc.metal.hammer_head.manyullin.name=Manyullin Hammer Head
-item.tfc.metal.propick.manyullin.name=Manyullin Prospector's Pickaxe
-item.tfc.metal.propick_head.manyullin.name=Manyullin Prospector's Pickaxe Head
-item.tfc.metal.knife.manyullin.name=Manyullin Knife
-item.tfc.metal.knife_blade.manyullin.name=Manyullin Knife Blade
-item.tfc.metal.scythe.manyullin.name=Manyullin Scythe
-item.tfc.metal.scythe_blade.manyullin.name=Manyullin Scythe Blade
+item.tfc.metal.pick.manyullyn.name=Manyullyn Pickaxe
+item.tfc.metal.pick_head.manyullyn.name=Manyullyn Pickaxe Head
+item.tfc.metal.shovel.manyullyn.name=Manyullyn Shovel
+item.tfc.metal.shovel_head.manyullyn.name=Manyullyn Shovel Head
+item.tfc.metal.axe.manyullyn.name=Manyullyn Axe
+item.tfc.metal.axe_head.manyullyn.name=Manyullyn Axe Head
+item.tfc.metal.hoe.manyullyn.name=Manyullyn Hoe
+item.tfc.metal.hoe_head.manyullyn.name=Manyullyn Hoe Head
+item.tfc.metal.chisel.manyullyn.name=Manyullyn Chisel
+item.tfc.metal.chisel_head.manyullyn.name=Manyullyn Chisel Head
+item.tfc.metal.sword.manyullyn.name=Manyullyn Sword
+item.tfc.metal.sword_blade.manyullyn.name=Manyullyn Sword Blade
+item.tfc.metal.mace.manyullyn.name=Manyullyn Mace
+item.tfc.metal.mace_head.manyullyn.name=Manyullyn Mace Head
+item.tfc.metal.saw.manyullyn.name=Manyullyn Saw
+item.tfc.metal.saw_blade.manyullyn.name=Manyullyn Saw Blade
+item.tfc.metal.shears.manyullyn.name=Manyullyn Shears
+item.tfc.metal.shield.manyullyn.name=Manyullyn Shield
+item.tfc.metal.javelin.manyullyn.name=Manyullyn Javelin
+item.tfc.metal.javelin_head.manyullyn.name=Manyullyn Javelin Head
+item.tfc.metal.hammer.manyullyn.name=Manyullyn Hammer
+item.tfc.metal.hammer_head.manyullyn.name=Manyullyn Hammer Head
+item.tfc.metal.propick.manyullyn.name=Manyullyn Prospector's Pickaxe
+item.tfc.metal.propick_head.manyullyn.name=Manyullyn Prospector's Pickaxe Head
+item.tfc.metal.knife.manyullyn.name=Manyullyn Knife
+item.tfc.metal.knife_blade.manyullyn.name=Manyullyn Knife Blade
+item.tfc.metal.scythe.manyullyn.name=Manyullyn Scythe
+item.tfc.metal.scythe_blade.manyullyn.name=Manyullyn Scythe Blade
 
-item.tfc.metal.lamp.manyullin.name=Manyullin Lamp
-item.tfc.ceramics.fired.mold.ingot.manyullin.name=Unshaped Manyullin
+item.tfc.metal.lamp.manyullyn.name=Manyullyn Lamp
+item.tfc.ceramics.fired.mold.ingot.manyullyn.name=Unshaped Manyullyn
 
 # Metal Armors
-item.tfc.metal.chestplate.manyullin.name=Manyullin Chestplate
-item.tfc.metal.greaves.manyullin.name=Manyullin Greaves
-item.tfc.metal.boots.manyullin.name=Manyullin Boots
-item.tfc.metal.helmet.manyullin.name=Manyullin Helmet
+item.tfc.metal.chestplate.manyullyn.name=Manyullyn Chestplate
+item.tfc.metal.greaves.manyullyn.name=Manyullyn Greaves
+item.tfc.metal.boots.manyullyn.name=Manyullyn Boots
+item.tfc.metal.helmet.manyullyn.name=Manyullyn Helmet
 
-item.tfc.metal.unfinished_chestplate.manyullin.name=Unfinished Manyullin Chestplate
-item.tfc.metal.unfinished_boots.manyullin.name=Unfinished Manyullin Boots
-item.tfc.metal.unfinished_helmet.manyullin.name=Unfinished Manyullin Helmet
-item.tfc.metal.unfinished_greaves.manyullin.name=Unfinished Manyullin Greaves
+item.tfc.metal.unfinished_chestplate.manyullyn.name=Unfinished Manyullyn Chestplate
+item.tfc.metal.unfinished_boots.manyullyn.name=Unfinished Manyullyn Boots
+item.tfc.metal.unfinished_helmet.manyullyn.name=Unfinished Manyullyn Helmet
+item.tfc.metal.unfinished_greaves.manyullyn.name=Unfinished Manyullyn Greaves
 
 #Metal Anvils
-item.tfc.metal.anvil.manyullin.name=Manyullin Anvil
+item.tfc.metal.anvil.manyullyn.name=Manyullyn Anvil
 
 #Mithril
 # Metal items
@@ -1094,13 +1094,14 @@ tfc.types.metal.cobalt=Cobalt
 tfc.types.metal.constantan=Constantan
 tfc.types.metal.electrum=Electrum
 tfc.types.metal.invar=Invar
-tfc.types.metal.manyullin=Manyullin
+tfc.types.metal.manyullyn=Manyullyn
 tfc.types.metal.mithril=Mithril
 tfc.types.metal.osmium=Osmium
 tfc.types.metal.tungsten=Tungsten
 tfc.types.metal.tungsten_steel=Tungsten Steel
 
 #Fluids
+fluid.antimony=Molten Antimony
 fluid.constantan=Molten Constantan
 fluid.electrum=Molten Electrum
 fluid.mithril=Molten Mithril
@@ -1109,7 +1110,7 @@ fluid.aluminium=Molten Aluminium
 fluid.aluminium_brass=Molten Aluminium Brass
 fluid.ardite=Molten Ardite
 fluid.cobalt=Molten Cobalt
-fluid.manyullin=Molten Manyullin
+fluid.manyullyn=Molten Manyullyn
 fluid.osmium=Molten Osmium
 fluid.titanium=Molten Titanium
 fluid.tungsten=Molten Tungsten
