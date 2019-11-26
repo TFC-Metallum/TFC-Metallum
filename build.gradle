@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 
-version = "1.12.2-1.0.0"
+version = "1.12.2-1.0.1"
 group = "tfcmetallum"
 archivesBaseName = "TFC-Metallum"
 
@@ -24,7 +24,8 @@ minecraft {
     runDir = "run"
     mappings = "snapshot_20180814"
 	
-	replace("@VERSION@",project.version)
+	replace("@VERSION@", project.version)
+	replace("@FINGERPRINT@", project.findProperty("signSHA1"))
     replaceIn("TFCMetallum.java")
 }
 
@@ -55,3 +56,18 @@ processResources {
         include "LICENSE.txt"
     }
 }
+
+task signJar(type: SignJar, dependsOn: reobfJar) {
+    onlyIf { // Skip the task if our secret data isn't available
+        project.hasProperty('keyStore')
+    }
+
+    keyStore = project.findProperty('keyStore')
+    alias = project.findProperty('keyStoreAlias')
+    storePass = project.findProperty('keyStorePass')
+    keyPass = project.findProperty('keyStoreKeyPass')
+    inputFile = jar.archivePath
+    outputFile = jar.archivePath
+}
+
+build.dependsOn signJar
