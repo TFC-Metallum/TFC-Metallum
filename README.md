@@ -1,8 +1,6 @@
 # TFC-Metallum
 Addon for TerraFirmaCraft: The New Generation
 
-**Work in progress.**
-
 ## Goal
 Add metals, ores and alloys from other to TFC:TNG
 
