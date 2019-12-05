@@ -1094,6 +1094,7 @@ tfc.types.metal.cobalt=Cobalt
 tfc.types.metal.constantan=Constantan
 tfc.types.metal.electrum=Electrum
 tfc.types.metal.invar=Invar
+tfc.types.metal.titanium=Titanium
 tfc.types.metal.manyullyn=Manyullyn
 tfc.types.metal.mithril=Mithril
 tfc.types.metal.osmium=Osmium
