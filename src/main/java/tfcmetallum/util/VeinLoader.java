@@ -8,7 +8,7 @@ import org.apache.commons.io.FileUtils;
 
 import net.dries007.tfc.world.classic.worldgen.vein.VeinRegistry;
 
-import static net.dries007.tfc.api.util.TFCConstants.MOD_ID;
+import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
 
 public enum VeinLoader
 {

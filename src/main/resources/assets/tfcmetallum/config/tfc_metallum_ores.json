@@ -1,8 +1,8 @@
 {
   "stibnite": {
     "ore": "tfc:stibnite",
-    "width": 32,
-    "height": 40,
+    "width": 20,
+    "height": 30,
     "shape": "cluster",
     "rarity": 120,
     "minimum_height": 5,
@@ -27,8 +27,8 @@
   },
   "cobaltite": {
     "ore": "tfc:cobaltite",
-    "width": 32,
-    "height": 40,
+    "width": 16,
+    "height": 30,
     "shape": "cluster",
     "rarity": 120,
     "minimum_height": 5,
@@ -42,8 +42,8 @@
   },
   "wolframite": {
     "ore": "tfc:wolframite",
-    "width": 32,
-    "height": 40,
+    "width": 16,
+    "height": 30,
     "shape": "cluster",
     "rarity": 120,
     "minimum_height": 5,
@@ -56,12 +56,12 @@
   },
   "bauxite": {
     "ore": "tfc:bauxite",
-    "width": 32,
-    "height": 40,
+    "width": 14,
+    "height": 20,
     "shape": "cluster",
     "rarity": 70,
-    "minimum_height": 5,
-    "maximum_height": 128,
+    "minimum_height": 110,
+    "maximum_height": 144,
     "density": 70,
     "base_rocks": [
       "tfc:sedimentary"
@@ -69,21 +69,38 @@
   },
   "native_osmium": {
     "ore": "tfc:native_osmium",
-    "width": 32,
-    "height": 40,
+    "width": 5,
+    "height": 10,
     "shape": "cluster",
-    "rarity": 100,
+    "rarity": 120,
     "minimum_height": 5,
     "maximum_height": 128,
     "density": 70,
     "base_rocks": [
-      "tfc:basalt"
+      "tfc:metamorphic",
+      "tfc:igneous_intrusive",
+      "tfc:igneous_extrusive"
     ]
   },
   "native_ardite": {
     "ore": "tfc:native_ardite",
-    "width": 12,
-    "height": 20,
+    "width": 5,
+    "height": 10,
+    "shape": "cluster",
+    "rarity": 120,
+    "minimum_height": 5,
+    "maximum_height": 128,
+    "density": 70,
+    "base_rocks": [
+      "tfc:metamorphic",
+      "tfc:igneous_intrusive",
+      "tfc:igneous_extrusive"
+    ]
+  },
+  "thorianite": {
+    "ore": "tfc:thorianite",
+    "width": 6,
+    "height": 12,
     "shape": "cluster",
     "rarity": 140,
     "minimum_height": 5,
@@ -93,70 +110,71 @@
       "tfc:igneous_extrusive"
     ]
   },
-  "thorianite": {
-    "ore": "tfc:thorianite",
-    "width": 12,
-    "height": 20,
+  "chromite": {
+    "ore": "tfc:chromite",
+    "width": 6,
+    "height": 12,
     "shape": "cluster",
     "rarity": 140,
     "minimum_height": 5,
     "maximum_height": 128,
+    "density": 50,
+    "base_rocks": [
+      "tfc:igneous_intrusive"
+    ]
+  },
+  "pyrolusite": {
+    "ore": "tfc:pyrolusite",
+    "width": 6,
+    "height": 12,
+    "shape": "cluster",
+    "rarity": 100,
+    "minimum_height": 110,
+    "maximum_height": 144,
+    "density": 60,
+    "base_rocks": [
+      "tfc:sedimentary"
+    ]
+  },
+  "magnesite": {
+    "ore": "tfc:magnesite",
+    "width": 6,
+    "height": 14,
+    "shape": "cluster",
+    "rarity": 80,
+    "minimum_height": 110,
+    "maximum_height": 144,
     "density": 70,
     "base_rocks": [
       "tfc:sedimentary"
     ]
   },
-  "chromite": {
-    "ore": "tfc:chromite",
-    "width": 12,
-    "height": 20,
-    "shape": "cluster",
-    "rarity": 140,
-    "minimum_height": 5,
-    "maximum_height": 128,
-    "density": 60,
-    "base_rocks": [
-      "tfc:gabbro"
-    ]
-  },
-  "pyrolusite": {
-    "ore": "tfc:pyrolusite",
-    "width": 12,
-    "height": 20,
-    "shape": "cluster",
-    "rarity": 120,
-    "minimum_height": 5,
-    "maximum_height": 128,
-    "density": 50,
-    "base_rocks": [
-      "tfc:igneous_extrusive",
-      "tfc:igneous_intrusive"
-    ]
-  },
-  "magnesite": {
+  "spodumene": {
     "ore": "tfc:magnesite",
-    "width": 12,
+    "width": 10,
     "height": 20,
     "shape": "cluster",
-    "rarity": 80,
+    "rarity": 100,
     "minimum_height": 5,
     "maximum_height": 128,
-    "density": 40,
+    "density": 70,
     "base_rocks": [
-      "tfc:sedimentary"
+      "tfc:sedimentary",
+      "tfc:metamorphic"
     ]
   },
   "boron": {
     "ore": "tfc:boron",
-    "width": 12,
-    "height": 20,
+    "width": 8,
+    "height": 14,
     "shape": "cluster",
-    "rarity": 120,
+    "rarity": 100,
     "minimum_height": 5,
     "maximum_height": 128,
-    "density": 50,
+    "density": 60,
     "base_rocks": [
-      "tfc:rocksalt"
+      "tfc:metamorphic",
+      "tfc:igneous_intrusive"
     ]
   }
 }

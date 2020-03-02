@@ -30,10 +30,10 @@ public class TFCMetallum
     @EventHandler
     public void onFingerprintViolation(FMLFingerprintViolationEvent event)
     {
-        if (!event.isDirectory())
+        /*if (!event.isDirectory())
         {
-            signedBuild = false;
-        }
+            signedBuild = false; // todo disabled for the time being
+        }*/
     }
 
     @EventHandler

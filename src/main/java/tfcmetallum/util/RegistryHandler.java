@@ -14,7 +14,7 @@ import tfcmetallum.TFCMetallum;
 import tfcmetallum.objects.ArmorMaterialsTFCM;
 import tfcmetallum.objects.ToolMaterialsTFCM;
 
-import static net.dries007.tfc.api.util.TFCConstants.MOD_ID;
+import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
 import static net.dries007.tfc.types.DefaultMetals.*;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -38,24 +38,27 @@ public final class RegistryHandler
     public static final ResourceLocation TITANIUM = new ResourceLocation(MOD_ID, "titanium");
     public static final ResourceLocation TUNGSTEN = new ResourceLocation(MOD_ID, "tungsten");
     public static final ResourceLocation TUNGSTEN_STEEL = new ResourceLocation(MOD_ID, "tungsten_steel");
+    public static final ResourceLocation NICKEL_SILVER = new ResourceLocation(MOD_ID, "nickel_silver"); // Copper + zinc + nickel
+    public static final ResourceLocation RED_ALLOY = new ResourceLocation(MOD_ID, "red_alloy"); // Copper + redstone (although not obtainable with just TFC + metallum
 
     //Ores
     public static final ResourceLocation NATIVE_ARDITE = new ResourceLocation(MOD_ID, "native_ardite");
     public static final ResourceLocation NATIVE_OSMIUM = new ResourceLocation(MOD_ID, "native_osmium");
     //public static final ResourceLocation NATIVE_PLATINUM = new ResourceLocation(MOD_ID, "native_platinum");
-    public static final ResourceLocation BAUXITE = new ResourceLocation(MOD_ID, "bauxite");
-    public static final ResourceLocation WOLFRAMITE = new ResourceLocation(MOD_ID, "wolframite");
-    public static final ResourceLocation COBALTITE = new ResourceLocation(MOD_ID, "cobaltite");
-    public static final ResourceLocation STIBNITE = new ResourceLocation(MOD_ID, "stibnite");
+    public static final ResourceLocation BAUXITE = new ResourceLocation(MOD_ID, "bauxite"); // aluminium / titanium
+    public static final ResourceLocation WOLFRAMITE = new ResourceLocation(MOD_ID, "wolframite"); // tungsten
+    public static final ResourceLocation COBALTITE = new ResourceLocation(MOD_ID, "cobaltite"); // cobalt
+    public static final ResourceLocation STIBNITE = new ResourceLocation(MOD_ID, "stibnite"); // antimony
     //public static final ResourceLocation GALENA = new ResourceLocation(MOD_ID, "galena");
 
     //Ore without TFC-M metals
     //public static final ResourceLocation PITCHBLENDE = new ResourceLocation(MOD_ID, "pitchblende");
-    public static final ResourceLocation THORIANITE = new ResourceLocation(MOD_ID, "thorianite");
-    public static final ResourceLocation CHROMITE = new ResourceLocation(MOD_ID, "chromite");
-    public static final ResourceLocation PYROLUSITE = new ResourceLocation(MOD_ID, "pyrolusite");
-    public static final ResourceLocation MAGNESITE = new ResourceLocation(MOD_ID, "magnesite");
-    public static final ResourceLocation BORON = new ResourceLocation(MOD_ID, "boron");
+    public static final ResourceLocation THORIANITE = new ResourceLocation(MOD_ID, "thorianite"); // thorium
+    public static final ResourceLocation CHROMITE = new ResourceLocation(MOD_ID, "chromite"); // chrome
+    public static final ResourceLocation PYROLUSITE = new ResourceLocation(MOD_ID, "pyrolusite"); // manganese
+    public static final ResourceLocation MAGNESITE = new ResourceLocation(MOD_ID, "magnesite"); //magnesium
+    public static final ResourceLocation BORON = new ResourceLocation(MOD_ID, "boron"); // boron
+    public static final ResourceLocation SPODUMENE = new ResourceLocation(MOD_ID, "spodumene"); // lithium
 
 
     @SubscribeEvent
@@ -65,6 +68,8 @@ public final class RegistryHandler
         r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null));
         r.register(new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFD28874, null, null));
         r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
+        r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER));
+        r.register(new Metal(RED_ALLOY, Metal.Tier.TIER_II, true, 0.35f, 1080, 0xFFDA6E6E, null, null));
         /*if (ModConfig.METAL_ADDITIONS.lead)
         {
             r.register(new Metal(LEAD, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null)); // todo change these values accordingly if added
@@ -116,6 +121,7 @@ public final class RegistryHandler
         r.register(new Ore(PYROLUSITE));
         r.register(new Ore(MAGNESITE));
         r.register(new Ore(BORON));
+        r.register(new Ore(SPODUMENE));
     }
 
     @SubscribeEvent
@@ -129,5 +135,6 @@ public final class RegistryHandler
         r.register(new AlloyRecipe.Builder(ALUMINIUM_BRASS).add(ALUMINIUM, 0.65, 0.85).add(COPPER, 0.15, 0.35).build());
         r.register(new AlloyRecipe.Builder(MANYULLYN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
         r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build());
+        r.register(new AlloyRecipe.Builder(NICKEL_SILVER).add(COPPER, 0.50, 0.65).add(ZINC, 0.1, 0.3).add(NICKEL, 0.1, 0.3).build());
     }
 }

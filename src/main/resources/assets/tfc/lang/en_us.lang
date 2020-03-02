@@ -231,6 +231,28 @@ tile.tfc.ore.boron.schist.name=Schist Boron
 tile.tfc.ore.boron.gneiss.name=Gneiss Boron
 tile.tfc.ore.boron.marble.name=Marble Boron
 
+tile.tfc.ore.spodumene.granite.name=Granite Spodumene
+tile.tfc.ore.spodumene.diorite.name=Diorite Spodumene
+tile.tfc.ore.spodumene.gabbro.name=Gabbro Spodumene
+tile.tfc.ore.spodumene.shale.name=Shale Spodumene
+tile.tfc.ore.spodumene.claystone.name=Claystone Spodumene
+tile.tfc.ore.spodumene.rocksalt.name=Rocksalt Spodumene
+tile.tfc.ore.spodumene.limestone.name=Limestone Spodumene
+tile.tfc.ore.spodumene.conglomerate.name=Conglomerate Spodumene
+tile.tfc.ore.spodumene.dolomite.name=Dolomite Spodumene
+tile.tfc.ore.spodumene.chert.name=Chert Spodumene
+tile.tfc.ore.spodumene.chalk.name=Chalk Spodumene
+tile.tfc.ore.spodumene.rhyolite.name=Rhyolite Spodumene
+tile.tfc.ore.spodumene.basalt.name=Basalt Spodumene
+tile.tfc.ore.spodumene.andesite.name=Andesite Spodumene
+tile.tfc.ore.spodumene.dacite.name=Dacite Spodumene
+tile.tfc.ore.spodumene.quartzite.name=Quartzite Spodumene
+tile.tfc.ore.spodumene.slate.name=Slate Spodumene
+tile.tfc.ore.spodumene.phyllite.name=Phyllite Spodumene
+tile.tfc.ore.spodumene.schist.name=Schist Spodumene
+tile.tfc.ore.spodumene.gneiss.name=Gneiss Spodumene
+tile.tfc.ore.spodumene.marble.name=Marble Spodumene
+
 # Ore items
 item.tfc.ore.bauxite.name=Bauxite
 item.tfc.ore.bauxite.poor.name=Poor Bauxite
@@ -272,6 +294,14 @@ item.tfc.ore.boron.name=Boron
 item.tfc.ore.boron.poor.name=Poor Boron
 item.tfc.ore.boron.rich.name=Rich Boron
 item.tfc.ore.small.boron.name=Small Boron
+item.tfc.ore.pyrolusite.name=Pyrolusite
+item.tfc.ore.pyrolusite.poor.name=Poor Pyrolusite
+item.tfc.ore.pyrolusite.rich.name=Rich Pyrolusite
+item.tfc.ore.small.pyrolusite.name=Small Pyrolusite
+item.tfc.ore.spodumene.name=Spodumene
+item.tfc.ore.spodumene.poor.name=Poor Spodumene
+item.tfc.ore.spodumene.rich.name=Rich Spodumene
+item.tfc.ore.small.spodumene.name=Small Spodumene
 
 #Aluminium
 # Metal items
@@ -388,6 +418,64 @@ item.tfc.metal.unfinished_greaves.aluminium_brass.name=Unfinished Aluminium Bras
 
 #Metal Anvils
 item.tfc.metal.anvil.aluminium_brass.name=Aluminium Brass Anvil
+
+#Red Alloy Brass
+# Metal items
+item.tfc.metal.ingot.red_alloy.name=Red Alloy Ingot
+item.tfc.metal.double_ingot.red_alloy.name=Red Alloy Double Ingot
+item.tfc.metal.scrap.red_alloy.name=Red Alloy Scrap
+item.tfc.metal.dust.red_alloy.name=Red Alloy Dust
+item.tfc.metal.nugget.red_alloy.name=Red Alloy Nugget
+item.tfc.metal.sheet.red_alloy.name=Red Alloy Sheet
+item.tfc.metal.double_sheet.red_alloy.name=Red Alloy Double Sheet
+item.tfc.metal.tuyere.red_alloy.name=Red Alloy Tuyere
+
+# Metal tools
+item.tfc.metal.pick.red_alloy.name=Red Alloy Pickaxe
+item.tfc.metal.pick_head.red_alloy.name=Red Alloy Pickaxe Head
+item.tfc.metal.shovel.red_alloy.name=Red Alloy Shovel
+item.tfc.metal.shovel_head.red_alloy.name=Red Alloy Shovel Head
+item.tfc.metal.axe.red_alloy.name=Red Alloy Axe
+item.tfc.metal.axe_head.red_alloy.name=Red Alloy Axe Head
+item.tfc.metal.hoe.red_alloy.name=Red Alloy Hoe
+item.tfc.metal.hoe_head.red_alloy.name=Red Alloy Hoe Head
+item.tfc.metal.chisel.red_alloy.name=Red Alloy Chisel
+item.tfc.metal.chisel_head.red_alloy.name=Red Alloy Chisel Head
+item.tfc.metal.sword.red_alloy.name=Red Alloy Sword
+item.tfc.metal.sword_blade.red_alloy.name=Red Alloy Sword Blade
+item.tfc.metal.mace.red_alloy.name=Red Alloy Mace
+item.tfc.metal.mace_head.red_alloy.name=Red Alloy Mace Head
+item.tfc.metal.saw.red_alloy.name=Red Alloy Saw
+item.tfc.metal.saw_blade.red_alloy.name=Red Alloy Saw Blade
+item.tfc.metal.shears.red_alloy.name=Red Alloy Shears
+item.tfc.metal.shield.red_alloy.name=Red Alloy Shield
+item.tfc.metal.javelin.red_alloy.name=Red Alloy Javelin
+item.tfc.metal.javelin_head.red_alloy.name=Red Alloy Javelin Head
+item.tfc.metal.hammer.red_alloy.name=Red Alloy Hammer
+item.tfc.metal.hammer_head.red_alloy.name=Red Alloy Hammer Head
+item.tfc.metal.propick.red_alloy.name=Red Alloy Prospector's Pickaxe
+item.tfc.metal.propick_head.red_alloy.name=Red Alloy Prospector's Pickaxe Head
+item.tfc.metal.knife.red_alloy.name=Red Alloy Knife
+item.tfc.metal.knife_blade.red_alloy.name=Red Alloy Knife Blade
+item.tfc.metal.scythe.red_alloy.name=Red Alloy Scythe
+item.tfc.metal.scythe_blade.red_alloy.name=Red Alloy Scythe Blade
+
+item.tfc.metal.lamp.red_alloy.name=Red Alloy Lamp
+item.tfc.ceramics.fired.mold.ingot.red_alloy.name=Unshaped Red Alloy
+
+# Metal Armors
+item.tfc.metal.chestplate.red_alloy.name=Red Alloy Chestplate
+item.tfc.metal.greaves.red_alloy.name=Red Alloy Greaves
+item.tfc.metal.boots.red_alloy.name=Red Alloy Boots
+item.tfc.metal.helmet.red_alloy.name=Red Alloy Helmet
+
+item.tfc.metal.unfinished_chestplate.red_alloy.name=Unfinished Red Alloy Chestplate
+item.tfc.metal.unfinished_boots.red_alloy.name=Unfinished Red Alloy Boots
+item.tfc.metal.unfinished_helmet.red_alloy.name=Unfinished Red Alloy Helmet
+item.tfc.metal.unfinished_greaves.red_alloy.name=Unfinished Red Alloy Greaves
+
+#Metal Anvils
+item.tfc.metal.anvil.red_alloy.name=Red Alloy Anvil
 
 #Antimony
 # Metal items
@@ -1085,6 +1173,64 @@ item.tfc.metal.unfinished_greaves.tungsten_steel.name=Unfinished Tungsten Steel 
 # Metal Anvils
 item.tfc.metal.anvil.tungsten_steel.name=Tungsten Steel Anvil
 
+#Nickel Silver
+# Metal items
+item.tfc.metal.ingot.nickel_silver.name=Nickel Silver Ingot
+item.tfc.metal.double_ingot.nickel_silver.name=Nickel Silver Double Ingot
+item.tfc.metal.scrap.nickel_silver.name=Nickel Silver Scrap
+item.tfc.metal.dust.nickel_silver.name=Nickel Silver Dust
+item.tfc.metal.nugget.nickel_silver.name=Nickel Silver Nugget
+item.tfc.metal.sheet.nickel_silver.name=Nickel Silver Sheet
+item.tfc.metal.double_sheet.nickel_silver.name=Nickel Silver Double Sheet
+item.tfc.metal.tuyere.nickel_silver.name=Nickel Silver Tuyere
+
+# Metal tools
+item.tfc.metal.pick.nickel_silver.name=Nickel Silver Pickaxe
+item.tfc.metal.pick_head.nickel_silver.name=Nickel Silver Pickaxe Head
+item.tfc.metal.shovel.nickel_silver.name=Nickel Silver Shovel
+item.tfc.metal.shovel_head.nickel_silver.name=Nickel Silver Shovel Head
+item.tfc.metal.axe.nickel_silver.name=Nickel Silver Axe
+item.tfc.metal.axe_head.nickel_silver.name=Nickel Silver Axe Head
+item.tfc.metal.hoe.nickel_silver.name=Nickel Silver Hoe
+item.tfc.metal.hoe_head.nickel_silver.name=Nickel Silver Hoe Head
+item.tfc.metal.chisel.nickel_silver.name=Nickel Silver Chisel
+item.tfc.metal.chisel_head.nickel_silver.name=Nickel Silver Chisel Head
+item.tfc.metal.sword.nickel_silver.name=Nickel Silver Sword
+item.tfc.metal.sword_blade.nickel_silver.name=Nickel Silver Sword Blade
+item.tfc.metal.mace.nickel_silver.name=Nickel Silver Mace
+item.tfc.metal.mace_head.nickel_silver.name=Nickel Silver Mace Head
+item.tfc.metal.saw.nickel_silver.name=Nickel Silver Saw
+item.tfc.metal.saw_blade.nickel_silver.name=Nickel Silver Saw Blade
+item.tfc.metal.shears.nickel_silver.name=Nickel Silver Shears
+item.tfc.metal.shield.nickel_silver.name=Nickel Silver Shield
+item.tfc.metal.javelin.nickel_silver.name=Nickel Silver Javelin
+item.tfc.metal.javelin_head.nickel_silver.name=Nickel Silver Javelin Head
+item.tfc.metal.hammer.nickel_silver.name=Nickel Silver Hammer
+item.tfc.metal.hammer_head.nickel_silver.name=Nickel Silver Hammer Head
+item.tfc.metal.propick.nickel_silver.name=Nickel Silver Prospector's Pickaxe
+item.tfc.metal.propick_head.nickel_silver.name=Nickel Silver Prospector's Pickaxe Head
+item.tfc.metal.knife.nickel_silver.name=Nickel Silver Knife
+item.tfc.metal.knife_blade.nickel_silver.name=Nickel Silver Knife Blade
+item.tfc.metal.scythe.nickel_silver.name=Nickel Silver Scythe
+item.tfc.metal.scythe_blade.nickel_silver.name=Nickel Silver Scythe Blade
+
+item.tfc.metal.lamp.nickel_silver.name=Nickel Silver Lamp
+item.tfc.ceramics.fired.mold.ingot.nickel_silver.name=Unshaped Nickel Silver
+
+# Metal Armors
+item.tfc.metal.chestplate.nickel_silver.name=Nickel Silver Chestplate
+item.tfc.metal.greaves.nickel_silver.name=Nickel Silver Greaves
+item.tfc.metal.boots.nickel_silver.name=Nickel Silver Boots
+item.tfc.metal.helmet.nickel_silver.name=Nickel Silver Helmet
+
+item.tfc.metal.unfinished_chestplate.nickel_silver.name=Unfinished Nickel Silver Chestplate
+item.tfc.metal.unfinished_boots.nickel_silver.name=Unfinished Nickel Silver Boots
+item.tfc.metal.unfinished_helmet.nickel_silver.name=Unfinished Nickel Silver Helmet
+item.tfc.metal.unfinished_greaves.nickel_silver.name=Unfinished Nickel Silver Greaves
+
+# Metal Anvils
+item.tfc.metal.anvil.nickel_silver.name=Nickel Silver Anvil
+
 # Metal types
 tfc.types.metal.aluminium=Aluminium
 tfc.types.metal.aluminium_brass=Aluminium Brass
@@ -1100,6 +1246,8 @@ tfc.types.metal.mithril=Mithril
 tfc.types.metal.osmium=Osmium
 tfc.types.metal.tungsten=Tungsten
 tfc.types.metal.tungsten_steel=Tungsten Steel
+tfc.types.metal.nickel_silver=Nickel Silver
+tfc.types.metal.red_alloy=Red Alloy
 
 #Fluids
 fluid.antimony=Molten Antimony
@@ -1116,3 +1264,5 @@ fluid.osmium=Molten Osmium
 fluid.titanium=Molten Titanium
 fluid.tungsten=Molten Tungsten
 fluid.tungsten_steel=Molten Tungsten Steel
+fluid.nickel_silver=Molten Nickel Silver
+fluid.red_alloy=Molten Red Alloy
