@@ -1266,3 +1266,18 @@ fluid.tungsten=Molten Tungsten
 fluid.tungsten_steel=Molten Tungsten Steel
 fluid.nickel_silver=Molten Nickel Silver
 fluid.red_alloy=Molten Red Alloy
+
+#Veins
+vein.stibnite.name=Stibnite
+vein.surface_stibnite.name=Surface Stibnite
+vein.cobaltite.name=Cobaltite
+vein.wolframite.name=Wolframite
+vein.bauxite.name=Bauxite
+vein.native_osmium.name=Native Osmium
+vein.native_ardite.name=Ardite
+vein.thorianite.name=Thorianite
+vein.chromite.name=Chromite
+vein.pyrolusite.name=Pyrolusite
+vein.magnesite.name=Magnesite
+vein.spodumene.name=Spodumene
+vein.boron.name=Boron
