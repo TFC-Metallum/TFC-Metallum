@@ -230,7 +230,6 @@ tile.tfc.ore.boron.phyllite.name=Phyllite Boron
 tile.tfc.ore.boron.schist.name=Schist Boron
 tile.tfc.ore.boron.gneiss.name=Gneiss Boron
 tile.tfc.ore.boron.marble.name=Marble Boron
-
 tile.tfc.ore.spodumene.granite.name=Granite Spodumene
 tile.tfc.ore.spodumene.diorite.name=Diorite Spodumene
 tile.tfc.ore.spodumene.gabbro.name=Gabbro Spodumene
@@ -252,6 +251,27 @@ tile.tfc.ore.spodumene.phyllite.name=Phyllite Spodumene
 tile.tfc.ore.spodumene.schist.name=Schist Spodumene
 tile.tfc.ore.spodumene.gneiss.name=Gneiss Spodumene
 tile.tfc.ore.spodumene.marble.name=Marble Spodumene
+tile.tfc.ore.rutile.granite.name=Granite Rutile
+tile.tfc.ore.rutile.diorite.name=Diorite Rutile
+tile.tfc.ore.rutile.gabbro.name=Gabbro Rutile
+tile.tfc.ore.rutile.shale.name=Shale Rutile
+tile.tfc.ore.rutile.claystone.name=Claystone Rutile
+tile.tfc.ore.rutile.rocksalt.name=Rocksalt Rutile
+tile.tfc.ore.rutile.limestone.name=Limestone Rutile
+tile.tfc.ore.rutile.conglomerate.name=Conglomerate Rutile
+tile.tfc.ore.rutile.dolomite.name=Dolomite Rutile
+tile.tfc.ore.rutile.chert.name=Chert Rutile
+tile.tfc.ore.rutile.chalk.name=Chalk Rutile
+tile.tfc.ore.rutile.rhyolite.name=Rhyolite Rutile
+tile.tfc.ore.rutile.basalt.name=Basalt Rutile
+tile.tfc.ore.rutile.andesite.name=Andesite Rutile
+tile.tfc.ore.rutile.dacite.name=Dacite Rutile
+tile.tfc.ore.rutile.quartzite.name=Quartzite Rutile
+tile.tfc.ore.rutile.slate.name=Slate Rutile
+tile.tfc.ore.rutile.phyllite.name=Phyllite Rutile
+tile.tfc.ore.rutile.schist.name=Schist Rutile
+tile.tfc.ore.rutile.gneiss.name=Gneiss Rutile
+tile.tfc.ore.rutile.marble.name=Marble Rutile
 
 # Ore items
 item.tfc.ore.bauxite.name=Bauxite
@@ -299,9 +319,10 @@ item.tfc.ore.pyrolusite.poor.name=Poor Pyrolusite
 item.tfc.ore.pyrolusite.rich.name=Rich Pyrolusite
 item.tfc.ore.small.pyrolusite.name=Small Pyrolusite
 item.tfc.ore.spodumene.name=Spodumene
-item.tfc.ore.spodumene.poor.name=Poor Spodumene
-item.tfc.ore.spodumene.rich.name=Rich Spodumene
-item.tfc.ore.small.spodumene.name=Small Spodumene
+item.tfc.ore.rutile.name=Rutile
+item.tfc.ore.rutile.poor.name=Poor Rutile
+item.tfc.ore.rutile.rich.name=Rich Rutile
+item.tfc.ore.small.rutile.name=Small Rutile
 
 #Aluminium
 # Metal items
@@ -1267,6 +1288,14 @@ fluid.tungsten_steel=Molten Tungsten Steel
 fluid.nickel_silver=Molten Nickel Silver
 fluid.red_alloy=Molten Red Alloy
 
+#Blooms
+item.tfc.bloom.unrefined.aluminium.name=Raw Aluminium Bloom
+item.tfc.bloom.refined.aluminium.name=Refined Aluminium Bloom
+item.tfc.bloom.unrefined.ardite.name=Raw Ardite Bloom
+item.tfc.bloom.refined.ardite.name=Refined Ardite Bloom
+item.tfc.bloom.unrefined.cobalt.name=Raw Cobalt Bloom
+item.tfc.bloom.refined.cobalt.name=Refined Cobalt Bloom
+
 #Veins
 vein.stibnite.name=Stibnite
 vein.surface_stibnite.name=Surface Stibnite
@@ -1280,4 +1309,31 @@ vein.chromite.name=Chromite
 vein.pyrolusite.name=Pyrolusite
 vein.magnesite.name=Magnesite
 vein.spodumene.name=Spodumene
+vein.rutile.name=Rutile
 vein.boron.name=Boron
+
+#Config
+config.tfcmetallum=TFC-Metallum
+config.tfcmetallum.tooltip=TFC-Metallum Mod Configuration
+
+##Recipes
+config.tfcmetallum.recipes=Recipe Configuration
+config.tfcmetallum.recipes.tooltip=Toggle advanced metals recipes on/off
+
+config.tfcmetallum.recipes.ardite=Ardite via Bloomery
+config.tfcmetallum.recipes.ardite.tooltip=Register ardite recipe via bloomery?
+
+config.tfcmetallum.recipes.aluminium=Aluminium via Bloomery
+config.tfcmetallum.recipes.aluminium.tooltip=Register aluminium recipe via bloomery?
+
+config.tfcmetallum.recipes.cobalt=Cobalt via Bloomery
+config.tfcmetallum.recipes.cobalt.tooltip=Register cobalt recipe via bloomery?
+
+config.tfcmetallum.recipes.osmium=Osmium via Blast Furnace
+config.tfcmetallum.recipes.osmium.tooltip=Register osmium recipe via blast furnace?
+
+config.tfcmetallum.recipes.titanium=Titanium via Blast Furnace
+config.tfcmetallum.recipes.titanium.tooltip=Register Titanium recipe via blast furnace?
+
+config.tfcmetallum.recipes.tungsten=Tungsten via Blast Furnace
+config.tfcmetallum.recipes.tungsten.tooltip=Register tungsten recipe via blast furnace?

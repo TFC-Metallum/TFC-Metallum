@@ -63,6 +63,7 @@ ROCK_TYPES = [
 
 ORE_TYPES = {
     'native_ardite': True,
+    'rutile': True,
     'native_osmium': True,
     'bauxite': True,
     'wolframite': True,
