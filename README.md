@@ -1,5 +1,5 @@
 # TFC-Metallum
-Addon for TerraFirmaCraft: The New Generation Chinese Language
+Addon for TerraFirmaCraft: The New Generation
 
 ## Goal
 Add metals, ores and alloys from other to TFC:TNG
