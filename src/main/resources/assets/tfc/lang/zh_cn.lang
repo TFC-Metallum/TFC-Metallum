@@ -20,7 +20,7 @@ tile.tfc.ore.bauxite.phyllite.name=千枚岩铝土矿
 tile.tfc.ore.bauxite.schist.name=片岩铝土矿
 tile.tfc.ore.bauxite.gneiss.name=片麻岩铝土矿
 tile.tfc.ore.bauxite.marble.name=大理岩铝土矿
-tile.tfc.ore.wolframite.granite.name=花岗岩钨锰铁矿
+tile.tfc.ore.wolframite.granite.name=花岗岩黑钨矿
 tile.tfc.ore.wolframite.diorite.name=闪长岩钨锰铁矿
 tile.tfc.ore.wolframite.gabbro.name=辉长岩钨锰铁矿
 tile.tfc.ore.wolframite.shale.name=页岩钨锰铁矿
@@ -146,27 +146,27 @@ tile.tfc.ore.thorianite.phyllite.name=千枚岩方钍石
 tile.tfc.ore.thorianite.schist.name=片岩方钍石
 tile.tfc.ore.thorianite.gneiss.name=片麻岩方钍石
 tile.tfc.ore.thorianite.marble.name=大理岩方钍石
-tile.tfc.ore.chromite.granite.name=花岗岩铬铁矿
-tile.tfc.ore.chromite.diorite.name=闪长岩铬铁矿
-tile.tfc.ore.chromite.gabbro.name=辉长岩铬铁矿
-tile.tfc.ore.chromite.shale.name=页岩铬铁矿
-tile.tfc.ore.chromite.claystone.name=粘土岩铬铁矿
-tile.tfc.ore.chromite.rocksalt.name=盐岩铬铁矿
-tile.tfc.ore.chromite.limestone.name=石灰岩铬铁矿
-tile.tfc.ore.chromite.conglomerate.name=砾岩铬铁矿
-tile.tfc.ore.chromite.dolomite.name=白云岩铬铁矿
-tile.tfc.ore.chromite.chert.name=硅质岩铬铁矿
-tile.tfc.ore.chromite.chalk.name=白垩岩铬铁矿
-tile.tfc.ore.chromite.rhyolite.name=流纹岩铬铁矿
-tile.tfc.ore.chromite.basalt.name=玄武岩铬铁矿
-tile.tfc.ore.chromite.andesite.name=安山岩铬铁矿
-tile.tfc.ore.chromite.dacite.name=英安岩铬铁矿
-tile.tfc.ore.chromite.quartzite.name=石英岩铬铁矿
-tile.tfc.ore.chromite.slate.name=板岩铬铁矿
-tile.tfc.ore.chromite.phyllite.name=千枚岩铬铁矿
-tile.tfc.ore.chromite.schist.name=片岩铬铁矿
-tile.tfc.ore.chromite.gneiss.name=片麻岩铬铁矿
-tile.tfc.ore.chromite.marble.name=大理岩铬铁矿
+tile.tfc.ore.chromite.granite.name=花岗岩苍铬矿
+tile.tfc.ore.chromite.diorite.name=闪长岩苍铬矿
+tile.tfc.ore.chromite.gabbro.name=辉长岩苍铬矿
+tile.tfc.ore.chromite.shale.name=页岩苍铬矿
+tile.tfc.ore.chromite.claystone.name=粘土岩苍铬矿
+tile.tfc.ore.chromite.rocksalt.name=盐岩苍铬矿
+tile.tfc.ore.chromite.limestone.name=石灰岩苍铬矿
+tile.tfc.ore.chromite.conglomerate.name=砾岩苍铬矿
+tile.tfc.ore.chromite.dolomite.name=白云岩苍铬矿
+tile.tfc.ore.chromite.chert.name=硅质岩苍铬矿
+tile.tfc.ore.chromite.chalk.name=白垩岩苍铬矿
+tile.tfc.ore.chromite.rhyolite.name=流纹岩苍铬矿
+tile.tfc.ore.chromite.basalt.name=玄武岩苍铬矿
+tile.tfc.ore.chromite.andesite.name=安山岩苍铬矿
+tile.tfc.ore.chromite.dacite.name=英安岩苍铬矿
+tile.tfc.ore.chromite.quartzite.name=石英岩苍铬矿
+tile.tfc.ore.chromite.slate.name=板岩苍铬矿
+tile.tfc.ore.chromite.phyllite.name=千枚岩苍铬矿
+tile.tfc.ore.chromite.schist.name=片岩苍铬矿
+tile.tfc.ore.chromite.gneiss.name=片麻岩苍铬矿
+tile.tfc.ore.chromite.marble.name=大理岩苍铬矿
 tile.tfc.ore.pyrolusite.granite.name=花岗岩软锰矿
 tile.tfc.ore.pyrolusite.diorite.name=闪长岩软锰矿
 tile.tfc.ore.pyrolusite.gabbro.name=辉长岩软锰矿
@@ -282,10 +282,10 @@ item.tfc.ore.thorianite.name=方钍石
 item.tfc.ore.thorianite.poor.name=贫瘠方钍石
 item.tfc.ore.thorianite.rich.name=富集方钍石
 item.tfc.ore.small.thorianite.name=小型方钍石
-item.tfc.ore.chromite.name=铬铁矿
-item.tfc.ore.chromite.poor.name=贫瘠铬铁矿
-item.tfc.ore.chromite.rich.name=富集铬铁矿
-item.tfc.ore.small.chromite.name=小型铬铁矿
+item.tfc.ore.chromite.name=苍铬矿
+item.tfc.ore.chromite.poor.name=贫瘠苍铬矿
+item.tfc.ore.chromite.rich.name=富集苍铬矿
+item.tfc.ore.small.chromite.name=小型苍铬矿
 item.tfc.ore.magnesite.name=菱镁矿
 item.tfc.ore.magnesite.poor.name=贫瘠菱镁矿
 item.tfc.ore.magnesite.rich.name=富集菱镁矿
@@ -358,7 +358,7 @@ item.tfc.metal.unfinished_boots.aluminium.name=未完成的铝靴
 item.tfc.metal.unfinished_helmet.aluminium.name=未完成的铝头盔
 item.tfc.metal.unfinished_greaves.aluminium.name=未完成的铝护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.aluminium.name=铝砧
 
 #铝黄铜
@@ -416,7 +416,7 @@ item.tfc.metal.unfinished_boots.aluminium_brass.name=未完成的铝黄铜靴
 item.tfc.metal.unfinished_helmet.aluminium_brass.name=未完成的铝黄铜头盔
 item.tfc.metal.unfinished_greaves.aluminium_brass.name=未完成的铝黄铜护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.aluminium_brass.name=铝黄铜砧
 
 #红石合金黄铜
@@ -474,7 +474,7 @@ item.tfc.metal.unfinished_boots.red_alloy.name=未完成的红石合金靴
 item.tfc.metal.unfinished_helmet.red_alloy.name=未完成的红石合金头盔
 item.tfc.metal.unfinished_greaves.red_alloy.name=未完成的红石合金护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.red_alloy.name=红石合金砧
 
 #锑
@@ -532,7 +532,7 @@ item.tfc.metal.unfinished_boots.antimony.name=未完成的锑靴
 item.tfc.metal.unfinished_helmet.antimony.name=未完成的锑头盔
 item.tfc.metal.unfinished_greaves.antimony.name=未完成的锑护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.antimony.name=锑砧
 
 #阿迪特
@@ -590,7 +590,7 @@ item.tfc.metal.unfinished_boots.ardite.name=未完成的阿迪特靴
 item.tfc.metal.unfinished_helmet.ardite.name=未完成的阿迪特头盔
 item.tfc.metal.unfinished_greaves.ardite.name=未完成的阿迪特护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.ardite.name=阿迪特砧
 
 #钴
@@ -648,7 +648,7 @@ item.tfc.metal.unfinished_boots.cobalt.name=未完成的钴靴
 item.tfc.metal.unfinished_helmet.cobalt.name=未完成的钴头盔
 item.tfc.metal.unfinished_greaves.cobalt.name=未完成的钴护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.cobalt.name=钴砧
 
 #康铜
@@ -706,7 +706,7 @@ item.tfc.metal.unfinished_boots.constantan.name=未完成的康铜靴
 item.tfc.metal.unfinished_helmet.constantan.name=未完成的康铜头盔
 item.tfc.metal.unfinished_greaves.constantan.name=未完成的康铜护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.constantan.name=康铜砧
 
 #琥珀金
@@ -764,7 +764,7 @@ item.tfc.metal.unfinished_boots.electrum.name=未完成的琥珀金靴
 item.tfc.metal.unfinished_helmet.electrum.name=未完成的琥珀金头盔
 item.tfc.metal.unfinished_greaves.electrum.name=未完成的琥珀金护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.electrum.name=琥珀金砧
 
 #殷钢
@@ -822,7 +822,7 @@ item.tfc.metal.unfinished_boots.invar.name=未完成的殷钢靴
 item.tfc.metal.unfinished_helmet.invar.name=未完成的殷钢头盔
 item.tfc.metal.unfinished_greaves.invar.name=未完成的殷钢护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.invar.name=殷钢砧
 
 #玛玉灵
@@ -880,7 +880,7 @@ item.tfc.metal.unfinished_boots.manyullyn.name=未完成的玛玉灵靴
 item.tfc.metal.unfinished_helmet.manyullyn.name=未完成的玛玉灵头盔
 item.tfc.metal.unfinished_greaves.manyullyn.name=未完成的玛玉灵护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.manyullyn.name=玛玉灵砧
 
 #秘银
@@ -938,7 +938,7 @@ item.tfc.metal.unfinished_boots.mithril.name=未完成的秘银靴
 item.tfc.metal.unfinished_helmet.mithril.name=未完成的秘银头盔
 item.tfc.metal.unfinished_greaves.mithril.name=未完成的秘银护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.mithril.name=秘银砧
 
 #锇
@@ -996,7 +996,7 @@ item.tfc.metal.unfinished_boots.osmium.name=未完成的锇靴
 item.tfc.metal.unfinished_helmet.osmium.name=未完成的锇头盔
 item.tfc.metal.unfinished_greaves.osmium.name=未完成的锇护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.osmium.name=锇砧
 
 #钛
@@ -1054,7 +1054,7 @@ item.tfc.metal.unfinished_boots.titanium.name=未完成的钛靴
 item.tfc.metal.unfinished_helmet.titanium.name=未完成的钛头盔
 item.tfc.metal.unfinished_greaves.titanium.name=未完成的钛护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.titanium.name=钛砧
 
 #钨
@@ -1112,7 +1112,7 @@ item.tfc.metal.unfinished_boots.tungsten.name=未完成的钨靴
 item.tfc.metal.unfinished_helmet.tungsten.name=未完成的钨头盔
 item.tfc.metal.unfinished_greaves.tungsten.name=未完成的钨护腿
 
-#Metal 砧s
+#Metal Anvils
 item.tfc.metal.anvil.tungsten.name=钨砧
 
 #钨钢
