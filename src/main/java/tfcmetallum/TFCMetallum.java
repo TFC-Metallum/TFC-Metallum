@@ -20,7 +20,7 @@ public class TFCMetallum
     public static final String SIGNING_KEY = "@FINGERPRINT@";
 
     private static Logger logger;
-    private static boolean signedBuild = true;
+    private static final boolean signedBuild = true;
 
     public static Logger getLog()
     {

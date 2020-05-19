@@ -158,15 +158,27 @@ public final class RegistryHandler
         IForgeRegistry<BlastFurnaceRecipe> registry = event.getRegistry();
         if (ConfigTFCM.RECIPES.osmium)
         {
-            registry.register(new BlastFurnaceRecipe(new ResourceLocation(TFCMetallum.MODID, "osmium"), TFCRegistries.METALS.getValue(OSMIUM), TFCRegistries.METALS.getValue(OSMIUM), IIngredient.of("dustFlux")));
+            Metal osmium = TFCRegistries.METALS.getValue(OSMIUM);
+            if (osmium != null)
+            {
+                registry.register(new BlastFurnaceRecipe(osmium, osmium, IIngredient.of("dustFlux")));
+            }
         }
         if (ConfigTFCM.RECIPES.titanium)
         {
-            registry.register(new BlastFurnaceRecipe(new ResourceLocation(TFCMetallum.MODID, "titanium"), TFCRegistries.METALS.getValue(TITANIUM), TFCRegistries.METALS.getValue(TITANIUM), IIngredient.of("dustFlux")));
+            Metal titanium = TFCRegistries.METALS.getValue(TITANIUM);
+            if (titanium != null)
+            {
+                registry.register(new BlastFurnaceRecipe(titanium, titanium, IIngredient.of("dustFlux")));
+            }
         }
         if (ConfigTFCM.RECIPES.tungsten)
         {
-            registry.register(new BlastFurnaceRecipe(new ResourceLocation(TFCMetallum.MODID, "tungsten"), TFCRegistries.METALS.getValue(TUNGSTEN), TFCRegistries.METALS.getValue(TUNGSTEN), IIngredient.of("dustFlux")));
+            Metal tungsten = TFCRegistries.METALS.getValue(TUNGSTEN);
+            if (tungsten != null)
+            {
+                registry.register(new BlastFurnaceRecipe(tungsten, tungsten, IIngredient.of("dustFlux")));
+            }
         }
     }
 
@@ -177,47 +189,59 @@ public final class RegistryHandler
         if (ConfigTFCM.RECIPES.aluminium)
         {
             Metal aluminium = TFCRegistries.METALS.getValue(ALUMINIUM);
-            r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "aluminium_bloom"), x -> {
-                if (x.getItem() == ItemsTFC.REFINED_BLOOM)
+            if (aluminium != null)
+            {
+                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "aluminium_bloom"), x ->
                 {
-                    IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
-                    if (cap instanceof IForgeableMeasurableMetal)
+                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
                     {
-                        return ((IForgeableMeasurableMetal) cap).getMetal() == aluminium && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
+                        if (cap instanceof IForgeableMeasurableMetal)
+                        {
+                            return ((IForgeableMeasurableMetal) cap).getMetal() == aluminium && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        }
                     }
-                }
-                return false;
-            }, new ItemStack(ItemMetal.get(aluminium, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+                    return false;
+                }, new ItemStack(ItemMetal.get(aluminium, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+            }
         }
         if (ConfigTFCM.RECIPES.ardite)
         {
             Metal ardite = TFCRegistries.METALS.getValue(ARDITE);
-            r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "ardite_bloom"), x -> {
-                if (x.getItem() == ItemsTFC.REFINED_BLOOM)
+            if (ardite != null)
+            {
+                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "ardite_bloom"), x ->
                 {
-                    IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
-                    if (cap instanceof IForgeableMeasurableMetal)
+                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
                     {
-                        return ((IForgeableMeasurableMetal) cap).getMetal() == ardite && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
+                        if (cap instanceof IForgeableMeasurableMetal)
+                        {
+                            return ((IForgeableMeasurableMetal) cap).getMetal() == ardite && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        }
                     }
-                }
-                return false;
-            }, new ItemStack(ItemMetal.get(ardite, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+                    return false;
+                }, new ItemStack(ItemMetal.get(ardite, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+            }
         }
         if (ConfigTFCM.RECIPES.cobalt)
         {
             Metal cobalt = TFCRegistries.METALS.getValue(COBALT);
-            r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "cobalt_bloom"), x -> {
-                if (x.getItem() == ItemsTFC.REFINED_BLOOM)
+            if (cobalt != null)
+            {
+                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "cobalt_bloom"), x ->
                 {
-                    IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
-                    if (cap instanceof IForgeableMeasurableMetal)
+                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
                     {
-                        return ((IForgeableMeasurableMetal) cap).getMetal() == cobalt && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
+                        if (cap instanceof IForgeableMeasurableMetal)
+                        {
+                            return ((IForgeableMeasurableMetal) cap).getMetal() == cobalt && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        }
                     }
-                }
-                return false;
-            }, new ItemStack(ItemMetal.get(cobalt, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+                    return false;
+                }, new ItemStack(ItemMetal.get(cobalt, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+            }
         }
     }
 }
