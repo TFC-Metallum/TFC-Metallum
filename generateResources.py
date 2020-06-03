@@ -68,12 +68,19 @@ ORE_TYPES = {
     'bauxite': True,
     'wolframite': True,
     'cobaltite': True,
-    'thorianite': False,
+    'thorianite': True,
     'chromite': False,
-    'pyrolusite': False,
-    'magnesite': False,
-    'boron': False,
-    'spodumene': False,
+    'pyrolusite': True,
+    'magnesite': True,
+    'boron': True,
+    'spodumene': True,
+    'beryl': True,
+    'zircon': True,
+    'villiaumite': False,
+    'rhodochrosite': False,
+    'fluorite': False,
+    'carobbite': False,
+    'arsenic': False
 } #Pitchblende, Galena and native_platinum if base TFC removes it
 
 # True - Generate Tools
@@ -96,6 +103,20 @@ METAL_TYPES = {
     'titanium': True,
     'tungsten': True,
     'tungsten_steel': True,
+    'boron': True,
+    'thorium':True,
+    'manganese': False,
+    'magnesium': False,
+    'lithium': False,
+    'zirconium': False,
+    'zircalloy': True,
+    'beryllium': False,
+    'beryllium_copper': True,
+    'hsla_steel': True,
+    'ferroboron': False,
+    'tough': False,
+    'magnesium_diboride': False,
+
 }  # + uranium, lead, platinum if base TFC removes it
 
 METAL_ITEMS = {
@@ -366,3 +387,64 @@ del _heads
 
 for metal in METAL_TYPES.keys():
     item(('ceramics', 'fired', 'mold', 'ingot', metal), 'tfc:items/ceramics/fired/mold/ingot/' + metal)
+
+#
+# lang entries
+#
+
+# used for vein lang entries
+def readConfig() :
+    oreFile = os.path.join('..\\tfcmetallum', 'config', 'tfc_metallum_ores.json')
+    #print(oreFile)
+    file = open(oreFile, 'r')
+    data = file.read()
+    result = json.loads(data)
+    file.close()
+    return result
+
+def Lang() :
+    result = []
+
+    result.append('# Ore blocks')
+
+    for ore_type, isMetal in ORE_TYPES.items() :
+        result.append('# {}'.format(ore_type))
+        for rock_type in ROCK_TYPES :
+            result.append('tile.tfc.ore.{}.{}.name={} {}'.format(rock_type, ore_type, rock_type.title(), ore_type.replace('_', ' ').title() ))
+    result.append('\n# Ore Items')
+    for ore_type, isMetal in ORE_TYPES.items() :
+        if(isMetal) :
+            result.append('item.tfc.ore.{}.name={}'.format(ore_type, ore_type.replace('_', ' ').title() ))
+            result.append('item.tfc.ore.{}.poor.name=Poor {}'.format(ore_type, ore_type.replace('_', ' ').title() ))
+            result.append('item.tfc.ore.{}.rich.name=Rich {}'.format(ore_type, ore_type.replace('_', ' ').title() ))
+            result.append('item.tfc.ore.{}.small.name=Small {}'.format(ore_type, ore_type.replace('_', ' ').title() ))
+        else :
+            result.append('item.tfc.ore.{}.name={}'.format(ore_type, ore_type.replace('_', ' ').title() ))
+    for metal_type, hasTool in  METAL_TYPES.items() :
+        result.append('\n# Metal items')
+
+        for metal_item, special in METAL_ITEMS.items() :
+
+            if(hasTool) :
+                result.append('item.tfc.metal.{}.{}.name={} {}'.format(metal_item, metal_type, metal_type.replace('_', ' ').title(), metal_item.replace('_', ' ').title() ))
+            elif metal_item == 'lamp':
+                result.append('item.tfc.lamp.{}.name={} Lamp'.format(metal_type, metal_type.replace('_', ' ').title()) )
+                result.append('item.tfc.lamp.{}.filled.name=%s {} Lamp'.format(metal_type, metal_type.replace('_', ' ').title()) )
+            elif metal_item in ['ingot', 'double_ingot', 'scrap', 'dust','nugget', 'sheet', 'double_sheet', 'tuyere'] :
+                result.append('item.tfc.metal.{}.{}.name={} {}'.format(metal_item, metal_type, metal_type.replace('_', ' ').title(), metal_item.replace('_', ' ').title() ))
+            if(metal_item == 'ingot') :
+                result.append('item.tfc.ceramics.fired.mold.{}.{}.name={} {}'.format(metal_item,metal_type, 'Unshaped', metal_type.replace('_', ' ').title() ))
+            else :
+                result.append('item.tfc.ceramics.fired.mold.{}.{}.name={} {}'.format(metal_item, metal_type, metal_item.replace('_', ' ').title(), metal_type.replace('_', ' ').title() ))
+    
+    result.append('\n# Veins')
+    veins = readConfig()
+    for vein in veins.keys() :
+        result.append('vein.{}.name={}'.format(vein, vein.replace('_', ' ').title() ))
+
+    f = os.path.join('lang', 'en_us.lang')
+    file = open(f, 'w')
+    file.write('\n'.join(map(str,result)))
+    file.close()
+
+Lang()
