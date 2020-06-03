@@ -146,7 +146,7 @@
   "magnesite": {
     "ore": "tfc:magnesite",
     "width": 6,
-    "height": 14,
+    "height": 30,
     "shape": "cluster",
     "rarity": 80,
     "minimum_height": 110,
@@ -159,7 +159,7 @@
   "spodumene": {
     "ore": "tfc:magnesite",
     "width": 10,
-    "height": 20,
+    "height": 25,
     "shape": "cluster",
     "rarity": 100,
     "minimum_height": 5,
