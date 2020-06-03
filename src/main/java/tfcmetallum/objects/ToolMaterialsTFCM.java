@@ -15,4 +15,6 @@ public class ToolMaterialsTFCM
     public static final Item.ToolMaterial OSMIUM = EnumHelper.addToolMaterial("tfcm_osmium", 4, 7000, 20, 9.0f, 24);
     public static final Item.ToolMaterial TUNGSTEN = EnumHelper.addToolMaterial("tfcm_tungsten", 4, 6600, 18, 10.0f, 24);
     public static final Item.ToolMaterial TUNGSTEN_STEEL = EnumHelper.addToolMaterial("tfcm_tungsten_steel", 5, 9200, 20, 11.5f, 24);
+    public static final Item.ToolMaterial BORON = EnumHelper.addToolMaterial("tfcm_boron", 2, 1000, 9, 4.2f, 14);
+    public static final Item.ToolMaterial THORIUM = EnumHelper.addToolMaterial("tfcm_thorium", 2, 1100, 8, 3.9f, 26);
 }

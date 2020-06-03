@@ -59,5 +59,15 @@ public class ConfigTFCM
         @Config.LangKey("config." + MODID + ".recipes.tungsten")
         @Config.RequiresMcRestart
         public boolean tungsten = true;
+
+        @Config.Comment({"Register boron recipe via blast furnace?"})
+        @Config.LangKey("config." + MODID + ".recipes.boron")
+        @Config.RequiresMcRestart
+        public boolean boron = true;
+
+        @Config.Comment({"Register thorium recipe via blast furnace?"})
+        @Config.LangKey("config." + MODID + ".recipes.thorium")
+        @Config.RequiresMcRestart
+        public boolean thorium = true;
     }
 }
