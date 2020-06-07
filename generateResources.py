@@ -72,7 +72,8 @@ ORE_TYPES = {
     'chromite': False,
     'pyrolusite': True,
     'magnesite': True,
-    'boron': True,
+    'stibnite': True,
+    'borax': True,
     'spodumene': True,
     'beryl': True,
     'zircon': True,
@@ -104,18 +105,19 @@ METAL_TYPES = {
     'tungsten': True,
     'tungsten_steel': True,
     'boron': True,
-    'thorium':True,
+    'thorium': False,
     'manganese': False,
     'magnesium': False,
     'lithium': False,
     'zirconium': False,
-    'zircalloy': True,
+    'zircaloy': True,
     'beryllium': False,
     'beryllium_copper': True,
     'hsla_steel': True,
     'ferroboron': False,
     'tough': False,
     'magnesium_diboride': False,
+    'uranium': False
 
 }  # + uranium, lead, platinum if base TFC removes it
 
@@ -410,33 +412,41 @@ def Lang() :
     for ore_type, isMetal in ORE_TYPES.items() :
         result.append('# {}'.format(ore_type))
         for rock_type in ROCK_TYPES :
-            result.append('tile.tfc.ore.{}.{}.name={} {}'.format(rock_type, ore_type, rock_type.title(), ore_type.replace('_', ' ').title() ))
+            result.append('tile.tfc.ore.{}.{}.name={} {}'.format(ore_type, rock_type, ore_type.replace('_', ' ').title(), rock_type.title() ))
     result.append('\n# Ore Items')
     for ore_type, isMetal in ORE_TYPES.items() :
         if(isMetal) :
             result.append('item.tfc.ore.{}.name={}'.format(ore_type, ore_type.replace('_', ' ').title() ))
             result.append('item.tfc.ore.{}.poor.name=Poor {}'.format(ore_type, ore_type.replace('_', ' ').title() ))
             result.append('item.tfc.ore.{}.rich.name=Rich {}'.format(ore_type, ore_type.replace('_', ' ').title() ))
-            result.append('item.tfc.ore.{}.small.name=Small {}'.format(ore_type, ore_type.replace('_', ' ').title() ))
+            result.append('item.tfc.ore.small.{}.name=Small {}'.format(ore_type, ore_type.replace('_', ' ').title() ))
         else :
             result.append('item.tfc.ore.{}.name={}'.format(ore_type, ore_type.replace('_', ' ').title() ))
     for metal_type, hasTool in  METAL_TYPES.items() :
+
         result.append('\n# Metal items')
 
         for metal_item, special in METAL_ITEMS.items() :
-
+            result.append('fluid.{}=Molten {}'.format(metal_type, metal_type.replace('_', ' ').title() ))
             if(hasTool) :
-                result.append('item.tfc.metal.{}.{}.name={} {}'.format(metal_item, metal_type, metal_type.replace('_', ' ').title(), metal_item.replace('_', ' ').title() ))
+                result.append('item.tfc.metal.{}.{}.name={} {}'.format(metal_item, metal_type, metal_type.replace('_', ' ').title(), metal_item.replace('_', ' ').title().replace('Pick', 'Pickaxe').replace('Propick', 'Prospector\'s Pickaxe') ))
             elif metal_item == 'lamp':
-                result.append('item.tfc.lamp.{}.name={} Lamp'.format(metal_type, metal_type.replace('_', ' ').title()) )
-                result.append('item.tfc.lamp.{}.filled.name=%s {} Lamp'.format(metal_type, metal_type.replace('_', ' ').title()) )
+                result.append('tile.tfc.lamp.{}.name={} Lamp'.format(metal_type, metal_type.replace('_', ' ').title()) )
+                result.append('tile.tfc.lamp.{}.filled.name=%s {} Lamp'.format(metal_type, metal_type.replace('_', ' ').title()) )
             elif metal_item in ['ingot', 'double_ingot', 'scrap', 'dust','nugget', 'sheet', 'double_sheet', 'tuyere'] :
                 result.append('item.tfc.metal.{}.{}.name={} {}'.format(metal_item, metal_type, metal_type.replace('_', ' ').title(), metal_item.replace('_', ' ').title() ))
             if(metal_item == 'ingot') :
                 result.append('item.tfc.ceramics.fired.mold.{}.{}.name={} {}'.format(metal_item,metal_type, 'Unshaped', metal_type.replace('_', ' ').title() ))
             else :
                 result.append('item.tfc.ceramics.fired.mold.{}.{}.name={} {}'.format(metal_item, metal_type, metal_item.replace('_', ' ').title(), metal_type.replace('_', ' ').title() ))
-    
+        result.append('item.tfc.metal.shield.{}.name={} Shield'.format(metal_type, metal_type.replace('_', ' ').title() ))
+        if(metal_type in ['aluminium', 'ardite', 'cobalt', 'boron', 'magnesium', 'thorium', 'manganese']) :
+            result.append('item.tfc.bloom.unrefined.{}.name=Raw {} Bloom'.format(metal_type, metal_type.replace('_', ' ').title() ))
+            result.append('item.tfc.bloom.refined.{}.name=Refined {} Bloom'.format(metal_type, metal_type.replace('_', ' ').title() ))
+    result.append('\n# Metal types')
+    for metal_type, hasTool in  METAL_TYPES.items() :
+        result.append('tfc.types.metal.{}={}'.format(metal_type, metal_type.replace('_', ' ').title() ))
+
     result.append('\n# Veins')
     veins = readConfig()
     for vein in veins.keys() :

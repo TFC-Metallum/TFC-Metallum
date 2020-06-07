@@ -62,7 +62,11 @@ public final class RegistryHandler
     public static final ResourceLocation BERYLLIUM = new ResourceLocation(MOD_ID, "beryllium");
     public static final ResourceLocation BERYLLIUM_COPPER = new ResourceLocation(MOD_ID, "beryllium_copper"); // Copper + beryllium + aluminium
     public static final ResourceLocation ZIRCONIUM = new ResourceLocation(MOD_ID, "zirconium");
-    public static final ResourceLocation ZIRCALLOY = new ResourceLocation(MOD_ID, "zircalloy"); // zirconium + tin
+    public static final ResourceLocation ZIRCALOY = new ResourceLocation(MOD_ID, "zircaloy"); // zirconium + tin
+    public static final ResourceLocation HSLA_STEEL = new ResourceLocation(MOD_ID, "hsla_steel"); // steel + manganese
+    public static final ResourceLocation MAGNESIUM_DIBORIDE = new ResourceLocation(MOD_ID, "magnesium_diboride"); // magnesium + steel
+    public static final ResourceLocation TOUGH = new ResourceLocation(MOD_ID, "tough"); // Ferroboron + lithium
+    public static final ResourceLocation URANIUM = new ResourceLocation(MOD_ID, "uranium");
 
     //Ores
     public static final ResourceLocation NATIVE_ARDITE = new ResourceLocation(MOD_ID, "native_ardite");
@@ -98,25 +102,30 @@ public final class RegistryHandler
         r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
         r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER));
         r.register(new Metal(RED_ALLOY, Metal.Tier.TIER_II, true, 0.35f, 1080, 0xFFDA6E6E, null, null));
-        r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_II, true, 0.30f, 650, 0xBBC8C2, null, null));
+        r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0xBBC8C2, null, null));
         r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL));
         r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFF40444A, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR));
         r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
         r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFFDCDABE, null, null));
         r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0xBBC8C2, null, null));
+        r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0x545454, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
+        r.register(new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, 630, 0x495155, null, null));
         r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, 1050, 0xFF40444A, null, null));
         r.register(new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));
         r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFF40444A, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
-        r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_IV, true, 0.35f, 1300, 0xB1C194, null, null));
-        r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_V, true, 0.35f, 1500, 0xBBC8C2, null, null));
+        r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xB1C194, null, null));
+        r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xBBC8C2, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
         r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM));
         r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM));
         r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF40444A, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
         r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL));
-        r.register(new Metal(BORON, Metal.Tier.TIER_IV, true, 0.3f, 630, 0x545454, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
-        r.register(new Metal(THORIUM, Metal.Tier.TIER_IV, true, 0.3f, 630, 0x545454, ToolMaterialsTFCM.THORIUM, ArmorMaterialsTFCM.THORIUM));
-        r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_V, true, 0.35f, 1500, 0xBBC8C2, null, null));
-        r.register(new Metal(ZIRCALLOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xBBC8C2, null, null));
+        r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0x888845, null, null));
+        r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0x85857A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
+        r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_VI, true, 0.35f, 2000, 0x5559AD, null, null));
+        r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_VI, true, 0.35f, 2000, 0x372D18, null, null));
+        r.register(new Metal(FERROBORON, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0x2B2B2B, null, null));
+        r.register(new Metal(TOUGH, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0x5A487A, null, null));
+        r.register(new Metal(URANIUM, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0x5D7F2C, null, null));
     }
 
 
@@ -142,6 +151,11 @@ public final class RegistryHandler
 
         // Ores without metals registered inside TFC
         r.register(new Ore(CHROMITE));
+        r.register(new Ore(VILLIAUMITE));
+        r.register(new Ore(RHODOCHROSITE));
+        r.register(new Ore(FLUORITE));
+        r.register(new Ore(CAROBBITE));
+        r.register(new Ore(ARSENIC));
     }
 
     @SubscribeEvent
@@ -156,8 +170,12 @@ public final class RegistryHandler
         r.register(new AlloyRecipe.Builder(MANYULLYN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
         r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build());
         r.register(new AlloyRecipe.Builder(NICKEL_SILVER).add(COPPER, 0.50, 0.65).add(ZINC, 0.1, 0.3).add(NICKEL, 0.1, 0.3).build());
-        r.register(new AlloyRecipe.Builder(BERYLLIUM_COPPER).add(COPPER, 0.3, 0.6).add(ALUMINIUM, 0.1, 0.3).add(BERYLLIUM, 0.1, 0.3).build());
-        r.register(new AlloyRecipe.Builder(ZIRCALLOY).add(ZIRCONIUM, 0.4, 0.6).add(TIN, 0.2, 0.4).build());
+        r.register(new AlloyRecipe.Builder(FERROBORON).add(STEEL, 0.4, 0.6).add(BORON, 0.4, 0.6).build());
+        r.register(new AlloyRecipe.Builder(HSLA_STEEL).add(STEEL, 0.2, 0.4).add(MANGANESE, 0.4, 0.6).build());
+        r.register(new AlloyRecipe.Builder(MAGNESIUM_DIBORIDE).add(BORON, 0.4, 0.6).add(MAGNESIUM, 0.4, 0.6).build());
+        r.register(new AlloyRecipe.Builder(BERYLLIUM_COPPER).add(COPPER, 0.3, 0.6).add(BERYLLIUM, 0.3, 0.6).add(ALUMINIUM, 0.1, 0.3).build());
+        r.register(new AlloyRecipe.Builder(ZIRCALOY).add(ZIRCONIUM, 0.4, 0.6).add(TIN, 0.2, 0.4).build());
+        r.register(new AlloyRecipe.Builder(TOUGH).add(FERROBORON, 0.4, 0.6).add(LITHIUM, 0.2, 0.4).build());
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -176,6 +194,22 @@ public final class RegistryHandler
         if (ConfigTFCM.RECIPES.cobalt)
         {
             registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(COBALT), FuelManager::isItemBloomeryFuel));
+        }
+        if (ConfigTFCM.RECIPES.boron)
+        {
+            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(BORON), FuelManager::isItemBloomeryFuel));
+        }
+        if (ConfigTFCM.RECIPES.thorium)
+        {
+            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(THORIUM), FuelManager::isItemBloomeryFuel));
+        }
+        if (ConfigTFCM.RECIPES.manganese)
+        {
+            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MANGANESE), FuelManager::isItemBloomeryFuel));
+        }
+        if (ConfigTFCM.RECIPES.magnesium)
+        {
+            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MAGNESIUM), FuelManager::isItemBloomeryFuel));
         }
     }
 
@@ -205,22 +239,6 @@ public final class RegistryHandler
             if (tungsten != null)
             {
                 registry.register(new BlastFurnaceRecipe(tungsten, tungsten, IIngredient.of("dustFlux")));
-            }
-        }
-        if (ConfigTFCM.RECIPES.boron)
-        {
-            Metal boron = TFCRegistries.METALS.getValue(BORON);
-            if (boron != null)
-            {
-                registry.register(new BlastFurnaceRecipe(boron, boron, IIngredient.of("dustFlux")));
-            }
-        }
-        if (ConfigTFCM.RECIPES.thorium)
-        {
-            Metal thorium = TFCRegistries.METALS.getValue(THORIUM);
-            if (thorium != null)
-            {
-                registry.register(new BlastFurnaceRecipe(thorium, thorium, IIngredient.of("dustFlux")));
             }
         }
     }
