@@ -45,6 +45,27 @@ public class ConfigTFCM
         @Config.RequiresMcRestart
         public boolean cobalt = true;
 
+        
+        @Config.Comment({"Register boron recipe via bloomery?"})
+        @Config.LangKey("config." + MODID + ".recipes.boron")
+        @Config.RequiresMcRestart
+        public boolean boron = true;
+
+        @Config.Comment({"Register thorium recipe via bloomery?"})
+        @Config.LangKey("config." + MODID + ".recipes.thorium")
+        @Config.RequiresMcRestart
+        public boolean thorium = true;
+
+        @Config.Comment({"Register manganese recipe via bloomery?"})
+        @Config.LangKey("config." + MODID + ".recipes.manganese")
+        @Config.RequiresMcRestart
+        public boolean manganese = true;
+
+        @Config.Comment({"Register magnesium recipe via bloomery?"})
+        @Config.LangKey("config." + MODID + ".recipes.magnesium")
+        @Config.RequiresMcRestart
+        public boolean magnesium = true;
+
         @Config.Comment({"Register osmium recipe via blast furnace?"})
         @Config.LangKey("config." + MODID + ".recipes.osmium")
         @Config.RequiresMcRestart
@@ -59,15 +80,5 @@ public class ConfigTFCM
         @Config.LangKey("config." + MODID + ".recipes.tungsten")
         @Config.RequiresMcRestart
         public boolean tungsten = true;
-
-        @Config.Comment({"Register boron recipe via blast furnace?"})
-        @Config.LangKey("config." + MODID + ".recipes.boron")
-        @Config.RequiresMcRestart
-        public boolean boron = true;
-
-        @Config.Comment({"Register thorium recipe via blast furnace?"})
-        @Config.LangKey("config." + MODID + ".recipes.thorium")
-        @Config.RequiresMcRestart
-        public boolean thorium = true;
     }
 }
