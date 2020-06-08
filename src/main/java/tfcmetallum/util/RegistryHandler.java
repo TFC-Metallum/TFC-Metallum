@@ -101,7 +101,7 @@ public final class RegistryHandler
     {
         IForgeRegistry<Metal> r = event.getRegistry();
         r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null));
-        r.register(new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, 630, 0x808885, null, null));
+        r.register(new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, 630, 0xC9CBC3, null, null));
         r.register(new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFD28874, null, null));
         r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
         r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER));
@@ -390,7 +390,7 @@ public final class RegistryHandler
         if(boron != null) {
             IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) TFCRegistries.QUERN;
             modRegistry.remove(new ResourceLocation(MOD_ID, "boarx"));
-            r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(uranium, ItemType.DUST), 4)).setRegistryName("boron_dust"));
+            r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(boron, ItemType.DUST), 4)).setRegistryName("boron_dust"));
         }
 
         r.register(new QuernRecipe(IIngredient.of("gemFluorite"), new ItemStack(ItemPowder.get(Powder.FLUX), 6)).setRegistryName("fluorite_flux"));
