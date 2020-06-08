@@ -6,7 +6,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-
+import net.minecraftforge.registries.IForgeRegistryModifiable;
 import net.dries007.tfc.api.capability.forge.CapabilityForgeable;
 import net.dries007.tfc.api.capability.forge.IForgeable;
 import net.dries007.tfc.api.capability.forge.IForgeableMeasurableMetal;
@@ -14,11 +14,15 @@ import net.dries007.tfc.api.recipes.AlloyRecipe;
 import net.dries007.tfc.api.recipes.BlastFurnaceRecipe;
 import net.dries007.tfc.api.recipes.BloomeryRecipe;
 import net.dries007.tfc.api.recipes.anvil.AnvilRecipe;
+import net.dries007.tfc.api.recipes.quern.QuernRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.registries.TFCRegistryEvent;
 import net.dries007.tfc.api.types.Metal;
 import net.dries007.tfc.api.types.Ore;
+import net.dries007.tfc.api.types.Metal.ItemType;
+import net.dries007.tfc.objects.Powder;
 import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
+import net.dries007.tfc.objects.items.ItemPowder;
 import net.dries007.tfc.objects.items.ItemsTFC;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
 import net.dries007.tfc.util.fuel.FuelManager;
@@ -144,7 +148,6 @@ public final class RegistryHandler
         r.register(new Ore(WOLFRAMITE, TUNGSTEN, false));
         r.register(new Ore(COBALTITE, COBALT, false));
         r.register(new Ore(RUTILE, TITANIUM, false));
-        r.register(new Ore(BORAX, BORON, false));
         r.register(new Ore(THORIANITE, THORIUM, false));
         r.register(new Ore(PYROLUSITE, MANGANESE, false));
         r.register(new Ore(MAGNESITE, MAGNESIUM, false));
@@ -195,10 +198,6 @@ public final class RegistryHandler
         {
             registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(COBALT), FuelManager::isItemBloomeryFuel));
         }
-        if (ConfigTFCM.RECIPES.boron)
-        {
-            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(BORON), FuelManager::isItemBloomeryFuel));
-        }
         if (ConfigTFCM.RECIPES.thorium)
         {
             registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(THORIUM), FuelManager::isItemBloomeryFuel));
@@ -210,10 +209,6 @@ public final class RegistryHandler
         if (ConfigTFCM.RECIPES.magnesium)
         {
             registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MAGNESIUM), FuelManager::isItemBloomeryFuel));
-        }
-        if (ConfigTFCM.RECIPES.uranium)
-        {
-            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(URANIUM), FuelManager::isItemBloomeryFuel));
         }
     }
 
@@ -324,26 +319,7 @@ public final class RegistryHandler
                 }, new ItemStack(ItemMetal.get(cobalt, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
             }
         }
-        if (ConfigTFCM.RECIPES.boron)
-        {
-            Metal boron = TFCRegistries.METALS.getValue(BORON);
-            if (boron != null)
-            {
-                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "boron_bloom"), x ->
-                {
-                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
-                    {
-                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
-                        if (cap instanceof IForgeableMeasurableMetal)
-                        {
-                            return ((IForgeableMeasurableMetal) cap).getMetal() == boron && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
-                        }
-                    }
-                    return false;
-                }, new ItemStack(ItemMetal.get(boron, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-            }
-        }
-        if (ConfigTFCM.RECIPES.cobalt)
+        if (ConfigTFCM.RECIPES.thorium)
         {
             Metal thorium = TFCRegistries.METALS.getValue(THORIUM);
             if (thorium != null)
@@ -360,25 +336,6 @@ public final class RegistryHandler
                     }
                     return false;
                 }, new ItemStack(ItemMetal.get(thorium, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-            }
-        }
-        if (ConfigTFCM.RECIPES.uranium)
-        {
-            Metal uranium = TFCRegistries.METALS.getValue(URANIUM);
-            if (uranium != null)
-            {
-                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "uranium_bloom"), x ->
-                {
-                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
-                    {
-                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
-                        if (cap instanceof IForgeableMeasurableMetal)
-                        {
-                            return ((IForgeableMeasurableMetal) cap).getMetal() == uranium && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
-                        }
-                    }
-                    return false;
-                }, new ItemStack(ItemMetal.get(uranium, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
             }
         }
         if (ConfigTFCM.RECIPES.magnesium)
@@ -419,5 +376,23 @@ public final class RegistryHandler
                 }, new ItemStack(ItemMetal.get(manganese, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void onRegisterQuernRecipeEvent(RegistryEvent.Register<QuernRecipe> event) {
+        IForgeRegistry<QuernRecipe> r = event.getRegistry();
+
+        Metal uranium = TFCRegistries.METALS.getValue(URANIUM);
+        Metal boron = TFCRegistries.METALS.getValue(BORON);
+        if(uranium != null) {
+            r.register(new QuernRecipe(IIngredient.of("gemPitchblende"), new ItemStack(ItemMetal.get(uranium, ItemType.DUST), 4)).setRegistryName("uranium_dust"));
+        }
+        if(boron != null) {
+            IForgeRegistryModifiable modRegistry = (IForgeRegistryModifiable) TFCRegistries.QUERN;
+            modRegistry.remove(new ResourceLocation(MOD_ID, "boarx"));
+            r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(uranium, ItemType.DUST), 4)).setRegistryName("boron_dust"));
+        }
+
+        r.register(new QuernRecipe(IIngredient.of("gemFluorite"), new ItemStack(ItemPowder.get(Powder.FLUX), 6)).setRegistryName("fluorite_flux"));
     }
 }
