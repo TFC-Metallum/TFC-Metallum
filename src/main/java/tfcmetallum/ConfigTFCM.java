@@ -66,6 +66,11 @@ public class ConfigTFCM
         @Config.RequiresMcRestart
         public boolean magnesium = true;
 
+        @Config.Comment({"Register uranium recipe via bloomery?"})
+        @Config.LangKey("config." + MODID + ".recipes.uranium")
+        @Config.RequiresMcRestart
+        public boolean uranium = true;
+
         @Config.Comment({"Register osmium recipe via blast furnace?"})
         @Config.LangKey("config." + MODID + ".recipes.osmium")
         @Config.RequiresMcRestart
@@ -80,5 +85,15 @@ public class ConfigTFCM
         @Config.LangKey("config." + MODID + ".recipes.tungsten")
         @Config.RequiresMcRestart
         public boolean tungsten = true;
+
+        @Config.Comment({"Register beryllium recipe via blast furnace?"})
+        @Config.LangKey("config." + MODID + ".recipes.beryllium")
+        @Config.RequiresMcRestart
+        public boolean beryllium = true;
+        
+        @Config.Comment({"Register zirconium recipe via blast furnace?"})
+        @Config.LangKey("config." + MODID + ".recipes.zirconium")
+        @Config.RequiresMcRestart
+        public boolean zirconium = true;
     }
 }

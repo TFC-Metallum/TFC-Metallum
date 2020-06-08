@@ -89,7 +89,7 @@ public final class RegistryHandler
     public static final ResourceLocation VILLIAUMITE = new ResourceLocation(MOD_ID, "villiaumite");
     public static final ResourceLocation RHODOCHROSITE = new ResourceLocation(MOD_ID, "rhodochrosite");
     public static final ResourceLocation FLUORITE = new ResourceLocation(MOD_ID, "fluorite");
-    public static final ResourceLocation CAROBBITE = new ResourceLocation(MOD_ID, "carobbite");
+    public static final ResourceLocation CAROBBIITE = new ResourceLocation(MOD_ID, "carobbiite");
     public static final ResourceLocation ARSENIC = new ResourceLocation(MOD_ID, "arsenic");
 
     @SubscribeEvent
@@ -97,35 +97,35 @@ public final class RegistryHandler
     {
         IForgeRegistry<Metal> r = event.getRegistry();
         r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null));
-        r.register(new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, 630, 0xBBC8C2, null, null));
+        r.register(new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, 630, 0x808885, null, null));
         r.register(new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFD28874, null, null));
         r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
         r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER));
         r.register(new Metal(RED_ALLOY, Metal.Tier.TIER_II, true, 0.35f, 1080, 0xFFDA6E6E, null, null));
-        r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0xBBC8C2, null, null));
         r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL));
         r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFF40444A, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR));
         r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
         r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFFDCDABE, null, null));
-        r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0xBBC8C2, null, null));
-        r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0x545454, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
-        r.register(new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, 630, 0x495155, null, null));
+        r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0x978195, null, null));
+        r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0x9397A8, null, null));
+        r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0x252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
+        r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_III, true, 0.35f, 2000, 0x46391E, null, null));
+        r.register(new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, 630, 0x3D4548, null, null));
+        r.register(new Metal(URANIUM, Metal.Tier.TIER_III, true, 0.3f, 3000, 0x3A6724, null, null));
         r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, 1050, 0xFF40444A, null, null));
         r.register(new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));
         r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFF40444A, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
-        r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xB1C194, null, null));
-        r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xBBC8C2, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
+        r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_V, true, 0.35f, 2000, 0x3F4180, null, null));
+        r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3000, 0x4B4B4B, null, null));
+        r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xE4EADA, null, null));
+        r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
         r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM));
         r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM));
         r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF40444A, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
         r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL));
-        r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0x888845, null, null));
-        r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0x85857A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
-        r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_VI, true, 0.35f, 2000, 0x5559AD, null, null));
-        r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_VI, true, 0.35f, 2000, 0x372D18, null, null));
-        r.register(new Metal(FERROBORON, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0x2B2B2B, null, null));
-        r.register(new Metal(TOUGH, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0x5A487A, null, null));
-        r.register(new Metal(URANIUM, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0x5D7F2C, null, null));
+        r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0x747527, null, null));
+        r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0x43423A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
+        r.register(new Metal(TOUGH, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0x3F2B61, null, null));
     }
 
 
@@ -154,7 +154,7 @@ public final class RegistryHandler
         r.register(new Ore(VILLIAUMITE));
         r.register(new Ore(RHODOCHROSITE));
         r.register(new Ore(FLUORITE));
-        r.register(new Ore(CAROBBITE));
+        r.register(new Ore(CAROBBIITE));
         r.register(new Ore(ARSENIC));
     }
 
@@ -211,6 +211,10 @@ public final class RegistryHandler
         {
             registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MAGNESIUM), FuelManager::isItemBloomeryFuel));
         }
+        if (ConfigTFCM.RECIPES.uranium)
+        {
+            registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(URANIUM), FuelManager::isItemBloomeryFuel));
+        }
     }
 
     @SubscribeEvent
@@ -239,6 +243,22 @@ public final class RegistryHandler
             if (tungsten != null)
             {
                 registry.register(new BlastFurnaceRecipe(tungsten, tungsten, IIngredient.of("dustFlux")));
+            }
+        }
+        if (ConfigTFCM.RECIPES.beryllium)
+        {
+            Metal beryllium = TFCRegistries.METALS.getValue(BERYLLIUM);
+            if (beryllium != null)
+            {
+                registry.register(new BlastFurnaceRecipe(beryllium, beryllium, IIngredient.of("dustFlux")));
+            }
+        }
+        if (ConfigTFCM.RECIPES.zirconium)
+        {
+            Metal zirconium = TFCRegistries.METALS.getValue(ZIRCONIUM);
+            if (zirconium != null)
+            {
+                registry.register(new BlastFurnaceRecipe(zirconium, zirconium, IIngredient.of("dustFlux")));
             }
         }
     }
@@ -302,6 +322,101 @@ public final class RegistryHandler
                     }
                     return false;
                 }, new ItemStack(ItemMetal.get(cobalt, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+            }
+        }
+        if (ConfigTFCM.RECIPES.boron)
+        {
+            Metal boron = TFCRegistries.METALS.getValue(BORON);
+            if (boron != null)
+            {
+                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "boron_bloom"), x ->
+                {
+                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
+                    {
+                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
+                        if (cap instanceof IForgeableMeasurableMetal)
+                        {
+                            return ((IForgeableMeasurableMetal) cap).getMetal() == boron && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        }
+                    }
+                    return false;
+                }, new ItemStack(ItemMetal.get(boron, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+            }
+        }
+        if (ConfigTFCM.RECIPES.cobalt)
+        {
+            Metal thorium = TFCRegistries.METALS.getValue(THORIUM);
+            if (thorium != null)
+            {
+                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "thorium_bloom"), x ->
+                {
+                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
+                    {
+                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
+                        if (cap instanceof IForgeableMeasurableMetal)
+                        {
+                            return ((IForgeableMeasurableMetal) cap).getMetal() == thorium && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        }
+                    }
+                    return false;
+                }, new ItemStack(ItemMetal.get(thorium, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+            }
+        }
+        if (ConfigTFCM.RECIPES.uranium)
+        {
+            Metal uranium = TFCRegistries.METALS.getValue(URANIUM);
+            if (uranium != null)
+            {
+                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "uranium_bloom"), x ->
+                {
+                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
+                    {
+                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
+                        if (cap instanceof IForgeableMeasurableMetal)
+                        {
+                            return ((IForgeableMeasurableMetal) cap).getMetal() == uranium && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        }
+                    }
+                    return false;
+                }, new ItemStack(ItemMetal.get(uranium, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+            }
+        }
+        if (ConfigTFCM.RECIPES.magnesium)
+        {
+            Metal magnesium = TFCRegistries.METALS.getValue(MAGNESIUM);
+            if (magnesium != null)
+            {
+                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "magnesium_bloom"), x ->
+                {
+                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
+                    {
+                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
+                        if (cap instanceof IForgeableMeasurableMetal)
+                        {
+                            return ((IForgeableMeasurableMetal) cap).getMetal() == magnesium && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        }
+                    }
+                    return false;
+                }, new ItemStack(ItemMetal.get(magnesium, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+            }
+        }
+        if (ConfigTFCM.RECIPES.manganese)
+        {
+            Metal manganese = TFCRegistries.METALS.getValue(COBALT);
+            if (manganese != null)
+            {
+                r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "manganese_bloom"), x ->
+                {
+                    if (x.getItem() == ItemsTFC.REFINED_BLOOM)
+                    {
+                        IForgeable cap = x.getCapability(CapabilityForgeable.FORGEABLE_CAPABILITY, null);
+                        if (cap instanceof IForgeableMeasurableMetal)
+                        {
+                            return ((IForgeableMeasurableMetal) cap).getMetal() == manganese && ((IForgeableMeasurableMetal) cap).getMetalAmount() == 100;
+                        }
+                    }
+                    return false;
+                }, new ItemStack(ItemMetal.get(manganese, INGOT)), Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
             }
         }
     }
