@@ -4,9 +4,9 @@
   "defaults": {
     "model": "tfc:ore",
     "textures": {
-      "all": "tfc:blocks/stonetypes/raw/gneiss",
-      "particle": "tfc:blocks/stonetypes/raw/gneiss",
-      "overlay": "tfc:blocks/ores/carobbite"
+      "all": "tfc:blocks/stonetypes/raw/shale",
+      "particle": "tfc:blocks/stonetypes/raw/shale",
+      "overlay": "tfc:blocks/ores/carobbiite"
     }
   },
   "variants": {

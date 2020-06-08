@@ -4,9 +4,9 @@
   "defaults": {
     "model": "tfc:ore",
     "textures": {
-      "all": "tfc:blocks/stonetypes/raw/rocksalt",
-      "particle": "tfc:blocks/stonetypes/raw/rocksalt",
-      "overlay": "tfc:blocks/ores/carobbite"
+      "all": "tfc:blocks/stonetypes/raw/schist",
+      "particle": "tfc:blocks/stonetypes/raw/schist",
+      "overlay": "tfc:blocks/ores/carobbiite"
     }
   },
   "variants": {

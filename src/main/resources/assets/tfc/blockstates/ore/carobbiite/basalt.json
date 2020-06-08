@@ -6,7 +6,7 @@
     "textures": {
       "all": "tfc:blocks/stonetypes/raw/basalt",
       "particle": "tfc:blocks/stonetypes/raw/basalt",
-      "overlay": "tfc:blocks/ores/carobbite"
+      "overlay": "tfc:blocks/ores/carobbiite"
     }
   },
   "variants": {

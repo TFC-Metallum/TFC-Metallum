@@ -4,9 +4,9 @@
   "defaults": {
     "model": "tfc:ore",
     "textures": {
-      "all": "tfc:blocks/stonetypes/raw/phyllite",
-      "particle": "tfc:blocks/stonetypes/raw/phyllite",
-      "overlay": "tfc:blocks/ores/carobbite"
+      "all": "tfc:blocks/stonetypes/raw/slate",
+      "particle": "tfc:blocks/stonetypes/raw/slate",
+      "overlay": "tfc:blocks/ores/carobbiite"
     }
   },
   "variants": {

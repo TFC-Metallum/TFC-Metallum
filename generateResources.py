@@ -80,7 +80,7 @@ ORE_TYPES = {
     'villiaumite': False,
     'rhodochrosite': False,
     'fluorite': False,
-    'carobbite': False,
+    'carobbiite': False,
     'arsenic': False
 } #Pitchblende, Galena and native_platinum if base TFC removes it
 

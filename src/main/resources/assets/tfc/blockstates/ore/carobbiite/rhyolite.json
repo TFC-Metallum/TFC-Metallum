@@ -4,9 +4,9 @@
   "defaults": {
     "model": "tfc:ore",
     "textures": {
-      "all": "tfc:blocks/stonetypes/raw/limestone",
-      "particle": "tfc:blocks/stonetypes/raw/limestone",
-      "overlay": "tfc:blocks/ores/carobbite"
+      "all": "tfc:blocks/stonetypes/raw/rhyolite",
+      "particle": "tfc:blocks/stonetypes/raw/rhyolite",
+      "overlay": "tfc:blocks/ores/carobbiite"
     }
   },
   "variants": {

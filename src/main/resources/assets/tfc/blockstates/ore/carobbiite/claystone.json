@@ -6,7 +6,7 @@
     "textures": {
       "all": "tfc:blocks/stonetypes/raw/claystone",
       "particle": "tfc:blocks/stonetypes/raw/claystone",
-      "overlay": "tfc:blocks/ores/carobbite"
+      "overlay": "tfc:blocks/ores/carobbiite"
     }
   },
   "variants": {
