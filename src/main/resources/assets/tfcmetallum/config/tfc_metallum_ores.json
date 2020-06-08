@@ -110,7 +110,7 @@
     "width": 12,
     "height": 12,
     "shape": "cluster",
-    "rarity": 140,
+    "rarity": 80,
     "minimum_height": 5,
     "maximum_height": 128,
     "density": 70,
@@ -124,7 +124,7 @@
     "width": 12,
     "height": 12,
     "shape": "cluster",
-    "rarity": 140,
+    "rarity": 80,
     "minimum_height": 128,
     "maximum_height": 140,
     "density": 70,
@@ -143,6 +143,39 @@
     "density": 50,
     "base_rocks": [
       "tfc:igneous_intrusive"
+    ]
+  },
+  "zircon": {
+    "ore": "tfc:zircon",
+    "loose": "tfc:zircon",
+    "width": 12,
+    "height": 12,
+    "shape": "cluster",
+    "rarity": 40,
+    "minimum_height": 5,
+    "maximum_height": 128,
+    "density": 60,
+    "base_rocks": [
+      "tfc:igneous_extrusive",
+      "tfc:igneous_intrusive",
+      "tfc:sedimentary",
+      "tfc:metamorphic"
+    ]
+  },
+  "surface_zircon": {
+    "ore": "tfc:zircon",
+    "loose": "tfc:zircon",
+    "width": 12,
+    "height": 12,
+    "shape": "cluster",
+    "rarity": 60,
+    "minimum_height": 128,
+    "maximum_height": 140,
+    "density": 40,
+    "base_rocks": [
+      "tfc:igneous_intrusive",
+      "tfc:sedimentary",
+      "tfc:metamorphic"
     ]
   },
   "pyrolusite": {

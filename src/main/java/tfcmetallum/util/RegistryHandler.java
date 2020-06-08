@@ -151,6 +151,7 @@ public final class RegistryHandler
         r.register(new Ore(THORIANITE, THORIUM, false));
         r.register(new Ore(PYROLUSITE, MANGANESE, false));
         r.register(new Ore(MAGNESITE, MAGNESIUM, false));
+        r.register(new Ore(ZIRCON, ZIRCONIUM, false));
 
         // Ores without metals registered inside TFC
         r.register(new Ore(CHROMITE));
