@@ -426,9 +426,9 @@ def Lang() :
 
         result.append('\n# Metal items')
 
+        result.append('fluid.{}=Molten {}'.format(metal_type, metal_type.replace('_', ' ').title() ))
         for metal_item, special in METAL_ITEMS.items() :
-            result.append('fluid.{}=Molten {}'.format(metal_type, metal_type.replace('_', ' ').title() ))
-            if(hasTool) :
+            if(hasTool and metal_item != "lamp") :
                 result.append('item.tfc.metal.{}.{}.name={} {}'.format(metal_item, metal_type, metal_type.replace('_', ' ').title(), metal_item.replace('_', ' ').title().replace('Pick', 'Pickaxe').replace('Propick', 'Prospector\'s Pickaxe') ))
             elif metal_item == 'lamp':
                 result.append('tile.tfc.lamp.{}.name={} Lamp'.format(metal_type, metal_type.replace('_', ' ').title()) )
