@@ -7,7 +7,7 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:metal/shovel_head/hsla_steel"
+      "item": "tfc:metal/scythe_blade/boron"
     },
     "S": {
       "type": "forge:ore_dict",
@@ -15,6 +15,6 @@
     }
   },
   "result": {
-    "item": "tfc:metal/shovel/hsla_steel"
+    "item": "tfc:metal/scythe/boron"
   }
 }

@@ -7,7 +7,7 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:metal/propick_head/hsla_steel"
+      "item": "tfc:metal/sword_blade/boron"
     },
     "S": {
       "type": "forge:ore_dict",
@@ -15,6 +15,6 @@
     }
   },
   "result": {
-    "item": "tfc:metal/propick/hsla_steel"
+    "item": "tfc:metal/sword/boron"
   }
 }

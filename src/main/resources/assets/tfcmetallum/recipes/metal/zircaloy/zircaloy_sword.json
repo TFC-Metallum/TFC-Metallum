@@ -7,7 +7,7 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:metal/javelin_head/hsla_steel"
+      "item": "tfc:metal/sword_blade/zircaloy"
     },
     "S": {
       "type": "forge:ore_dict",
@@ -15,6 +15,6 @@
     }
   },
   "result": {
-    "item": "tfc:metal/javelin/hsla_steel"
+    "item": "tfc:metal/sword/zircaloy"
   }
 }

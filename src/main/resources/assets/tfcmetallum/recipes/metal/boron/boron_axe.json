@@ -7,7 +7,7 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:metal/pick_head/hsla_steel"
+      "item": "tfc:metal/axe_head/boron"
     },
     "S": {
       "type": "forge:ore_dict",
@@ -15,6 +15,6 @@
     }
   },
   "result": {
-    "item": "tfc:metal/pick/hsla_steel"
+    "item": "tfc:metal/axe/boron"
   }
 }

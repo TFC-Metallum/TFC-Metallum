@@ -113,7 +113,7 @@ METAL_TYPES = {
     'zircaloy': True,
     'beryllium': False,
     'beryllium_copper': True,
-    'hsla_steel': True,
+    'hsla_steel': False,
     'ferroboron': False,
     'tough': False,
     'magnesium_diboride': False,
