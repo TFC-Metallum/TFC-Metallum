@@ -73,7 +73,6 @@ ORE_TYPES = {
     'pyrolusite': True,
     'magnesite': True,
     'stibnite': True,
-    'borax': True,
     'spodumene': True,
     'beryl': True,
     'zircon': True,

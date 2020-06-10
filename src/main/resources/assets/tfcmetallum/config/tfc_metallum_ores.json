@@ -110,10 +110,10 @@
     "width": 12,
     "height": 12,
     "shape": "cluster",
-    "rarity": 80,
+    "rarity": 65,
     "minimum_height": 5,
     "maximum_height": 128,
-    "density": 70,
+    "density": 85,
     "base_rocks": [
       "tfc:igneous_extrusive"
     ]
@@ -124,10 +124,10 @@
     "width": 12,
     "height": 12,
     "shape": "cluster",
-    "rarity": 80,
+    "rarity": 65,
     "minimum_height": 128,
     "maximum_height": 140,
-    "density": 70,
+    "density": 85,
     "base_rocks": [
       "tfc:igneous_extrusive"
     ]
@@ -154,7 +154,7 @@
     "rarity": 40,
     "minimum_height": 5,
     "maximum_height": 128,
-    "density": 60,
+    "density": 55,
     "base_rocks": [
       "tfc:igneous_extrusive",
       "tfc:igneous_intrusive",
@@ -168,11 +168,12 @@
     "width": 12,
     "height": 12,
     "shape": "cluster",
-    "rarity": 60,
+    "rarity": 40,
     "minimum_height": 128,
     "maximum_height": 140,
-    "density": 40,
+    "density": 55,
     "base_rocks": [
+      "tfc:igneous_extrusive",
       "tfc:igneous_intrusive",
       "tfc:sedimentary",
       "tfc:metamorphic"
@@ -184,7 +185,7 @@
     "width": 15,
     "height": 15,
     "shape": "cluster",
-    "rarity": 100,
+    "rarity": 75,
     "minimum_height": 110,
     "maximum_height": 144,
     "density": 60,
@@ -195,13 +196,13 @@
   "magnesite": {
     "ore": "tfc:magnesite",
     "loose": "tfc:magnesite",
-    "width": 6,
-    "height": 30,
+    "width": 15,
+    "height": 15,
     "shape": "cluster",
-    "rarity": 80,
+    "rarity": 75,
     "minimum_height": 110,
     "maximum_height": 144,
-    "density": 70,
+    "density": 75,
     "base_rocks": [
       "tfc:sedimentary"
     ]
@@ -210,12 +211,12 @@
     "ore": "tfc:spodumene",
     "loose": "tfc:spodumene",
     "width": 10,
-    "height": 30,
+    "height": 25,
     "shape": "cluster",
-    "rarity": 100,
+    "rarity": 70,
     "minimum_height": 5,
     "maximum_height": 128,
-    "density": 70,
+    "density": 75,
     "base_rocks": [
       "tfc:sedimentary",
       "tfc:metamorphic"
@@ -224,13 +225,13 @@
   "surface_spodumene": {
     "ore": "tfc:spodumene",
     "loose": "tfc:spodumene",
-    "width": 10,
-    "height": 30,
+    "width": 15,
+    "height": 15,
     "shape": "cluster",
-    "rarity": 100,
-    "minimum_height": 5,
-    "maximum_height": 128,
-    "density": 70,
+    "rarity": 70,
+    "minimum_height": 128,
+    "maximum_height": 140,
+    "density": 65,
     "base_rocks": [
       "tfc:sedimentary",
       "tfc:metamorphic"
@@ -238,8 +239,8 @@
   },
   "villiaumite": {
     "ore": "tfc:villiaumite",
-    "width": 20,
-    "height": 24,
+    "width": 12,
+    "height": 12,
     "shape": "cluster",
     "rarity": 100,
     "minimum_height": 5,
@@ -251,8 +252,8 @@
   },
   "rhodochrosite": {
     "ore": "tfc:rhodochrosite",
-    "width": 20,
-    "height": 24,
+    "width": 12,
+    "height": 12,
     "shape": "cluster",
     "rarity": 100,
     "minimum_height": 5,
@@ -264,8 +265,8 @@
   },
   "fluorite": {
     "ore": "tfc:fluorite",
-    "width": 20,
-    "height": 24,
+    "width": 12,
+    "height": 12,
     "shape": "cluster",
     "rarity": 100,
     "minimum_height": 5,
@@ -277,8 +278,8 @@
   },
   "carobbiite": {
     "ore": "tfc:carobbiite",
-    "width": 20,
-    "height": 24,
+    "width": 12,
+    "height": 12,
     "shape": "cluster",
     "rarity": 100,
     "minimum_height": 5,
@@ -290,8 +291,8 @@
   },
   "arsenic": {
     "ore": "tfc:arsenic",
-    "width": 20,
-    "height": 24,
+    "width": 12,
+    "height": 12,
     "shape": "cluster",
     "rarity": 100,
     "minimum_height": 5,
@@ -299,6 +300,21 @@
     "density": 70,
     "base_rocks": [
       "tfc:andesite"
+    ]
+  },
+  "pitchblende": {
+    "ore": "tfc:pitchblende",
+    "width": 5,
+    "height": 15,
+    "shape": "cluster",
+    "rarity": 80,
+    "minimum_height": 5,
+    "maximum_height": 128,
+    "density": 60,
+    "base_rocks": [
+      "tfc:metamorphic",
+      "tfc:igneous_extrusive",
+      "tfc:igneous_intrusive"
     ]
   }
 }

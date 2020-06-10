@@ -107,29 +107,29 @@ public final class RegistryHandler
         r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER));
         r.register(new Metal(RED_ALLOY, Metal.Tier.TIER_II, true, 0.35f, 1080, 0xFFDA6E6E, null, null));
         r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL));
-        r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFF40444A, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR));
+        r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFFAAAA9E, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR));
         r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
         r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFFDCDABE, null, null));
-        r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0x978195, null, null));
-        r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0x9397A8, null, null));
-        r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0x252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
-        r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_III, true, 0.35f, 2000, 0x46391E, null, null));
-        r.register(new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, 630, 0x3D4548, null, null));
-        r.register(new Metal(URANIUM, Metal.Tier.TIER_III, true, 0.3f, 3000, 0x3A6724, null, null));
-        r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, 1050, 0xFF40444A, null, null));
+        r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0xFF978195, null, null));
+        r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0xFF9397A8, null, null));
+        r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
+        r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_III, true, 0.35f, 2000, 0xFF46391E, null, null));
+        r.register(new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF3D4548, null, null));
+        r.register(new Metal(URANIUM, Metal.Tier.TIER_III, true, 0.3f, 3000, 0xFF3A6724, null, null));
+        r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, 1050, 0xFFF09614, null, null));
         r.register(new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));
-        r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFF40444A, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
-        r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_V, true, 0.35f, 2000, 0x3F4180, null, null));
-        r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3000, 0x4B4B4B, null, null));
-        r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xE4EADA, null, null));
-        r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
+        r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFFB052C0, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
+        r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_V, true, 0.35f, 2000, 0xFF3F4180, null, null));
+        r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3000, 0xFF4B4B4B, null, null));
+        r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xFFE4EADA, null, null));
+        r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFFEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
         r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM));
         r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM));
-        r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF40444A, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
+        r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF41454B, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
         r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL));
-        r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0x747527, null, null));
-        r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0x43423A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
-        r.register(new Metal(TOUGH, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0x3F2B61, null, null));
+        r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF747527, null, null));
+        r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF43423A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
+        r.register(new Metal(TOUGH, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0xFF3F2B61, null, null));
     }
 
 
