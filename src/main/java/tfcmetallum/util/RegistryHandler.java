@@ -1,13 +1,16 @@
 package tfcmetallum.util;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryModifiable;
 
+import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.api.capability.forge.CapabilityForgeable;
 import net.dries007.tfc.api.capability.forge.IForgeable;
 import net.dries007.tfc.api.capability.forge.IForgeableMeasurableMetal;
@@ -25,7 +28,9 @@ import net.dries007.tfc.objects.Powder;
 import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
 import net.dries007.tfc.objects.items.ItemPowder;
 import net.dries007.tfc.objects.items.ItemsTFC;
+import net.dries007.tfc.objects.items.itemblock.ItemBlockMetalLamp;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
+import net.dries007.tfc.util.OreDictionaryHelper;
 import net.dries007.tfc.util.fuel.FuelManager;
 import tfcmetallum.ConfigTFCM;
 import tfcmetallum.TFCMetallum;
@@ -101,36 +106,38 @@ public final class RegistryHandler
     public static void onPreRegisterMetal(TFCRegistryEvent.RegisterPreBlock<Metal> event)
     {
         IForgeRegistry<Metal> r = event.getRegistry();
-        r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null));
-        r.register(new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, 630, 0xC9CBC3, null, null));
-        r.register(new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFD28874, null, null));
-        r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
-        r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER));
-        r.register(new Metal(RED_ALLOY, Metal.Tier.TIER_II, true, 0.35f, 1080, 0xFFDA6E6E, null, null));
-        r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL));
-        r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFFAAAA9E, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR));
-        r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
-        r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFFDCDABE, null, null));
-        r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0xFF978195, null, null));
-        r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0xFF9397A8, null, null));
-        r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
-        r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_III, true, 0.35f, 2000, 0xFF46391E, null, null));
-        r.register(new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF3D4548, null, null));
-        r.register(new Metal(URANIUM, Metal.Tier.TIER_III, true, 0.3f, 3000, 0xFF3A6724, null, null));
-        r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, 1050, 0xFFF09614, null, null));
-        r.register(new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));
-        r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFFB052C0, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
-        r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_V, true, 0.35f, 2000, 0xFF3F4180, null, null));
-        r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3000, 0xFF4B4B4B, null, null));
-        r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xFFE4EADA, null, null));
-        r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFFEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
-        r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM));
-        r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM));
-        r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF41454B, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
-        r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL));
-        r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF747527, null, null));
-        r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF43423A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
-        r.register(new Metal(TOUGH, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0xFF3F2B61, null, null));
+        r.registerAll(
+                new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null),
+                new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, 630, 0xC9CBC3, null, null),
+                new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFD28874, null, null),
+                new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null),
+                new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER),
+                new Metal(RED_ALLOY, Metal.Tier.TIER_II, true, 0.35f, 1080, 0xFFDA6E6E, null, null),
+                new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL),
+                new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFFAAAA9E, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR),
+                new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM),
+                new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFFDCDABE, null, null),
+                new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0xFF978195, null, null),
+                new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0xFF9397A8, null, null),
+                new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON),
+                new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_III, true, 0.35f, 2000, 0xFF46391E, null, null),
+                new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF3D4548, null, null),
+                new Metal(URANIUM, Metal.Tier.TIER_III, true, 0.3f, 3000, 0xFF3A6724, null, null),
+                new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, 1050, 0xFFF09614, null, null),
+                new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT),
+                new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFFB052C0, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN),
+                new Metal(HSLA_STEEL, Metal.Tier.TIER_V, true, 0.35f, 2000, 0xFF3F4180, null, null),
+                new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3000, 0xFF4B4B4B, null, null),
+                new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xFFE4EADA, null, null),
+                new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFFEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER),
+                new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM),
+                new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM),
+                new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF41454B, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN),
+                new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL),
+                new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF747527, null, null),
+                new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF43423A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY),
+                new Metal(TOUGH, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0xFF3F2B61, null, null)
+        );
     }
 
 
@@ -332,6 +339,40 @@ public final class RegistryHandler
                         getBloomIngredient(manganese),
                         new ItemStack(ItemMetal.get(manganese, INGOT)),
                         Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void registerItems(RegistryEvent.Register<Item> event)
+    {
+        // Register "aluminum" ore dict (because american mod-dev people are dumb, the international standard is Alumin"i"um, period)
+        // And yes, we have to run it here because some mods are dumber: instead of querying ore dictionary at run time they do after item registration.
+        Metal aluminium = TFCRegistries.METALS.getValue(ALUMINIUM);
+        if (aluminium != null)
+        {
+            for (ItemType type : ItemType.values())
+            {
+                Item metalItem = ItemMetal.get(aluminium, type);
+                if (metalItem != null && !(metalItem instanceof ItemBlockMetalLamp))
+                {
+                    if (type == Metal.ItemType.DOUBLE_INGOT)
+                    {
+                        OreDictionary.registerOre(OreDictionaryHelper.toString("ingot", "double", "aluminum"), metalItem);
+                    }
+                    else if (type == Metal.ItemType.DOUBLE_SHEET)
+                    {
+                        OreDictionary.registerOre(OreDictionaryHelper.toString( "sheet", "double", "aluminum"), metalItem);
+                    }
+                    else if (!type.isToolItem())
+                    {
+                        OreDictionary.registerOre(OreDictionaryHelper.toString( type, "aluminum"), metalItem);
+                        if (type == Metal.ItemType.SHEET && ConfigTFC.General.MISC.dictionaryPlates)
+                        {
+                            OreDictionary.registerOre(OreDictionaryHelper.toString( "plate", "aluminum"), metalItem);
+                        }
+                    }
+                }
             }
         }
     }
