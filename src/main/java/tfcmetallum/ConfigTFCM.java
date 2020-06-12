@@ -79,7 +79,7 @@ public class ConfigTFCM
         @Config.LangKey("config." + MODID + ".recipes.beryllium")
         @Config.RequiresMcRestart
         public boolean beryllium = true;
-        
+
         @Config.Comment({"Register zirconium recipe via blast furnace?"})
         @Config.LangKey("config." + MODID + ".recipes.zirconium")
         @Config.RequiresMcRestart
