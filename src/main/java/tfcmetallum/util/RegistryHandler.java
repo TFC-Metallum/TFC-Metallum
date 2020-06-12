@@ -350,7 +350,7 @@ public final class RegistryHandler
         if (boron != null)
         {
             IForgeRegistryModifiable<QuernRecipe> modRegistry = (IForgeRegistryModifiable<QuernRecipe>) TFCRegistries.QUERN;
-            modRegistry.remove(new ResourceLocation(MOD_ID, "boarx"));
+            modRegistry.remove(new ResourceLocation(MOD_ID, "borax"));
             r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(boron, ItemType.DUST), 4)).setRegistryName("boron_dust"));
         }
 

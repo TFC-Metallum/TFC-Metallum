@@ -95,7 +95,7 @@ METAL_TYPES = {
     'nickel_silver': True,
     'invar': True,
     'aluminium': True,
-    'aluminium_brass': True,
+    'aluminium_brass': False,
     'ardite': False,
     'cobalt': True,
     'manyullyn': True,
@@ -261,7 +261,7 @@ def item(filename_parts, *layers, parent='item/generated'):
           None if len(layers) == 0 else {'layer%d' % i: v for i, v in enumerate(layers)})
           
 def tool_recipe(filename_parts, pattern, key, result):
-    p = os.path.join('recipes', *filename_parts) + '.json'
+    p = os.path.join('..\\tfcmetallum/recipes', *filename_parts) + '.json'
     os.makedirs(os.path.dirname(p), exist_ok=True)
     with open(p, 'w') as file:
         json.dump(del_none({
@@ -306,6 +306,23 @@ for key in METAL_TYPES:
                 'west': {'y': 90}
             }
         })
+        
+# LAMP
+for key in METAL_TYPES:
+    blockstate(('lamp', key), 'tfc:lamp/up', textures={
+        ('sheet', 'particle') : 'tfc:blocks/metal/%s' % key,
+        'lamp' : "tfc:blocks/lamp_unlit"
+    }, variants={
+        'lit': {
+            'true': {
+                "textures": {
+                    'lamp': 'tfc:blocks/lamp_lit'
+                }
+            },
+            'false': {}
+        },
+        'facing': {'up': {}, 'down': {'model': "tfc:lamp/down"}}
+    })
 
 # METAL SHEETS
 for key in METAL_TYPES:
