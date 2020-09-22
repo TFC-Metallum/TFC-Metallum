@@ -2787,8 +2787,8 @@ vein.arsenic.name=Arsenic
 vein.pitchblende.name=Pitchblende
 
 # trapdoors
-tile.tfc.trapdoor.aluminum.name=Aluminum Trapdoor
-tile.tfc.trapdoor.aluminum_brass.name=Aluminum Brass Trapdoor
+tile.tfc.trapdoor.aluminium.name=Aluminium Trapdoor
+tile.tfc.trapdoor.aluminium_brass.name=Aluminium Brass Trapdoor
 tile.tfc.trapdoor.antimony.name=Antimony Trapdoor
 tile.tfc.trapdoor.ardite.name=Ardite Trapdoor
 tile.tfc.trapdoor.beryllium.name=Beryllium Trapdoor
@@ -2805,6 +2805,7 @@ tile.tfc.trapdoor.magnesium.name=Magnesium Trapdoor
 tile.tfc.trapdoor.magnesium_diboride.name=Magnesium Diboride Trapdoor
 tile.tfc.trapdoor.manganese.name=Manganese Trapdoor
 tile.tfc.trapdoor.manyullyn.name=Manyullyn Trapdoor
+tile.tfc.trapdoor.mithril.name=Mithril Trapdoor
 tile.tfc.trapdoor.nickel_silver.name=Nickel Silver Trapdoor
 tile.tfc.trapdoor.osmium.name=Osmium Trapdoor
 tile.tfc.trapdoor.red_alloy.name=Red Alloy Trapdoor

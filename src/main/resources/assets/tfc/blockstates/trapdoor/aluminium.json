@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "texture": "tfc:blocks/trapdoor/aluminum_brass"
+      "texture": "tfc:blocks/trapdoor/aluminium"
     }
   },
   "variants": {

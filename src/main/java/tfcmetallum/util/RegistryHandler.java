@@ -186,7 +186,7 @@ public final class RegistryHandler
                 new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build(),
                 new AlloyRecipe.Builder(NICKEL_SILVER).add(COPPER, 0.50, 0.65).add(ZINC, 0.1, 0.3).add(NICKEL, 0.1, 0.3).build(),
                 new AlloyRecipe.Builder(FERROBORON).add(STEEL, 0.4, 0.6).add(BORON, 0.4, 0.6).build(),
-                new AlloyRecipe.Builder(HSLA_STEEL).add(STEEL, 0.2, 0.4).add(MANGANESE, 0.4, 0.6).build(),
+                new AlloyRecipe.Builder(HSLA_STEEL).add(STEEL, 0.4, 0.6).add(MANGANESE, 0.4, 0.6).build(),
                 new AlloyRecipe.Builder(MAGNESIUM_DIBORIDE).add(BORON, 0.4, 0.6).add(MAGNESIUM, 0.2, 0.4).build(),
                 new AlloyRecipe.Builder(BERYLLIUM_COPPER).add(BERYLLIUM, 0.3, 0.6).add(COPPER, 0.3, 0.6).add(ALUMINIUM, 0.1, 0.3).build(),
                 new AlloyRecipe.Builder(ZIRCALOY).add(ZIRCONIUM, 0.72, 0.98).add(TIN, 0.2, 0.4).build(),
