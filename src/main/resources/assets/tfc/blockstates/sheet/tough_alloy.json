@@ -4,8 +4,8 @@
   "defaults": {
     "model": "tfc:empty",
     "textures": {
-      "all": "tfc:blocks/metal/tough",
-      "particle": "tfc:blocks/metal/tough"
+      "all": "tfc:blocks/metal/tough_alloy",
+      "particle": "tfc:blocks/metal/tough_alloy"
     }
   },
   "variants": {

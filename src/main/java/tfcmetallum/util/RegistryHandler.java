@@ -75,7 +75,7 @@ public final class RegistryHandler
     public static final ResourceLocation ZIRCALOY = new ResourceLocation(MOD_ID, "zircaloy"); // zirconium + tin
     public static final ResourceLocation HSLA_STEEL = new ResourceLocation(MOD_ID, "hsla_steel"); // steel + manganese
     public static final ResourceLocation MAGNESIUM_DIBORIDE = new ResourceLocation(MOD_ID, "magnesium_diboride"); // magnesium + steel
-    public static final ResourceLocation TOUGH = new ResourceLocation(MOD_ID, "tough"); // Ferroboron + lithium
+    public static final ResourceLocation TOUGH_ALLOY = new ResourceLocation(MOD_ID, "tough_alloy"); // Ferroboron + lithium
     public static final ResourceLocation URANIUM = new ResourceLocation(MOD_ID, "uranium");
 
     //Ores
@@ -106,129 +106,162 @@ public final class RegistryHandler
     public static void onPreRegisterMetal(TFCRegistryEvent.RegisterPreBlock<Metal> event)
     {
         IForgeRegistry<Metal> r = event.getRegistry();
-        
+        //Checks if antimony enabled
         if (ConfigTFCM.METALS.antimony)
         {
             r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null));
+            //If antimony is enabled check if mithril enabled
+            if (ConfigTFCM.METALS.mithril)
+            {
+            	r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL));
+            }
         }
+        //Checks if lithium enabled
         if (ConfigTFCM.METALS.lithium)
         {
         	r.register(new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, 630, 0xC9CBC3, null, null));
         }
+        //Checks if constantan enabled
         if (ConfigTFCM.METALS.constantan)
         {
         	r.register(new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFD28874, null, null));
         }
+        //Checks if electrum enabled
         if (ConfigTFCM.METALS.electrum)
         {
         	r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
         }
+        //Checks if nickel silver enabled
         if (ConfigTFCM.METALS.nickel_silver)
         {
         	r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER));
         }
+        //Checks if red alloy enabled
         if (ConfigTFCM.METALS.red_alloy)
         {
         	r.register(new Metal(RED_ALLOY, Metal.Tier.TIER_II, true, 0.35f, 1080, 0xFFDA6E6E, null, null));
         }
-        if (ConfigTFCM.METALS.mithril)
-        {
-        	r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL));
-        }
+        //Checks if invar enabled
         if (ConfigTFCM.METALS.invar)
         {
         	r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFFAAAA9E, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR));
         }
+        //Checks if aluminium enabled
         if (ConfigTFCM.METALS.aluminium)
         {
         	r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
-        
+        	
+        	//If aluminium is enabled checks if aluminium brass is enabled 
         	if (ConfigTFCM.METALS.aluminium_brass)
         	{
         		r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFFDCDABE, null, null));
         	}
+        	//If aluminium is enabled checks if beryllim copper is enabled
+            if (ConfigTFCM.METALS.beryllim_copper)
+            {
+            	r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFFEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
+            }
         }
+        //Checks if magnesium enabled
         if (ConfigTFCM.METALS.magnesium)
         {
         	r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0xFF978195, null, null));
+        	
+        	//If magnesium enabled checks if magnesium diboride is enabled
+            if (ConfigTFCM.METALS.magnesium_diboride)
+            {
+            	r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_III, true, 0.35f, 2000, 0xFF46391E, null, null));
+            }
         }
+        //Checks if manganese enabled
         if (ConfigTFCM.METALS.manganese)
         {
         	r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0xFF9397A8, null, null));
+            //If manganese enabled checks if hsla steel enabled
+            if (ConfigTFCM.METALS.hsla_steel)
+            {
+            	r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_V, true, 0.35f, 2000, 0xFF3F4180, null, null));
+            }
         }
+        //Checks if boron enabled
         if (ConfigTFCM.METALS.boron)
         {
         	r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
+            //If boron enabled checks if ferroboron enabled
+            if (ConfigTFCM.METALS.ferroboron)
+            {
+            	r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3000, 0xFF4B4B4B, null, null));
+                //If both boron and ferroboron enabled check if tough alloy enabled
+                if (ConfigTFCM.METALS.tough_alloy)
+                {
+                	r.register(new Metal(TOUGH_ALLOY, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0xFF3F2B61, null, null));
+                }
+            }
         }
-        if (ConfigTFCM.METALS.magnesium_diboride)
-        {
-        	r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_III, true, 0.35f, 2000, 0xFF46391E, null, null));
-        }
+        //Checks if thorium enabled
         if (ConfigTFCM.METALS.thorium)
         {
         	r.register(new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF3D4548, null, null));
         }
+        //Checks if uranium enabled
         if (ConfigTFCM.METALS.uranium)
         {
         	r.register(new Metal(URANIUM, Metal.Tier.TIER_III, true, 0.3f, 3000, 0xFF3A6724, null, null));
         }
+        //Checks if ardite enabled
         if (ConfigTFCM.METALS.ardite)
         {
         	r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, 1050, 0xFFF09614, null, null));
+            //If ardite enabled checks if cobalt is enabled
+            if (ConfigTFCM.METALS.cobalt)
+            {
+            	//If both ardite and cobalt enabled checks if manyullyn enabled
+                if (ConfigTFCM.METALS.manyullyn)
+                {
+                	r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFFB052C0, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
+                }
+            }
         }
+        //Checks if cobalt enabled
         if (ConfigTFCM.METALS.cobalt)
         {
         	r.register(new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));
         }
-        if (ConfigTFCM.METALS.manyullyn)
-        {
-        	r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFFB052C0, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
-        }
-        if (ConfigTFCM.METALS.hsla_steel)
-        {
-        	r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_V, true, 0.35f, 2000, 0xFF3F4180, null, null));
-        }
-        if (ConfigTFCM.METALS.ferroboron)
-        {
-        	r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3000, 0xFF4B4B4B, null, null));
-        }
+        //Checks if beryllim enabled
         if (ConfigTFCM.METALS.beryllim)
         {
         	r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xFFE4EADA, null, null));
         }
-        if (ConfigTFCM.METALS.beryllim_copper)
-        {
-        	r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFFEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
-        }
+        //Checks if osmium enabled
         if (ConfigTFCM.METALS.osmium)
         {
         	r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM));
         }
+        //Checks if titanum enabled
         if (ConfigTFCM.METALS.titanum)
         {
         	r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM));
         }
+        //Checks if tungsten enabled
         if (ConfigTFCM.METALS.tungsten)
         {
         	r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF41454B, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
+        	//If tungsten is enabled checks if tungsten steel is enabled
+            if (ConfigTFCM.METALS.tungsten_steel)
+            {
+            	r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL));
+            }
         }
-        if (ConfigTFCM.METALS.tungsten_steel)
-        {
-        	r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL));
-        }
+        //Checks if zirconium enabled
         if (ConfigTFCM.METALS.zirconium)
         {
         	r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF747527, null, null));
+        	//If zirconium checks if zircaloy enabled
+            if (ConfigTFCM.METALS.zircaloy)
+            {
+            	r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF43423A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
+            }
         }
-        if (ConfigTFCM.METALS.zircaloy)
-        {
-        	r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF43423A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
-        }
-        if (ConfigTFCM.METALS.tough)
-        {
-        	r.register(new Metal(TOUGH, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0xFF3F2B61, null, null));
-        }
-                
     }
 
 
@@ -318,91 +351,128 @@ public final class RegistryHandler
     public static void onRegisterAlloyRecipe(RegistryEvent.Register<AlloyRecipe> event)
     {
         IForgeRegistry<AlloyRecipe> r = event.getRegistry();
+        //Checks if constantan is enabled
+        if (ConfigTFCM.METALS.constantan)
+        {
+        	r.register(new AlloyRecipe.Builder(CONSTANTAN).add(COPPER, 0.4, 0.6).add(NICKEL, 0.4, 0.6).build());
+        }
+        //Checks if electrum is enabled
+        if (ConfigTFCM.METALS.electrum)
+        {
+        	r.register(new AlloyRecipe.Builder(ELECTRUM).add(GOLD, 0.4, 0.6).add(SILVER, 0.4, 0.6).build());
+        }
+        //Checks if invar is enabled
+        if (ConfigTFCM.METALS.invar)
+        {
+        	r.register(new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build());
+        }
+        //Checks if nickel silver is enabled
+        if (ConfigTFCM.METALS.nickel_silver)
+        {
+        	r.register(new AlloyRecipe.Builder(NICKEL_SILVER).add(COPPER, 0.50, 0.65).add(ZINC, 0.1, 0.3).add(NICKEL, 0.1, 0.3).build());
+        }
         
+        /*This next bit is kinda hard to read so I'll just explain. These are alloys that require other metals added by Metallum which means they should be dissabled if one of their 
+        parents are dissabled. An example of this is bellow. Aluminium is added by Metallum and is used to make both aluminium brass and beryllim copper but beryllim copper also
+        needs beryllim. I'm sure there's a better way to do this but I just check if the topmost parent metal is enabled (in this case aluminium) and then go from there. So for beryllim copper
+        I first check if aluminium is enabled, then beryllim, then finally beryllim copper. If there are other alloys that share the same parents I merge them into the same check.
+        The only positive thing about what I feel is pretty bad code is it only runs once so eh. All in all not bad for my first time exploring outside "hello user" programs
+        */
+        
+        //Checks if aluminium is enabled
         if (ConfigTFCM.METALS.aluminium)
         {
-            if (ConfigTFCM.METALS.beryllim_copper)
-            {
-            	r.register(new AlloyRecipe.Builder(BERYLLIUM_COPPER).add(BERYLLIUM, 0.3, 0.6).add(COPPER, 0.3, 0.6).add(ALUMINIUM, 0.1, 0.3).build());
-            }
+        	//If aluminium is enabled check if beryllim is enabled
+        	if (ConfigTFCM.METALS.beryllim)
+        	{
+            	//If aluminium and beryllim is enabled checks if beryllim copper is enabled
+                if (ConfigTFCM.METALS.beryllim_copper)
+                {
+                	r.register(new AlloyRecipe.Builder(BERYLLIUM_COPPER).add(BERYLLIUM, 0.3, 0.6).add(COPPER, 0.3, 0.6).add(ALUMINIUM, 0.1, 0.3).build());
+                }
+        	}
+            //If aluminium is enabled checks if aluminium brass is enabled
             if (ConfigTFCM.METALS.aluminium_brass)
         	{
         		r.register(new AlloyRecipe.Builder(ALUMINIUM_BRASS).add(ALUMINIUM, 0.65, 0.85).add(COPPER, 0.15, 0.35).build());
         	}
         }
-        if (ConfigTFCM.METALS.constantan)
-        {
-        	r.register(new AlloyRecipe.Builder(CONSTANTAN).add(COPPER, 0.4, 0.6).add(NICKEL, 0.4, 0.6).build());
-        }
-        if (ConfigTFCM.METALS.electrum)
-        {
-        	r.register(new AlloyRecipe.Builder(ELECTRUM).add(GOLD, 0.4, 0.6).add(SILVER, 0.4, 0.6).build());
-        }
+        //Checks if antimony is enabled
         if (ConfigTFCM.METALS.antimony)
         {
+            //Checks if mithril is enabled
         	if (ConfigTFCM.METALS.mithril)
             {
             	r.register(new AlloyRecipe.Builder(MITHRIL).add(COPPER, 0.88, 0.92).add(ANTIMONY, 0.08, 0.12).build());
             }
         }
-        if (ConfigTFCM.METALS.invar)
-        {
-        	r.register(new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build());
-        }
+        //Checks if ardite is enabled
         if (ConfigTFCM.METALS.ardite)
         {
+            //Checks if cobalt is enabled
         	if (ConfigTFCM.METALS.cobalt)
         	{
+                //Checks if manyullyn is enabled
         		if (ConfigTFCM.METALS.manyullyn)
                 {
                 	r.register(new AlloyRecipe.Builder(MANYULLYN).add(COBALT, 0.4, 0.6).add(ARDITE, 0.4, 0.6).build());
                 }
         	}
         }
+        //Checks if tungsten is enabled
         if (ConfigTFCM.METALS.tungsten)
         {
+            //Checks if tungsten steel is enabled
         	if (ConfigTFCM.METALS.tungsten_steel)
             {
             	r.register(new AlloyRecipe.Builder(TUNGSTEN_STEEL).add(TUNGSTEN, 0.02, 0.18).add(STEEL, 0.72, 0.98).build());
             }
         }
-        if (ConfigTFCM.METALS.nickel_silver)
-        {
-        	r.register(new AlloyRecipe.Builder(NICKEL_SILVER).add(COPPER, 0.50, 0.65).add(ZINC, 0.1, 0.3).add(NICKEL, 0.1, 0.3).build());
-        }
+        //Checks if boron is enabled
         if (ConfigTFCM.METALS.boron)
         {
+            //Checks if ferroboron is enabled
         	if (ConfigTFCM.METALS.ferroboron)
             {
             	r.register(new AlloyRecipe.Builder(FERROBORON).add(STEEL, 0.4, 0.6).add(BORON, 0.4, 0.6).build());
+            	//If ferroboron enabled checks if lithium is enabled
+                if(ConfigTFCM.METALS.lithium)
+                {
+                	//If ferroboron, boron and lithium are enabled checks if tough alloy is enabled
+                    if (ConfigTFCM.METALS.tough_alloy)
+                    {
+                    	r.register(new AlloyRecipe.Builder(TOUGH_ALLOY).add(FERROBORON, 0.4, 0.6).add(LITHIUM, 0.4, 0.6).build());
+                    }
+                }
             }
+            //If boron is enabled checks if magnesium is enabled
         	if (ConfigTFCM.METALS.magnesium)
             {
+                //If magnesium and boron are enabled checks if magnesium diboride is enabled
         		if (ConfigTFCM.METALS.magnesium_diboride)
     	        {
     	        	r.register(new AlloyRecipe.Builder(MAGNESIUM_DIBORIDE).add(BORON, 0.4, 0.6).add(MAGNESIUM, 0.2, 0.4).build());
     	        }
             }
         }
+        //Checks if manganese is enabled
         if (ConfigTFCM.METALS.manganese)
         {
+            //If manganese enabled checks if hsla steel is enabled
         	if (ConfigTFCM.METALS.hsla_steel)
             {
             	r.register(new AlloyRecipe.Builder(HSLA_STEEL).add(STEEL, 0.4, 0.6).add(MANGANESE, 0.4, 0.6).build());
             }
         }
+        //Checks if zirconium is enabled
         if (ConfigTFCM.METALS.zirconium)
         {
+            //If zirconium enabled checks if zircaloy is enabled
         	if (ConfigTFCM.METALS.zircaloy)
             {
             	r.register(new AlloyRecipe.Builder(ZIRCALOY).add(ZIRCONIUM, 0.72, 0.98).add(TIN, 0.2, 0.4).build());
             }
-        } 
-        if (ConfigTFCM.METALS.tough)
-        {
-        	r.register(new AlloyRecipe.Builder(TOUGH).add(FERROBORON, 0.4, 0.6).add(LITHIUM, 0.4, 0.6).build());
-        }
-        
+        }        
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -410,43 +480,55 @@ public final class RegistryHandler
     public static void onRegisterBloomeryRecipeEvent(RegistryEvent.Register<BloomeryRecipe> event)
     {
         IForgeRegistry<BloomeryRecipe> registry = event.getRegistry();
+        //Check if aluminium metal is dissabled
         if (ConfigTFCM.METALS.aluminium)
         {
+            //Check if aluminium recipe is dissabled
         	 if (ConfigTFCM.RECIPES.aluminium)
              {
                  registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ALUMINIUM), FuelManager::isItemBloomeryFuel));
              }
         }
+        //Check if ardite metal is dissabled
         if (ConfigTFCM.METALS.ardite)
         {
+            //Check if ardite recipe is dissabled
         	 if (ConfigTFCM.RECIPES.ardite)
              {
                  registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ARDITE), FuelManager::isItemBloomeryFuel));
              }
         }
+        //Check if cobalt metal is dissabled
         if (ConfigTFCM.METALS.cobalt)
         {
+            //Check if cobalt recipe is dissabled
         	if (ConfigTFCM.RECIPES.cobalt)
             {
                 registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(COBALT), FuelManager::isItemBloomeryFuel));
             }
         }
+        //Check if thorium metal is dissabled
         if (ConfigTFCM.METALS.thorium)
         {
+            //Check if thorium recipe is dissabled
         	if (ConfigTFCM.RECIPES.thorium)
             {
                 registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(THORIUM), FuelManager::isItemBloomeryFuel));
             }
         }
+        //Check if manganese metal is dissabled
         if (ConfigTFCM.METALS.manganese)
         {
+            //Check if manganese recipe is dissabled
         	if (ConfigTFCM.RECIPES.manganese)
             {
                 registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MANGANESE), FuelManager::isItemBloomeryFuel));
             }
         }
+        //Check if magnesium metal is dissabled
         if (ConfigTFCM.METALS.magnesium)
         {
+            //Check if magnesium recipe is dissabled
         	if (ConfigTFCM.RECIPES.magnesium)
             {
                 registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MAGNESIUM), FuelManager::isItemBloomeryFuel));
@@ -458,8 +540,10 @@ public final class RegistryHandler
     public static void onRegisterBlastFurnaceRecipeEvent(RegistryEvent.Register<BlastFurnaceRecipe> event)
     {
         IForgeRegistry<BlastFurnaceRecipe> registry = event.getRegistry();
+        //Check if osmium metal is dissabled
         if (ConfigTFCM.METALS.osmium)
         {
+            //Check if osmium recipe is dissabled
         	if (ConfigTFCM.RECIPES.osmium)
             {
                 Metal osmium = TFCRegistries.METALS.getValue(OSMIUM);
@@ -469,8 +553,10 @@ public final class RegistryHandler
                 }
             }
         }
+        //Check if titanum metal is dissabled
         if (ConfigTFCM.METALS.titanum)
         {
+            //Check if titanum recipe is dissabled
         	if (ConfigTFCM.RECIPES.titanium)
             {
                 Metal titanium = TFCRegistries.METALS.getValue(TITANIUM);
@@ -480,8 +566,10 @@ public final class RegistryHandler
                 }
             }
         }
+        //Check if tungsten metal is dissabled
         if (ConfigTFCM.METALS.tungsten)
         {
+            //Check if tungsten recipe is dissabled
         	if (ConfigTFCM.RECIPES.tungsten)
             {
                 Metal tungsten = TFCRegistries.METALS.getValue(TUNGSTEN);
@@ -491,8 +579,10 @@ public final class RegistryHandler
                 }
             }
         }
+        //Check if beryllim metal is dissabled
         if (ConfigTFCM.METALS.beryllim)
         {
+            //Check if beryllim recipe is dissabled
         	if (ConfigTFCM.RECIPES.beryllium)
             {
                 Metal beryllium = TFCRegistries.METALS.getValue(BERYLLIUM);
@@ -502,8 +592,10 @@ public final class RegistryHandler
                 }
             }
         }
+        //Check if zirconium metal is dissabled
         if (ConfigTFCM.METALS.zirconium)
         {
+            //Check if zirconium recipe is dissabled
         	if (ConfigTFCM.RECIPES.zirconium)
             {
                 Metal zirconium = TFCRegistries.METALS.getValue(ZIRCONIUM);
@@ -519,8 +611,10 @@ public final class RegistryHandler
     public static void onRegisterAnvilRecipeEvent(RegistryEvent.Register<AnvilRecipe> event)
     {
         IForgeRegistry<AnvilRecipe> r = event.getRegistry();
+        //Check if aluminium metal is dissabled
         if (ConfigTFCM.METALS.aluminium)
         {
+            //Check if aluminium recipe is dissabled
         	if (ConfigTFCM.RECIPES.aluminium)
             {
                 Metal aluminium = TFCRegistries.METALS.getValue(ALUMINIUM);
@@ -533,8 +627,10 @@ public final class RegistryHandler
                 }
             }
         }
+        //Check if cobalt metal is dissabled
         if (ConfigTFCM.METALS.ardite)
         {
+            //Check if ardite recipe is dissabled
         	if (ConfigTFCM.RECIPES.ardite)
             {
                 Metal ardite = TFCRegistries.METALS.getValue(ARDITE);
@@ -547,8 +643,10 @@ public final class RegistryHandler
                 }
             }
         }
+        //Check if cobalt metal is dissabled
         if (ConfigTFCM.METALS.cobalt)
         {
+            //Check if cobalt recipe is dissabled
         	if (ConfigTFCM.RECIPES.cobalt)
             {
                 Metal cobalt = TFCRegistries.METALS.getValue(COBALT);
@@ -561,8 +659,10 @@ public final class RegistryHandler
                 }
             }
         }
+        //Check if thorium metal is dissabled
         if (ConfigTFCM.METALS.thorium)
         {
+            //Check if thorium recipe is dissabled
         	if (ConfigTFCM.RECIPES.thorium)
             {
                 Metal thorium = TFCRegistries.METALS.getValue(THORIUM);
@@ -575,8 +675,10 @@ public final class RegistryHandler
                 }
             }
         }
+        //Check if magnesium metal is dissabled
         if (ConfigTFCM.METALS.magnesium)
         {
+            //Check if magnesium recipe is dissabled
         	if (ConfigTFCM.RECIPES.magnesium)
             {
                 Metal magnesium = TFCRegistries.METALS.getValue(MAGNESIUM);
@@ -589,8 +691,10 @@ public final class RegistryHandler
                 }
             }
         }
+        //Check if manganese metal is dissabled
         if (ConfigTFCM.METALS.manganese)
         {
+        	//Checks if manganese recipe is dissabled
         	if (ConfigTFCM.RECIPES.manganese)
             {
                 Metal manganese = TFCRegistries.METALS.getValue(MANGANESE);
@@ -646,27 +750,37 @@ public final class RegistryHandler
     public static void onRegisterQuernRecipeEvent(RegistryEvent.Register<QuernRecipe> event)
     {
         IForgeRegistry<QuernRecipe> r = event.getRegistry();
+        //Dissables uranium dust if metal is dissabled
         if (ConfigTFCM.METALS.uranium)
         {
-        	Metal uranium = TFCRegistries.METALS.getValue(URANIUM);
-        	if (uranium != null)
+            //Dissables uranium dust if recipe is dissabled
+            if (ConfigTFCM.RECIPES.uranium_dust)
             {
-                r.register(new QuernRecipe(IIngredient.of("gemPitchblende"), new ItemStack(ItemMetal.get(uranium, ItemType.DUST), 4)).setRegistryName("uranium_dust"));
+            	Metal uranium = TFCRegistries.METALS.getValue(URANIUM);
+            	if (uranium != null)
+                {
+                    r.register(new QuernRecipe(IIngredient.of("gemPitchblende"), new ItemStack(ItemMetal.get(uranium, ItemType.DUST), 4)).setRegistryName("uranium_dust"));
+                }
             }
         }
+        //Dissables boron dust if the metal is dissabled
         if (ConfigTFCM.METALS.boron)
         {
-            Metal boron = TFCRegistries.METALS.getValue(BORON);
-        	if (boron != null)
+        	//Dissables boron dust if the recipe is dissabled
+        	if (ConfigTFCM.RECIPES.boron_dust)
             {
-                IForgeRegistryModifiable<QuernRecipe> modRegistry = (IForgeRegistryModifiable<QuernRecipe>) TFCRegistries.QUERN;
-                modRegistry.remove(new ResourceLocation(MOD_ID, "borax"));
-                r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(boron, ItemType.DUST), 4)).setRegistryName("boron_dust"));
+                Metal boron = TFCRegistries.METALS.getValue(BORON);
+            	if (boron != null)
+                {
+                    IForgeRegistryModifiable<QuernRecipe> modRegistry = (IForgeRegistryModifiable<QuernRecipe>) TFCRegistries.QUERN;
+                    modRegistry.remove(new ResourceLocation(MOD_ID, "borax"));
+                    r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(boron, ItemType.DUST), 4)).setRegistryName("boron_dust"));
+                }
             }
         }
         r.register(new QuernRecipe(IIngredient.of("gemFluorite"), new ItemStack(ItemPowder.get(Powder.FLUX), 6)).setRegistryName("fluorite_flux"));
     }
-
+    //Makes the bloomery blooms
     private static IIngredient<ItemStack> getBloomIngredient(Metal metal)
     {
         return x ->

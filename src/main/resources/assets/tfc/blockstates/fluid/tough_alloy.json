@@ -9,7 +9,7 @@
     "normal": {
       "transform": "forge:default-item",
       "custom": {
-        "fluid": "tough"
+        "fluid": "tough_alloy"
       }
     }
   }

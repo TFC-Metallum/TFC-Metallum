@@ -4,8 +4,8 @@
   "defaults": {
     "model": "tfc:lamp/up",
     "textures": {
-      "sheet": "tfc:blocks/metal/tough",
-      "particle": "tfc:blocks/metal/tough",
+      "sheet": "tfc:blocks/metal/tough_alloy",
+      "particle": "tfc:blocks/metal/tough_alloy",
       "lamp": "tfc:blocks/lamp_unlit"
     }
   },

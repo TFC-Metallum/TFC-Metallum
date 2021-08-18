@@ -35,7 +35,8 @@ public class ConfigTFCM
             ConfigManager.sync(MODID, Config.Type.INSTANCE);
         }
     }
-
+    
+    //Config for recipes such as bloomery and blast furnace
     public static class Recipes
     {
         @Config.Comment({"Register ardite recipe via bloomery?"})
@@ -92,8 +93,19 @@ public class ConfigTFCM
         @Config.LangKey("config." + MODID + ".recipes.zirconium")
         @Config.RequiresMcRestart
         public boolean zirconium = true;
+        
+        @Config.Comment({"Register uranium dust recipe via quern?"})
+        @Config.LangKey("config." + MODID + ".recipes.uranium")
+        @Config.RequiresMcRestart
+        public boolean uranium_dust = true;
+
+        @Config.Comment({"Register boron dust recipe via quern?"})
+        @Config.LangKey("config." + MODID + ".recipes.boron")
+        @Config.RequiresMcRestart
+        public boolean boron_dust = true;
     }
     
+    //Metals config includes alloys 
     public static class Metals
     {
     	
@@ -245,8 +257,10 @@ public class ConfigTFCM
     	@Config.Comment({"Enable tough alloy?"})
         @Config.LangKey("config." + MODID + ".metals.tough")
         @Config.RequiresMcRestart
-        public boolean tough = true;
+        public boolean tough_alloy = true;
     }
+    
+    //Non-Metals config 
     public static class NonMetals
     {
     	@Config.Comment({"Enable chromite?"})
