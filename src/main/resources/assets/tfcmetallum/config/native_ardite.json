@@ -1,0 +1,18 @@
+{
+  "native_ardite": {
+    "ore": "tfc:native_ardite",
+    "loose": "tfc:native_ardite",
+    "width": 5,
+    "height": 10,
+    "shape": "cluster",
+    "rarity": 120,
+    "minimum_height": 5,
+    "maximum_height": 128,
+    "density": 70,
+    "base_rocks": [
+      "tfc:metamorphic",
+      "tfc:igneous_intrusive",
+      "tfc:igneous_extrusive"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "fluorite": {
+    "ore": "tfc:fluorite",
+    "width": 12,
+    "height": 12,
+    "shape": "cluster",
+    "rarity": 100,
+    "minimum_height": 5,
+    "maximum_height": 140,
+    "density": 70,
+    "base_rocks": [
+      "tfc:diorite"
+    ]
+  }
+}

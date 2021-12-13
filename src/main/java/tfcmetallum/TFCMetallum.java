@@ -3,7 +3,7 @@ package tfcmetallum;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
+import tfcmetallum.util.IsObtainable;
 import tfcmetallum.util.VeinLoader;
 
 @SuppressWarnings("WeakerAccess")
@@ -18,6 +18,7 @@ public class TFCMetallum
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+    	IsObtainable.checkObtanability();
         VeinLoader.INSTANCE.preInit(event.getModConfigurationDirectory());
     }
 }

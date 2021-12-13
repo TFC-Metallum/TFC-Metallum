@@ -5,6 +5,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class ToolMaterialsTFCM
 {
+	
     public static final Item.ToolMaterial ALUMINIUM = EnumHelper.addToolMaterial("tfcm_aluminium", 2, 800, 8, 4.0f, 16);
     public static final Item.ToolMaterial MITHRIL = EnumHelper.addToolMaterial("tfcm_mithril", 2, 1600, 10, 4.25f, 12);
     public static final Item.ToolMaterial NICKEL_SILVER = EnumHelper.addToolMaterial("tfcm_nickel_silver", 2, 2500, 12, 4.75f, 12);
