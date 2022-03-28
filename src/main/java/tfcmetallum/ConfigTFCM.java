@@ -1,12 +1,13 @@
 package tfcmetallum;
 
+import static tfcmetallum.TFCMetallum.MODID;
+
 import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.Config.RangeInt;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import static tfcmetallum.TFCMetallum.MODID;
 
 @SuppressWarnings("unused")
 @Config(modid = MODID, category = "")
@@ -17,6 +18,21 @@ public class ConfigTFCM
     @Config.Comment("Recipe configuration")
     @Config.LangKey("config." + MODID + ".recipes")
     public static Recipes RECIPES = new Recipes();
+    
+    @Config.Comment("Configuration for melting temperatures. Values higher than around 2000 are not reachable in base TFC.\r\n"
+    		+ "Warming starts at 1, ends at 80\r\n"
+    		+ "Hot starts at 80, ends at 210\r\n"
+    		+ "Very Hot starts at 210, ends at 480\r\n"
+    		+ "Faint Red starts at 480, ends at 580\r\n"
+    		+ "Dark Red starts at 580, ends at 730\r\n"
+    		+ "Bright Red starts at 730, ends at 930\r\n"
+    		+ "Orange starts at 930, ends at 1100\r\n"
+    		+ "Yellow starts at 1100, ends at 1300\r\n"
+    		+ "Yellow White starts at 1300, ends at 1400\r\n"
+    		+ "White starts at 1400, ends at 1500\r\n"
+    		+ "Brilliant White starts at 1500")
+    @Config.LangKey("config." + MODID + ".melt_temps")
+    public static MeltTemps MELT_TEMP = new MeltTemps();
     
     @Config.Comment("Metals configuration. Alloys will be dissabled if any of the metals included are dissabled")
     @Config.LangKey("config." + MODID + ".metals")
@@ -36,7 +52,6 @@ public class ConfigTFCM
         }
     }
     
-    //Config for recipes such as bloomery and blast furnace
     public static class Recipes
     {
         @Config.Comment({"Register ardite recipe via bloomery?"})
@@ -104,11 +119,190 @@ public class ConfigTFCM
         @Config.RequiresMcRestart
         public boolean boron_dust = true;
     }
-    
-    //Metals config includes alloys 
+    public static class MeltTemps
+    {
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for lithium"})
+        @Config.LangKey("config." + MODID + ".melt_temp.lithium")
+        public float lithium = 630;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for constantan"})
+        @Config.LangKey("config." + MODID + ".melt_temp.constantan")
+        public float constantan = 1200;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for electrum"})
+        @Config.LangKey("config." + MODID + ".melt_temp.electrum")
+        public float electrum = 1200;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for nickel_silver"})
+        @Config.LangKey("config." + MODID + ".melt_temp.nickel_silver")
+        public float nickel_silver = 1450;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for red_alloy"})
+        @Config.LangKey("config." + MODID + ".melt_temp.red_alloy")
+        public float red_alloy = 1080;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for invar"})
+        @Config.LangKey("config." + MODID + ".melt_temp.invar")
+        public float invar = 1450;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for thorium"})
+        @Config.LangKey("config." + MODID + ".melt_temp.thorium")
+        public float thorium = 630;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for uranium"})
+        @Config.LangKey("config." + MODID + ".melt_temp.uranium")
+        public float uranium = 3000;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for osmium"})
+        @Config.LangKey("config." + MODID + ".melt_temp.osmium")
+        public float osmium = 3025;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for titanum"})
+        @Config.LangKey("config." + MODID + ".melt_temp.titanum")
+        public float titanum = 1700;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for ardite"})
+        @Config.LangKey("config." + MODID + ".melt_temp.ardite")
+        public float ardite = 1050;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for cobalt"})
+        @Config.LangKey("config." + MODID + ".melt_temp.cobalt")
+        public float cobalt = 1495;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for manyullyn"})
+        @Config.LangKey("config." + MODID + ".melt_temp.manyullyn")
+        public float manyullyn = 1550;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for mithril"})
+        @Config.LangKey("config." + MODID + ".melt_temp.mithril")
+        public float mithril = 940;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for antimony"})
+        @Config.LangKey("config." + MODID + ".melt_temp.antimony")
+        public float antimony = 630;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for magnesium"})
+        @Config.LangKey("config." + MODID + ".melt_temp.magnesium")
+        public float magnesium = 630;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for magnesium_diboride"})
+        @Config.LangKey("config." + MODID + ".melt_temp.magnesium_diboride")
+        public float magnesium_diboride = 2000;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for manganese"})
+        @Config.LangKey("config." + MODID + ".melt_temp.manganese")
+        public float manganese = 1250;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for hsla_steel"})
+        @Config.LangKey("config." + MODID + ".melt_temp.hsla_steel")
+        public float hsla_steel = 2000;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for tungsten"})
+        @Config.LangKey("config." + MODID + ".melt_temp.tungsten")
+        public float tungsten = 3400;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for tungsten_steel"})
+        @Config.LangKey("config." + MODID + ".melt_temp.tungsten_steel")
+        public float tungsten_steel = 3695;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for zirconium"})
+        @Config.LangKey("config." + MODID + ".melt_temp.zirconium")
+        public float zirconium = 1500;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for zircaloy"})
+        @Config.LangKey("config." + MODID + ".melt_temp.zircaloy")
+        public float zircaloy = 1500;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for aluminium"})
+        @Config.LangKey("config." + MODID + ".melt_temp.aluminium")
+        public float aluminium = 660;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for beryllim"})
+        @Config.LangKey("config." + MODID + ".melt_temp.beryllim")
+        public float beryllim = 1300;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for aluminium_brass"})
+        @Config.LangKey("config." + MODID + ".melt_temp.aluminium_brass")
+        public float aluminium_brass = 630;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for beryllim_copper"})
+        @Config.LangKey("config." + MODID + ".melt_temp.beryllim_copper")
+        public float beryllim_copper = 1500;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for boron"})
+        @Config.LangKey("config." + MODID + ".melt_temp.boron")
+        public float boron = 630;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for ferroboron"})
+        @Config.LangKey("config." + MODID + ".melt_temp.ferroboron")
+        public float ferroboron = 3000;
+
+    	@RangeInt(min = 0)
+    	@Config.RequiresMcRestart
+    	@Config.Comment({"Melting temp for tough"})
+        @Config.LangKey("config." + MODID + ".melt_temp.tough")
+        public float tough = 3000;
+    }
     public static class Metals
     {
-    	
     	@Config.Comment({"Enable antimony metal?"})
         @Config.LangKey("config." + MODID + ".metals.antimony")
         @Config.RequiresMcRestart
@@ -259,8 +453,6 @@ public class ConfigTFCM
         @Config.RequiresMcRestart
         public boolean tough_alloy = true;
     }
-    
-    //Non-Metals config 
     public static class NonMetals
     {
     	@Config.Comment({"Enable chromite?"})

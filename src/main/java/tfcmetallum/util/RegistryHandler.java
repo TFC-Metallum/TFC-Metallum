@@ -1,14 +1,18 @@
 package tfcmetallum.util;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistryModifiable;
+import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
+import static net.dries007.tfc.api.types.Metal.ItemType.INGOT;
+import static net.dries007.tfc.types.DefaultMetals.COPPER;
+import static net.dries007.tfc.types.DefaultMetals.GOLD;
+import static net.dries007.tfc.types.DefaultMetals.NICKEL;
+import static net.dries007.tfc.types.DefaultMetals.SILVER;
+import static net.dries007.tfc.types.DefaultMetals.STEEL;
+import static net.dries007.tfc.types.DefaultMetals.TIN;
+import static net.dries007.tfc.types.DefaultMetals.WROUGHT_IRON;
+import static net.dries007.tfc.types.DefaultMetals.ZINC;
+import static net.dries007.tfc.util.forge.ForgeRule.HIT_LAST;
+import static net.dries007.tfc.util.forge.ForgeRule.HIT_SECOND_LAST;
+import static net.dries007.tfc.util.forge.ForgeRule.HIT_THIRD_LAST;
 
 import net.dries007.tfc.ConfigTFC;
 import net.dries007.tfc.api.capability.forge.CapabilityForgeable;
@@ -32,17 +36,19 @@ import net.dries007.tfc.objects.items.itemblock.ItemBlockMetalLamp;
 import net.dries007.tfc.objects.items.metal.ItemMetal;
 import net.dries007.tfc.util.OreDictionaryHelper;
 import net.dries007.tfc.util.fuel.FuelManager;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.IForgeRegistryModifiable;
 import tfcmetallum.ConfigTFCM;
 import tfcmetallum.TFCMetallum;
 import tfcmetallum.objects.ArmorMaterialsTFCM;
 import tfcmetallum.objects.ToolMaterialsTFCM;
-
-import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
-import static net.dries007.tfc.api.types.Metal.ItemType.INGOT;
-import static net.dries007.tfc.types.DefaultMetals.*;
-import static net.dries007.tfc.util.forge.ForgeRule.*;
-
-import com.typesafe.config.Config;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @Mod.EventBusSubscriber(modid = TFCMetallum.MODID)
@@ -109,175 +115,149 @@ public final class RegistryHandler
     public static void onPreRegisterMetal(TFCRegistryEvent.RegisterPreBlock<Metal> event)
     {
         IForgeRegistry<Metal> r = event.getRegistry();
-        //Checks if lithium enabled
         if (ConfigTFCM.METALS.lithium) {
         	
-        	r.register(new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, 630, 0xC9CBC3, null, null));
+        	r.register(new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, ConfigTFCM.MELT_TEMP.lithium, 0xC9CBC3, null, null));
         }
-        //Checks if constantan enabled
         if (ConfigTFCM.METALS.constantan) {
         	
-        	r.register(new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFD28874, null, null));
+        	r.register(new Metal(CONSTANTAN, Metal.Tier.TIER_II, true, 0.5f, ConfigTFCM.MELT_TEMP.constantan, 0xFFD28874, null, null));
         }
-        //Checks if electrum enabled
         if (ConfigTFCM.METALS.electrum) {
         	
-        	r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, 1200, 0xFFDFB950, null, null));
+        	r.register(new Metal(ELECTRUM, Metal.Tier.TIER_II, true, 0.5f, ConfigTFCM.MELT_TEMP.electrum, 0xFFDFB950, null, null));
         }
-        //Checks if nickel silver enabled
         if (ConfigTFCM.METALS.nickel_silver) {
         	
-        	r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, 1450, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER));
+        	r.register(new Metal(NICKEL_SILVER, Metal.Tier.TIER_II, true, 0.35f, ConfigTFCM.MELT_TEMP.nickel_silver, 0xFFA4A4A5, ToolMaterialsTFCM.NICKEL_SILVER, ArmorMaterialsTFCM.NICKEL_SILVER));
         }
-        //Checks if red alloy enabled
         if (ConfigTFCM.METALS.red_alloy) {
         	
-        	r.register(new Metal(RED_ALLOY, Metal.Tier.TIER_II, true, 0.35f, 1080, 0xFFDA6E6E, null, null));
+        	r.register(new Metal(RED_ALLOY, Metal.Tier.TIER_II, true, 0.35f, ConfigTFCM.MELT_TEMP.red_alloy, 0xFFDA6E6E, null, null));
         }
-        //Checks if invar enabled
         if (ConfigTFCM.METALS.invar) {
         	
-        	r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, 1450, 0xFFAAAA9E, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR));
+        	r.register(new Metal(INVAR, Metal.Tier.TIER_III, true, 0.35f, ConfigTFCM.MELT_TEMP.invar, 0xFFAAAA9E, ToolMaterialsTFCM.INVAR, ArmorMaterialsTFCM.INVAR));
         }
-        //Checks if thorium enabled
         if (ConfigTFCM.METALS.thorium) {
         	
-        	r.register(new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF3D4548, null, null));
+        	r.register(new Metal(THORIUM, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.thorium, 0xFF3D4548, null, null));
         }
-        //Checks if uranium enabled
         if (ConfigTFCM.METALS.uranium) {
         	
-        	r.register(new Metal(URANIUM, Metal.Tier.TIER_III, true, 0.3f, 3000, 0xFF3A6724, null, null));
+        	r.register(new Metal(URANIUM, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.uranium, 0xFF3A6724, null, null));
         }
-        //Checks if osmium enabled
         if (ConfigTFCM.METALS.osmium) {
         	
-        	r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, 3025, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM));
+        	r.register(new Metal(OSMIUM, Metal.Tier.TIER_VI, true, 0.35f, ConfigTFCM.MELT_TEMP.osmium, 0xFFB8D8DE, ToolMaterialsTFCM.OSMIUM, ArmorMaterialsTFCM.OSMIUM));
         }
-        //Checks if titanum enabled
         if (ConfigTFCM.METALS.titanum) {
         	
-        	r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, 1700, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM));
+        	r.register(new Metal(TITANIUM, Metal.Tier.TIER_VI, true, 0.3f, ConfigTFCM.MELT_TEMP.titanum, 0xFFC2C4CC, ToolMaterialsTFCM.TITANIUM, ArmorMaterialsTFCM.TITANIUM));
         }
-        
-        //if Manyullyn is obtainable register all required metals otherwise check to see if other metals are enabled
         if (IsObtainable.manyullyn) {
         	
-        	r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, 1050, 0xFFF09614, null, null));
-        	r.register(new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));        	
-        	r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, 1550, 0xFFB052C0, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
+        	r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.ardite, 0xFFF09614, null, null));
+        	r.register(new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.cobalt, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));        	
+        	r.register(new Metal(MANYULLYN, Metal.Tier.TIER_IV, true, 0.3f, ConfigTFCM.MELT_TEMP.manyullyn, 0xFFB052C0, ToolMaterialsTFCM.MANYULLYN, ArmorMaterialsTFCM.MANYULLYN));
         } else {
         	if (ConfigTFCM.METALS.ardite) {
         		
-            	r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, 1050, 0xFFF09614, null, null));
+            	r.register(new Metal(ARDITE, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.ardite, 0xFFF09614, null, null));
             }
         	if (ConfigTFCM.METALS.cobalt) {
         		
-            	r.register(new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, 1495, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));
+            	r.register(new Metal(COBALT, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.cobalt, 0xFF6CA6E5, ToolMaterialsTFCM.COBALT, ArmorMaterialsTFCM.COBALT));
             }
         }
-        
-        //if Mithril is obtainable register all required metals otherwise check to see if other metals are enabled
         if (IsObtainable.mithril) {
         	
-            r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null));
-            r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, 940, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL));
+            r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, ConfigTFCM.MELT_TEMP.antimony, 0xFFE7E7F5, null, null));
+            r.register(new Metal(MITHRIL, Metal.Tier.TIER_II, true, 0.35f, ConfigTFCM.MELT_TEMP.mithril, 0xFF8ADAF6, ToolMaterialsTFCM.MITHRIL, ArmorMaterialsTFCM.MITHRIL));
         } else {
         	if (ConfigTFCM.METALS.antimony) {
         		
-        		r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, 630, 0xFFE7E7F5, null, null));
+        		r.register(new Metal(ANTIMONY, Metal.Tier.TIER_I, true, 0.25f, ConfigTFCM.MELT_TEMP.antimony, 0xFFE7E7F5, null, null));
         	}
         }
-        
-        //if Magnesium Diboride is obtainable register all required metals otherwise check to see if other metals are enabled
         if (IsObtainable.magnesium_diboride) {
         	
-        	r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0xFF978195, null, null));
-            r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_III, true, 0.35f, 2000, 0xFF46391E, null, null));
+        	r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, ConfigTFCM.MELT_TEMP.magnesium, 0xFF978195, null, null));
+            r.register(new Metal(MAGNESIUM_DIBORIDE, Metal.Tier.TIER_III, true, 0.35f, ConfigTFCM.MELT_TEMP.magnesium_diboride, 0xFF46391E, null, null));
         } else {
         	if (ConfigTFCM.METALS.magnesium) {
         		
-        		r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, 650, 0xFF978195, null, null));
+        		r.register(new Metal(MAGNESIUM, Metal.Tier.TIER_III, true, 0.30f, ConfigTFCM.MELT_TEMP.magnesium, 0xFF978195, null, null));
         	}
         }
-        
-        //if HSLA Steel is obtainable register all required metals otherwise check to see if other metals are enabled
         if (IsObtainable.hsla_steel) {
         	
-        	r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0xFF9397A8, null, null));
-        	r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_V, true, 0.35f, 2000, 0xFF3F4180, null, null));
+        	r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, ConfigTFCM.MELT_TEMP.manganese, 0xFF9397A8, null, null));
+        	r.register(new Metal(HSLA_STEEL, Metal.Tier.TIER_V, true, 0.35f, ConfigTFCM.MELT_TEMP.hsla_steel, 0xFF3F4180, null, null));
         } else {
         	if (ConfigTFCM.METALS.manganese) {
-        		r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, 1250, 0xFF9397A8, null, null));
+        		r.register(new Metal(MANGANESE, Metal.Tier.TIER_III, true, 0.29f, ConfigTFCM.MELT_TEMP.manganese, 0xFF9397A8, null, null));
         	}
         }
-        
-        //if Tungsten Steel is obtainable register all required metals otherwise check to see if other metals are enabled
         if (IsObtainable.tungsten_steel) {
         	
-        	r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF41454B, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
-        	r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, 3695, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL));
+        	r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, ConfigTFCM.MELT_TEMP.tungsten, 0xFF41454B, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
+        	r.register(new Metal(TUNGSTEN_STEEL, Metal.Tier.TIER_VI, true, 0.2f, ConfigTFCM.MELT_TEMP.tungsten_steel, 0xFF565F6E, ToolMaterialsTFCM.TUNGSTEN_STEEL, ArmorMaterialsTFCM.TUNGSTEN_STEEL));
         } else {
         	if (ConfigTFCM.METALS.tungsten)
             {
-            	r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, 3400, 0xFF41454B, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
+            	r.register(new Metal(TUNGSTEN, Metal.Tier.TIER_VI, true, 0.2f, ConfigTFCM.MELT_TEMP.tungsten, 0xFF41454B, ToolMaterialsTFCM.TUNGSTEN, ArmorMaterialsTFCM.TUNGSTEN));
             }
         }
-
-        //if Zircaloy is obtainable register all required metals otherwise check to see if other metals are enabled
         if (IsObtainable.zircaloy) {
         	
-        	r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF747527, null, null));
-        	r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF43423A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
+        	r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, ConfigTFCM.MELT_TEMP.zirconium, 0xFF747527, null, null));
+        	r.register(new Metal(ZIRCALOY, Metal.Tier.TIER_VI, true, 0.35f, ConfigTFCM.MELT_TEMP.zircaloy, 0xFF43423A, ToolMaterialsTFCM.ZIRCALOY, ArmorMaterialsTFCM.ZIRCALOY));
         } else {
         	if (ConfigTFCM.METALS.zirconium) {
         		
-        	r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFF747527, null, null));
+        	r.register(new Metal(ZIRCONIUM, Metal.Tier.TIER_VI, true, 0.35f, ConfigTFCM.MELT_TEMP.zirconium, 0xFF747527, null, null));
         	}
         }
-
-        //if Aluminium Brass and Beryllim Copper is obtainable register both with all required metals otherwise check other metals
         if (IsObtainable.aluminium_brass && IsObtainable.beryllim_copper) {
         	
-        	r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
-        	r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xFFE4EADA, null, null));
-        	r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFFDCDABE, null, null));
-        	r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFFEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
+        	r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.aluminium, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
+        	r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, ConfigTFCM.MELT_TEMP.beryllim, 0xFFE4EADA, null, null));
+        	r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.aluminium_brass, 0xFFDCDABE, null, null));
+        	r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, ConfigTFCM.MELT_TEMP.beryllim_copper, 0xFFEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
         } else {
             if (ConfigTFCM.METALS.beryllim) {
             	
-            	r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, 1300, 0xFFE4EADA, null, null));
+            	r.register(new Metal(BERYLLIUM, Metal.Tier.TIER_VI, true, 0.35f, ConfigTFCM.MELT_TEMP.beryllim, 0xFFE4EADA, null, null));
             }
         	if (ConfigTFCM.METALS.aluminium) {
         		
-        		r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, 660, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
+        		r.register(new Metal(ALUMINIUM, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.aluminium, 0xFFD9FBFC, ToolMaterialsTFCM.ALUMINIUM, ArmorMaterialsTFCM.ALUMINIUM));
         	}
         	if (IsObtainable.aluminium_brass) {
         		
-            	r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFFDCDABE, null, null));
+            	r.register(new Metal(ALUMINIUM_BRASS, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.aluminium_brass, 0xFFDCDABE, null, null));
         	}
         	if (IsObtainable.beryllim_copper) {
         		
-        		r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, 1500, 0xFFEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
+        		r.register(new Metal(BERYLLIUM_COPPER, Metal.Tier.TIER_VI, true, 0.35f, ConfigTFCM.MELT_TEMP.beryllim_copper, 0xFFEAAE90, ToolMaterialsTFCM.BERYLLIUM_COPPER, ArmorMaterialsTFCM.BERYLLIUM_COPPER));
         	}
         	
         }
-
-        //if Tough Alloy and Ferroboron is obtainable register both with all required metals otherwise check other metals
         if (IsObtainable.tough_alloy) {
         	
-        	r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
-        	r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3000, 0xFF4B4B4B, null, null));
-        	r.register(new Metal(TOUGH_ALLOY, Metal.Tier.TIER_VI, true, 0.3f, 3000, 0xFF3F2B61, null, null));
+        	r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.boron, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
+        	r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, ConfigTFCM.MELT_TEMP.ferroboron, 0xFF4B4B4B, null, null));
+        	r.register(new Metal(TOUGH_ALLOY, Metal.Tier.TIER_VI, true, 0.3f, ConfigTFCM.MELT_TEMP.tough, 0xFF3F2B61, null, null));
         } else {
         	if (IsObtainable.ferroboron) {
         		
-        		r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
-        		r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, 3000, 0xFF4B4B4B, null, null));
+        		r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.boron, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
+        		r.register(new Metal(FERROBORON, Metal.Tier.TIER_V, true, 0.3f, ConfigTFCM.MELT_TEMP.ferroboron, 0xFF4B4B4B, null, null));
         	} else {
         		if (ConfigTFCM.METALS.boron) {
         			
-        			r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, 630, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
+        			r.register(new Metal(BORON, Metal.Tier.TIER_III, true, 0.3f, ConfigTFCM.MELT_TEMP.boron, 0xFF252525, ToolMaterialsTFCM.BORON, ArmorMaterialsTFCM.BORON));
         		}
         	}
         }
@@ -370,22 +350,18 @@ public final class RegistryHandler
     public static void onRegisterAlloyRecipe(RegistryEvent.Register<AlloyRecipe> event)
     {
         IForgeRegistry<AlloyRecipe> r = event.getRegistry();
-        //Checks if constantan is enabled
         if (ConfigTFCM.METALS.constantan)
         {
         	r.register(new AlloyRecipe.Builder(CONSTANTAN).add(COPPER, 0.4, 0.6).add(NICKEL, 0.4, 0.6).build());
         }
-        //Checks if electrum is enabled
         if (ConfigTFCM.METALS.electrum)
         {
         	r.register(new AlloyRecipe.Builder(ELECTRUM).add(GOLD, 0.4, 0.6).add(SILVER, 0.4, 0.6).build());
         }
-        //Checks if invar is enabled
         if (ConfigTFCM.METALS.invar)
         {
         	r.register(new AlloyRecipe.Builder(INVAR).add(WROUGHT_IRON, 0.6, 0.7).add(NICKEL, 0.3, 0.4).build());
         }
-        //Checks if nickel silver is enabled
         if (ConfigTFCM.METALS.nickel_silver)
         {
         	r.register(new AlloyRecipe.Builder(NICKEL_SILVER).add(COPPER, 0.50, 0.65).add(ZINC, 0.1, 0.3).add(NICKEL, 0.1, 0.3).build());
@@ -453,59 +429,29 @@ public final class RegistryHandler
     public static void onRegisterBloomeryRecipeEvent(RegistryEvent.Register<BloomeryRecipe> event)
     {
         IForgeRegistry<BloomeryRecipe> registry = event.getRegistry();
-        //Check if aluminium metal is dissabled
-        if (ConfigTFCM.METALS.aluminium)
+        if (ConfigTFCM.METALS.aluminium && ConfigTFCM.RECIPES.aluminium)
         {
-            //Check if aluminium recipe is dissabled
-        	 if (ConfigTFCM.RECIPES.aluminium)
-             {
-                 registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ALUMINIUM), FuelManager::isItemBloomeryFuel));
-             }
+        	registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ALUMINIUM), FuelManager::isItemBloomeryFuel));
         }
-        //Check if ardite metal is dissabled
-        if (ConfigTFCM.METALS.ardite)
+        if (ConfigTFCM.METALS.ardite && ConfigTFCM.RECIPES.ardite)
         {
-            //Check if ardite recipe is dissabled
-        	 if (ConfigTFCM.RECIPES.ardite)
-             {
-                 registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ARDITE), FuelManager::isItemBloomeryFuel));
-             }
+        	registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(ARDITE), FuelManager::isItemBloomeryFuel));
         }
-        //Check if cobalt metal is dissabled
-        if (ConfigTFCM.METALS.cobalt)
+        if (ConfigTFCM.METALS.cobalt && ConfigTFCM.RECIPES.cobalt)
         {
-            //Check if cobalt recipe is dissabled
-        	if (ConfigTFCM.RECIPES.cobalt)
-            {
-                registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(COBALT), FuelManager::isItemBloomeryFuel));
-            }
+        	registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(COBALT), FuelManager::isItemBloomeryFuel));
         }
-        //Check if thorium metal is dissabled
-        if (ConfigTFCM.METALS.thorium)
+        if (ConfigTFCM.METALS.thorium && ConfigTFCM.RECIPES.thorium)
         {
-            //Check if thorium recipe is dissabled
-        	if (ConfigTFCM.RECIPES.thorium)
-            {
-                registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(THORIUM), FuelManager::isItemBloomeryFuel));
-            }
+        	registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(THORIUM), FuelManager::isItemBloomeryFuel));
         }
-        //Check if manganese metal is dissabled
-        if (ConfigTFCM.METALS.manganese)
+        if (ConfigTFCM.METALS.manganese && ConfigTFCM.RECIPES.manganese)
         {
-            //Check if manganese recipe is dissabled
-        	if (ConfigTFCM.RECIPES.manganese)
-            {
-                registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MANGANESE), FuelManager::isItemBloomeryFuel));
-            }
+        	registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MANGANESE), FuelManager::isItemBloomeryFuel));
         }
-        //Check if magnesium metal is dissabled
-        if (ConfigTFCM.METALS.magnesium)
+        if (ConfigTFCM.METALS.magnesium && ConfigTFCM.RECIPES.magnesium)
         {
-            //Check if magnesium recipe is dissabled
-        	if (ConfigTFCM.RECIPES.magnesium)
-            {
-                registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MAGNESIUM), FuelManager::isItemBloomeryFuel));
-            }
+        	registry.register(new BloomeryRecipe(TFCRegistries.METALS.getValue(MAGNESIUM), FuelManager::isItemBloomeryFuel));
         }
     }
 
@@ -513,70 +459,45 @@ public final class RegistryHandler
     public static void onRegisterBlastFurnaceRecipeEvent(RegistryEvent.Register<BlastFurnaceRecipe> event)
     {
         IForgeRegistry<BlastFurnaceRecipe> registry = event.getRegistry();
-        //Check if osmium metal is dissabled
-        if (ConfigTFCM.METALS.osmium)
+        if (ConfigTFCM.METALS.osmium && ConfigTFCM.RECIPES.osmium)
         {
-            //Check if osmium recipe is dissabled
-        	if (ConfigTFCM.RECIPES.osmium)
-            {
-                Metal osmium = TFCRegistries.METALS.getValue(OSMIUM);
-                if (osmium != null)
-                {
-                    registry.register(new BlastFurnaceRecipe(osmium, osmium, IIngredient.of("dustFlux")));
-                }
-            }
+        	Metal osmium = TFCRegistries.METALS.getValue(OSMIUM);
+        	if (osmium != null)
+        	{
+        		registry.register(new BlastFurnaceRecipe(osmium, osmium, IIngredient.of("dustFlux")));
+        	}
         }
-        //Check if titanum metal is dissabled
-        if (ConfigTFCM.METALS.titanum)
+        if (ConfigTFCM.METALS.titanum && ConfigTFCM.RECIPES.titanium)
         {
-            //Check if titanum recipe is dissabled
-        	if (ConfigTFCM.RECIPES.titanium)
-            {
-                Metal titanium = TFCRegistries.METALS.getValue(TITANIUM);
-                if (titanium != null)
-                {
-                    registry.register(new BlastFurnaceRecipe(titanium, titanium, IIngredient.of("dustFlux")));
-                }
-            }
+        	Metal titanium = TFCRegistries.METALS.getValue(TITANIUM);
+        	if (titanium != null)
+        	{
+        		registry.register(new BlastFurnaceRecipe(titanium, titanium, IIngredient.of("dustFlux")));
+        	}
         }
-        //Check if tungsten metal is dissabled
-        if (ConfigTFCM.METALS.tungsten)
+        if (ConfigTFCM.METALS.tungsten && ConfigTFCM.RECIPES.tungsten)
         {
-            //Check if tungsten recipe is dissabled
-        	if (ConfigTFCM.RECIPES.tungsten)
-            {
-                Metal tungsten = TFCRegistries.METALS.getValue(TUNGSTEN);
-                if (tungsten != null)
-                {
-                    registry.register(new BlastFurnaceRecipe(tungsten, tungsten, IIngredient.of("dustFlux")));
-                }
-            }
+        	Metal tungsten = TFCRegistries.METALS.getValue(TUNGSTEN);
+        	if (tungsten != null)
+        	{
+        		registry.register(new BlastFurnaceRecipe(tungsten, tungsten, IIngredient.of("dustFlux")));
+        	}
         }
-        //Check if beryllim metal is dissabled
-        if (ConfigTFCM.METALS.beryllim)
+        if (ConfigTFCM.METALS.beryllim && ConfigTFCM.RECIPES.beryllium)
         {
-            //Check if beryllim recipe is dissabled
-        	if (ConfigTFCM.RECIPES.beryllium)
-            {
-                Metal beryllium = TFCRegistries.METALS.getValue(BERYLLIUM);
-                if (beryllium != null)
-                {
-                    registry.register(new BlastFurnaceRecipe(beryllium, beryllium, IIngredient.of("dustFlux")));
-                }
-            }
+        	Metal beryllium = TFCRegistries.METALS.getValue(BERYLLIUM);
+        	if (beryllium != null)
+        	{
+        		registry.register(new BlastFurnaceRecipe(beryllium, beryllium, IIngredient.of("dustFlux")));
+        	}
         }
-        //Check if zirconium metal is dissabled
-        if (ConfigTFCM.METALS.zirconium)
+        if (ConfigTFCM.METALS.zirconium && ConfigTFCM.RECIPES.zirconium)
         {
-            //Check if zirconium recipe is dissabled
-        	if (ConfigTFCM.RECIPES.zirconium)
-            {
-                Metal zirconium = TFCRegistries.METALS.getValue(ZIRCONIUM);
-                if (zirconium != null)
-                {
-                    registry.register(new BlastFurnaceRecipe(zirconium, zirconium, IIngredient.of("dustFlux")));
-                }
-            }
+        	Metal zirconium = TFCRegistries.METALS.getValue(ZIRCONIUM);
+        	if (zirconium != null)
+        	{
+        		registry.register(new BlastFurnaceRecipe(zirconium, zirconium, IIngredient.of("dustFlux")));
+        	}
         }
     }
 
@@ -584,101 +505,71 @@ public final class RegistryHandler
     public static void onRegisterAnvilRecipeEvent(RegistryEvent.Register<AnvilRecipe> event)
     {
         IForgeRegistry<AnvilRecipe> r = event.getRegistry();
-        //Check if aluminium metal is dissabled
-        if (ConfigTFCM.METALS.aluminium)
+        if (ConfigTFCM.METALS.aluminium && ConfigTFCM.RECIPES.aluminium)
         {
-            //Check if aluminium recipe is dissabled
-        	if (ConfigTFCM.RECIPES.aluminium)
-            {
-                Metal aluminium = TFCRegistries.METALS.getValue(ALUMINIUM);
-                if (aluminium != null)
-                {
-                    r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "aluminium_bloom"),
-                            getBloomIngredient(aluminium),
-                            new ItemStack(ItemMetal.get(aluminium, INGOT)),
-                            Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-                }
-            }
+        	Metal aluminium = TFCRegistries.METALS.getValue(ALUMINIUM);
+        	if (aluminium != null)
+        	{
+        		r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "aluminium_bloom"),
+        				getBloomIngredient(aluminium),
+        				new ItemStack(ItemMetal.get(aluminium, INGOT)),
+        				Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+        	}
         }
-        //Check if cobalt metal is dissabled
-        if (ConfigTFCM.METALS.ardite)
+        if (ConfigTFCM.METALS.ardite && ConfigTFCM.RECIPES.ardite)
         {
-            //Check if ardite recipe is dissabled
-        	if (ConfigTFCM.RECIPES.ardite)
-            {
-                Metal ardite = TFCRegistries.METALS.getValue(ARDITE);
-                if (ardite != null)
-                {
-                    r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "ardite_bloom"),
-                            getBloomIngredient(ardite),
-                            new ItemStack(ItemMetal.get(ardite, INGOT)),
-                            Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-                }
-            }
+        	Metal ardite = TFCRegistries.METALS.getValue(ARDITE);
+        	if (ardite != null)
+        	{
+        		r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "ardite_bloom"),
+        				getBloomIngredient(ardite),
+        				new ItemStack(ItemMetal.get(ardite, INGOT)),
+        				Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+        	}
         }
-        //Check if cobalt metal is dissabled
-        if (ConfigTFCM.METALS.cobalt)
+        if (ConfigTFCM.METALS.cobalt && ConfigTFCM.RECIPES.cobalt)
         {
-            //Check if cobalt recipe is dissabled
-        	if (ConfigTFCM.RECIPES.cobalt)
-            {
-                Metal cobalt = TFCRegistries.METALS.getValue(COBALT);
-                if (cobalt != null)
-                {
-                    r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "cobalt_bloom"),
-                            getBloomIngredient(cobalt),
-                            new ItemStack(ItemMetal.get(cobalt, INGOT)),
-                            Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-                }
-            }
+        	Metal cobalt = TFCRegistries.METALS.getValue(COBALT);
+        	if (cobalt != null)
+        	{
+        		r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "cobalt_bloom"),
+        				getBloomIngredient(cobalt),
+        				new ItemStack(ItemMetal.get(cobalt, INGOT)),
+        				Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+        	}
         }
-        //Check if thorium metal is dissabled
-        if (ConfigTFCM.METALS.thorium)
+        if (ConfigTFCM.METALS.thorium && ConfigTFCM.RECIPES.thorium)
         {
-            //Check if thorium recipe is dissabled
-        	if (ConfigTFCM.RECIPES.thorium)
-            {
-                Metal thorium = TFCRegistries.METALS.getValue(THORIUM);
-                if (thorium != null)
-                {
-                    r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "thorium_bloom"),
-                            getBloomIngredient(thorium),
-                            new ItemStack(ItemMetal.get(thorium, INGOT)),
-                            Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-                }
-            }
+        	Metal thorium = TFCRegistries.METALS.getValue(THORIUM);
+        	if (thorium != null)
+        	{
+        		r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "thorium_bloom"),
+        				getBloomIngredient(thorium),
+        				new ItemStack(ItemMetal.get(thorium, INGOT)),
+        				Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+        	}            
         }
-        //Check if magnesium metal is dissabled
-        if (ConfigTFCM.METALS.magnesium)
+        if (ConfigTFCM.METALS.magnesium && ConfigTFCM.RECIPES.magnesium)
         {
-            //Check if magnesium recipe is dissabled
-        	if (ConfigTFCM.RECIPES.magnesium)
-            {
-                Metal magnesium = TFCRegistries.METALS.getValue(MAGNESIUM);
-                if (magnesium != null)
-                {
-                    r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "magnesium_bloom"),
-                            getBloomIngredient(magnesium),
-                            new ItemStack(ItemMetal.get(magnesium, INGOT)),
-                            Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-                }
-            }
+        	Metal magnesium = TFCRegistries.METALS.getValue(MAGNESIUM);
+        	if (magnesium != null)
+        	{
+        		r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "magnesium_bloom"),
+        				getBloomIngredient(magnesium),
+        				new ItemStack(ItemMetal.get(magnesium, INGOT)),
+        				Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+        	}
         }
-        //Check if manganese metal is dissabled
-        if (ConfigTFCM.METALS.manganese)
+        if (ConfigTFCM.METALS.manganese && ConfigTFCM.RECIPES.manganese)
         {
-        	//Checks if manganese recipe is dissabled
-        	if (ConfigTFCM.RECIPES.manganese)
-            {
-                Metal manganese = TFCRegistries.METALS.getValue(MANGANESE);
-                if (manganese != null)
-                {
-                    r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "manganese_bloom"),
-                            getBloomIngredient(manganese),
-                            new ItemStack(ItemMetal.get(manganese, INGOT)),
-                            Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
-                }
-            }
+        	Metal manganese = TFCRegistries.METALS.getValue(MANGANESE);
+        	if (manganese != null)
+        	{
+        		r.register(new AnvilRecipe(new ResourceLocation(TFCMetallum.MODID, "manganese_bloom"),
+        				getBloomIngredient(manganese),
+        				new ItemStack(ItemMetal.get(manganese, INGOT)),
+        				Metal.Tier.TIER_II, null, HIT_LAST, HIT_SECOND_LAST, HIT_THIRD_LAST));
+        	}
         }
     }
 
@@ -723,37 +614,26 @@ public final class RegistryHandler
     public static void onRegisterQuernRecipeEvent(RegistryEvent.Register<QuernRecipe> event)
     {
         IForgeRegistry<QuernRecipe> r = event.getRegistry();
-        //Dissables uranium dust if metal is dissabled
-        if (ConfigTFCM.METALS.uranium)
-        {
-            //Dissables uranium dust if recipe is dissabled
-            if (ConfigTFCM.RECIPES.uranium_dust)
-            {
-            	Metal uranium = TFCRegistries.METALS.getValue(URANIUM);
-            	if (uranium != null)
-                {
-                    r.register(new QuernRecipe(IIngredient.of("gemPitchblende"), new ItemStack(ItemMetal.get(uranium, ItemType.DUST), 4)).setRegistryName("uranium_dust"));
-                }
-            }
+        if (ConfigTFCM.METALS.uranium && ConfigTFCM.RECIPES.uranium_dust)
+        {            
+        	Metal uranium = TFCRegistries.METALS.getValue(URANIUM);
+        	if (uranium != null)
+        	{
+        		r.register(new QuernRecipe(IIngredient.of("gemPitchblende"), new ItemStack(ItemMetal.get(uranium, ItemType.DUST), 4)).setRegistryName("uranium_dust"));
+        	}
         }
-        //Dissables boron dust if the metal is dissabled
-        if (ConfigTFCM.METALS.boron)
+        if (ConfigTFCM.METALS.boron && ConfigTFCM.RECIPES.boron_dust)
         {
-        	//Dissables boron dust if the recipe is dissabled
-        	if (ConfigTFCM.RECIPES.boron_dust)
-            {
-                Metal boron = TFCRegistries.METALS.getValue(BORON);
-            	if (boron != null)
-                {
-                    IForgeRegistryModifiable<QuernRecipe> modRegistry = (IForgeRegistryModifiable<QuernRecipe>) TFCRegistries.QUERN;
-                    modRegistry.remove(new ResourceLocation(MOD_ID, "borax"));
-                    r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(boron, ItemType.DUST), 4)).setRegistryName("boron_dust"));
-                }
-            }
+        	Metal boron = TFCRegistries.METALS.getValue(BORON);
+        	if (boron != null)
+        	{
+        		IForgeRegistryModifiable<QuernRecipe> modRegistry = (IForgeRegistryModifiable<QuernRecipe>) TFCRegistries.QUERN;
+        		modRegistry.remove(new ResourceLocation(MOD_ID, "borax"));
+        		r.register(new QuernRecipe(IIngredient.of("gemBorax"), new ItemStack(ItemMetal.get(boron, ItemType.DUST), 4)).setRegistryName("boron_dust"));
+        	}
         }
         r.register(new QuernRecipe(IIngredient.of("gemFluorite"), new ItemStack(ItemPowder.get(Powder.FLUX), 6)).setRegistryName("fluorite_flux"));
     }
-    //Makes the bloomery blooms
     private static IIngredient<ItemStack> getBloomIngredient(Metal metal)
     {
         return x ->

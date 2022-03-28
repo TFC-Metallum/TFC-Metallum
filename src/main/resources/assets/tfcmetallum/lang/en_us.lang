@@ -1,0 +1,256 @@
+# Config
+
+config.tfcmetallum.melt_temps=Melting Temps
+config.tfcmetallum.melt_temps.tooltip=Melting temperature of metals configuration
+
+config.tfcmetallum.recipes=Recipes
+config.tfcmetallum.recipes.tooltip=Recipe configuration
+
+config.tfcmetallum.metals=Metals
+config.tfcmetallum.metals.tooltip=Metals configuration. Alloys will be dissabled if any of the metals included are dissabled
+
+config.tfcmetallum.non-metals=Non-Metals
+config.tfcmetallum.non-metals.tooltip=Non-Metals configuration
+
+## Melt temps
+config.tfcmetallum.melt_temp.lithium=Lithium
+config.tfcmetallum.melt_temp.lithium.tooltip=Melting temp for lithium
+
+config.tfcmetallum.melt_temp.constantan=Constantan
+config.tfcmetallum.melt_temp.constantan.tooltip=Melting temp for constantan
+
+config.tfcmetallum.melt_temp.electrum=Electrum
+config.tfcmetallum.melt_temp.electrum.tooltip=Melting temp for electrum
+
+config.tfcmetallum.melt_temp.nickel_silver=Nickel Silver
+config.tfcmetallum.melt_temp.nickel_silver.tooltip=Melting temp for nickel silver
+
+config.tfcmetallum.melt_temp.red_alloy=Red Alloy
+config.tfcmetallum.melt_temp.red_alloy.tooltip=Melting temp for red alloy
+
+config.tfcmetallum.melt_temp.invar=Invar
+config.tfcmetallum.melt_temp.invar.tooltip=Melting temp for invar
+
+config.tfcmetallum.melt_temp.thorium=Thorium
+config.tfcmetallum.melt_temp.thorium.tooltip=Melting temp for thorium
+
+config.tfcmetallum.melt_temp.uranium=Uranium
+config.tfcmetallum.melt_temp.uranium.tooltip=Melting temp for uranium
+
+config.tfcmetallum.melt_temp.osmium=Osmium
+config.tfcmetallum.melt_temp.osmium.tooltip=Melting temp for osmium
+
+config.tfcmetallum.melt_temp.titanum=Titanum
+config.tfcmetallum.melt_temp.titanum.tooltip=Melting temp for titanum
+
+config.tfcmetallum.melt_temp.ardite=Ardite
+config.tfcmetallum.melt_temp.ardite.tooltip=Melting temp for ardite
+
+config.tfcmetallum.melt_temp.cobalt=Cobalt
+config.tfcmetallum.melt_temp.cobalt.tooltip=Melting temp for cobalt
+
+config.tfcmetallum.melt_temp.manyullyn=Manyullyn
+config.tfcmetallum.melt_temp.manyullyn.tooltip=Melting temp for manyullyn
+
+config.tfcmetallum.melt_temp.mithril=Mithril
+config.tfcmetallum.melt_temp.mithril.tooltip=Melting temp for mithril
+
+config.tfcmetallum.melt_temp.antimony=Antimony
+config.tfcmetallum.melt_temp.antimony.tooltip=Melting temp for antimony
+
+config.tfcmetallum.melt_temp.magnesium=Magnesium
+config.tfcmetallum.melt_temp.magnesium.tooltip=Melting temp for magnesium
+
+config.tfcmetallum.melt_temp.magnesium_diboride=Magnesium Diboride
+config.tfcmetallum.melt_temp.magnesium_diboride.tooltip=Melting temp for magnesium diboride
+
+config.tfcmetallum.melt_temp.manganese=Manganese
+config.tfcmetallum.melt_temp.manganese.tooltip=Melting temp for manganese
+
+config.tfcmetallum.melt_temp.hsla_steel=HSLA steel
+config.tfcmetallum.melt_temp.hsla_steel.tooltip=Melting temp for HSLA steel
+
+config.tfcmetallum.melt_temp.tungsten=Tungsten
+config.tfcmetallum.melt_temp.tungsten.tooltip=Melting temp for tungsten
+
+config.tfcmetallum.melt_temp.tungsten_steel=Tungsten Steel
+config.tfcmetallum.melt_temp.tungsten_steel.tooltip=Melting temp for tungsten steel
+
+config.tfcmetallum.melt_temp.zirconium=Zirconium
+config.tfcmetallum.melt_temp.zirconium.tooltip=Melting temp for zirconium
+
+config.tfcmetallum.melt_temp.zircaloy=Zircaloy
+config.tfcmetallum.melt_temp.zircaloy.tooltip=Melting temp for zircaloy
+
+config.tfcmetallum.melt_temp.aluminium=Aluminium
+config.tfcmetallum.melt_temp.aluminium.tooltip=Melting temp for aluminium
+
+config.tfcmetallum.melt_temp.beryllim=Beryllim
+config.tfcmetallum.melt_temp.beryllim.tooltip=Melting temp for beryllim
+
+config.tfcmetallum.melt_temp.aluminium_brass=Aluminium Brass
+config.tfcmetallum.melt_temp.aluminium_brass.tooltip=Melting temp for aluminium brass
+
+config.tfcmetallum.melt_temp.beryllim_copper=Beryllim Copper
+config.tfcmetallum.melt_temp.beryllim_copper.tooltip=Melting temp for beryllim_copper
+
+config.tfcmetallum.melt_temp.boron=Boron
+config.tfcmetallum.melt_temp.boron.tooltip=Melting temp for boron
+
+config.tfcmetallum.melt_temp.ferroboron=Ferroboron
+config.tfcmetallum.melt_temp.ferroboron.tooltip=Melting temp for ferroboron
+
+config.tfcmetallum.melt_temp.tough=Tough Alloy
+config.tfcmetallum.melt_temp.tough.tooltip=Melting temp for Tough Alloy
+
+
+## Metals
+config.tfcmetallum.metals.antimony=Antimony
+config.tfcmetallum.metals.antimony.tooltip=Enable antimony metal?
+
+config.tfcmetallum.metals.lithium=Lithuium
+config.tfcmetallum.metals.lithium.tooltip=Enable lithium metal?
+
+config.tfcmetallum.metals.constantan=Constantan
+config.tfcmetallum.metals.constantan.tooltip=Enable constantan alloy?
+
+config.tfcmetallum.metals.electrum=Electrum
+config.tfcmetallum.metals.electrum.tooltip=Enable electrum alloy?
+
+config.tfcmetallum.metals.nickel_silver=Nickel Silver
+config.tfcmetallum.metals.nickel_silver.tooltip=Enable nickel silver alloy?
+
+config.tfcmetallum.metals.red_alloy=Red Alloy
+config.tfcmetallum.metals.red_alloy.tooltip=Enable red alloy?
+
+config.tfcmetallum.metals.mithril=Mithril
+config.tfcmetallum.metals.mithril.tooltip=Enable mithril alloy?
+
+config.tfcmetallum.metals.invar=Invar
+config.tfcmetallum.metals.invar.tooltip=Enable invar alloy?
+
+config.tfcmetallum.metals.aluminium=Aluminium
+config.tfcmetallum.metals.aluminium.tooltip=Enable aluminium metal?
+
+config.tfcmetallum.metals.aluminium_brass=Aluminium Brass
+config.tfcmetallum.metals.aluminium_brass.tooltip=Enable aluminium brass alloy?
+
+config.tfcmetallum.metals.magnesium=Magnesium
+config.tfcmetallum.metals.magnesium.tooltip=Enable magnesium metal?
+
+config.tfcmetallum.metals.manganese=Manganese
+config.tfcmetallum.metals.manganese.tooltip=Enable manganese metal?
+
+config.tfcmetallum.metals.boron=Boron
+config.tfcmetallum.metals.boron.tooltip=Enable boron metal?
+
+config.tfcmetallum.metals.magnesium_diboride=Magnesium Diboride
+config.tfcmetallum.metals.magnesium_diboride.tooltip=Enable magnesium diboride alloy?
+
+config.tfcmetallum.metals.thorium=Thorium
+config.tfcmetallum.metals.thorium.tooltip=Enable thorium metal?
+
+config.tfcmetallum.metals.uranium=Uranium
+config.tfcmetallum.metals.uranium.tooltip=Enable uranium metal?
+
+config.tfcmetallum.metals.ardite=Ardite
+config.tfcmetallum.metals.ardite.tooltip=Enable ardite metal?
+
+config.tfcmetallum.metals.cobalt=Cobalt
+config.tfcmetallum.metals.cobalt.tooltip=Enable cobalt metal?
+
+config.tfcmetallum.metals.manyullyn=Manyullyn
+config.tfcmetallum.metals.manyullyn.tooltip=Enable manyullyn alloy?
+
+config.tfcmetallum.metals.hsla_steel=HSLA Steel
+config.tfcmetallum.metals.hsla_steel.tooltip=Enable hsla steel alloy?
+
+config.tfcmetallum.metals.ferroboron=Ferroboron
+config.tfcmetallum.metals.ferroboron.tooltip=Enable ferroboron alloy?
+
+config.tfcmetallum.metals.beryllim=Beryllim
+config.tfcmetallum.metals.beryllim.tooltip=Enable beryllim metal?
+
+config.tfcmetallum.metals.beryllim_copper=Beryllim Copper
+config.tfcmetallum.metals.beryllim_copper.tooltip=Enable beryllim copper alloy?
+
+config.tfcmetallum.metals.osmium=Osmium
+config.tfcmetallum.metals.osmium.tooltip=Enable osmium metal?
+
+config.tfcmetallum.metals.titanum=Titanum
+config.tfcmetallum.metals.titanum.tooltip=Enable titanum metal?
+
+config.tfcmetallum.metals.tungsten=Tungsten
+config.tfcmetallum.metals.tungsten.tooltip=Enable tungsten metal?
+
+config.tfcmetallum.metals.tungsten_steel=Tungsten Steel
+config.tfcmetallum.metals.tungsten_steel.tooltip=Enable tungsten steel alloy?
+
+config.tfcmetallum.metals.zirconium=Zirconium
+config.tfcmetallum.metals.zirconium.tooltip=Enable zirconium metal?
+
+config.tfcmetallum.metals.zircaloy=Zircaloy
+config.tfcmetallum.metals.zircaloy.tooltip=Enable zircaloy metal?
+
+config.tfcmetallum.metals.tough=Tough Alloy
+config.tfcmetallum.metals.tough.tooltip=Enable tough alloy?
+
+# Non-Metals
+
+config.tfcmetallum.non-metals.chromite=Chromite
+config.tfcmetallum.non-metals.chromite.tooltip=Enable chromite?
+
+config.tfcmetallum.non-metals.villiaumite=Villiaumite
+config.tfcmetallum.non-metals.villiaumite.tooltip=Enable villiaumite?
+
+config.tfcmetallum.non-metals.rhodochrosite=Rhodochrosite
+config.tfcmetallum.non-metals.rhodochrosite.tooltip=Enable rhodochrosite?
+
+config.tfcmetallum.non-metals.fluorite=Fluorite
+config.tfcmetallum.non-metals.fluorite.tooltip=Enable fluorite?
+
+config.tfcmetallum.non-metals.carobbiite=Carobbiite
+config.tfcmetallum.non-metals.carobbiite.tooltip=Enable carobbiite?
+
+config.tfcmetallum.non-metals.arsenic=Arsenic
+config.tfcmetallum.non-metals.arsenic.tooltip=Enable arsenic?
+
+# Recipes
+config.tfcmetallum.recipes.ardite=Ardite
+config.tfcmetallum.recipes.ardite.tooltip=Register ardite recipe via bloomery?
+
+config.tfcmetallum.recipes.aluminium=Aluminium
+config.tfcmetallum.recipes.aluminium.tooltip=Register aluminium recipe via bloomery?
+
+config.tfcmetallum.recipes.cobalt=Cobalt
+config.tfcmetallum.recipes.cobalt.tooltip=Register cobalt recipe via bloomery?
+
+config.tfcmetallum.recipes.thorium=Thorium
+config.tfcmetallum.recipes.thorium.tooltip=Register thorium recipe via bloomery?
+
+config.tfcmetallum.recipes.manganese=Manganese
+config.tfcmetallum.recipes.manganese.tooltip=Register manganese recipe via bloomery?
+
+config.tfcmetallum.recipes.magnesium=Manganese
+config.tfcmetallum.recipes.magnesium.tooltip=Register manganese recipe via bloomery?
+
+config.tfcmetallum.recipes.osmium=Osmium
+config.tfcmetallum.recipes.osmium.tooltip=Register osmium recipe via blast furnace?
+
+config.tfcmetallum.recipes.titanium=Titanium
+config.tfcmetallum.recipes.titanium.tooltip=Register titanium recipe via blast furnace?
+
+config.tfcmetallum.recipes.tungsten=Tungsten
+config.tfcmetallum.recipes.tungsten.tooltip=Register tungsten recipe via blast furnace?
+
+config.tfcmetallum.recipes.beryllium=Beryllium
+config.tfcmetallum.recipes.beryllium.tooltip=Register beryllium recipe via blast furnace?
+
+config.tfcmetallum.recipes.zirconium=Zirconium
+config.tfcmetallum.recipes.zirconium.tooltip=Register zirconium recipe via blast furnace?
+
+config.tfcmetallum.recipes.uranium=Uranium
+config.tfcmetallum.recipes.uranium.tooltip=Register uranium dust recipe via quern?
+
+config.tfcmetallum.recipes.boron=Boron
+config.tfcmetallum.recipes.boron.tooltip=Register boron dust recipe via quern?
