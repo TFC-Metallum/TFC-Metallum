@@ -1,7 +1,11 @@
 package tfcmetallum;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import tfcmetallum.util.IsObtainable;
 import tfcmetallum.util.VeinLoader;
@@ -15,6 +19,16 @@ public class TFCMetallum
     public static final String VERSION = "@VERSION@";
     public static final String SIGNING_KEY = "@FINGERPRINT@";
 
+    @Instance
+	private static TFCMetallum INSTANCE;
+    
+    private final Logger log = LogManager.getLogger(MODID);
+    
+    public static Logger getLog()
+	{
+		return INSTANCE.log;
+	}
+    
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {

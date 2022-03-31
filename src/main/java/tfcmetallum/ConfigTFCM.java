@@ -19,29 +19,32 @@ public class ConfigTFCM
     @Config.LangKey("config." + MODID + ".recipes")
     public static Recipes RECIPES = new Recipes();
     
-    @Config.Comment("Configuration for melting temperatures. Values higher than around 2000 are not reachable in base TFC.\r\n"
-    		+ "Warming starts at 1, ends at 80\r\n"
-    		+ "Hot starts at 80, ends at 210\r\n"
-    		+ "Very Hot starts at 210, ends at 480\r\n"
-    		+ "Faint Red starts at 480, ends at 580\r\n"
-    		+ "Dark Red starts at 580, ends at 730\r\n"
-    		+ "Bright Red starts at 730, ends at 930\r\n"
-    		+ "Orange starts at 930, ends at 1100\r\n"
-    		+ "Yellow starts at 1100, ends at 1300\r\n"
-    		+ "Yellow White starts at 1300, ends at 1400\r\n"
-    		+ "White starts at 1400, ends at 1500\r\n"
-    		+ "Brilliant White starts at 1500")
+    @Config.Comment({"Configuration for melting temperatures. Values higher than around 2000 are not reachable in base TFC.",
+    	"Warming starts at 1, ends at 80", 
+    	"Hot starts at 80, ends at 210", 
+    	"Very Hot starts at 210, ends at 480", 
+    	"Faint Red starts at 480, ends at 580", 
+    	"Dark Red starts at 580, ends at 730", 
+    	"Bright Red starts at 730, ends at 930", 
+    	"Orange starts at 930, ends at 1100", 
+    	"Yellow starts at 1100, ends at 1300", 
+    	"Yellow White starts at 1300, ends at 1400", 
+    	"White starts at 1400, ends at 1500", 
+    	"Brilliant White starts at 1500"})
     @Config.LangKey("config." + MODID + ".melt_temps")
     public static MeltTemps MELT_TEMP = new MeltTemps();
     
-    @Config.Comment("Metals configuration. Alloys will be dissabled if any of the metals included are dissabled")
+    @Config.Comment({"Metals configuration. Alloys will be dissabled if any of the metals included are dissabled"})
     @Config.LangKey("config." + MODID + ".metals")
     public static Metals METALS = new Metals();
     
-    @Config.Comment("Non-Metals configuration")
+    @Config.Comment({"Non-Metals configuration"})
     @Config.LangKey("config." + MODID + ".non-metals")
     public static NonMetals NON_METALS = new NonMetals();
 
+    @Config.Comment({"Vein config"})
+    @Config.LangKey("config." + MODID + ".veins")
+    public static Veins VEINS = new Veins();
 
     @SubscribeEvent
     public static void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
@@ -51,7 +54,13 @@ public class ConfigTFCM
             ConfigManager.sync(MODID, Config.Type.INSTANCE);
         }
     }
-    
+    public static class Veins
+    {
+        @Config.Comment({"Dissable this if you are doing custom vein data", "(make sure to remove the ones you no longer need)"})
+        @Config.LangKey("config." + MODID + ".manage")
+        @Config.RequiresMcRestart
+        public boolean manage = true;
+    }
     public static class Recipes
     {
         @Config.Comment({"Register ardite recipe via bloomery?"})

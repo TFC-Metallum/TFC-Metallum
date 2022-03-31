@@ -12,6 +12,9 @@ config.tfcmetallum.metals.tooltip=Metals configuration. Alloys will be dissabled
 config.tfcmetallum.non-metals=Non-Metals
 config.tfcmetallum.non-metals.tooltip=Non-Metals configuration
 
+config.tfcmetallum.veins=Veins
+config.tfcmetallum.veins.tooltip=Vein data config
+
 ## Melt temps
 config.tfcmetallum.melt_temp.lithium=Lithium
 config.tfcmetallum.melt_temp.lithium.tooltip=Melting temp for lithium
@@ -254,3 +257,8 @@ config.tfcmetallum.recipes.uranium.tooltip=Register uranium dust recipe via quer
 
 config.tfcmetallum.recipes.boron=Boron
 config.tfcmetallum.recipes.boron.tooltip=Register boron dust recipe via quern?
+
+# Veins
+
+config.tfcmetallum.manage=Manage Vein Data
+config.tfcmetallum.manage.tooltip=Dissable this if you are doing custom vein data (make sure to remove the ones you no longer need)

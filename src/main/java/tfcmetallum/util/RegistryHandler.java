@@ -115,6 +115,7 @@ public final class RegistryHandler
     public static void onPreRegisterMetal(TFCRegistryEvent.RegisterPreBlock<Metal> event)
     {
         IForgeRegistry<Metal> r = event.getRegistry();
+        TFCMetallum.getLog().info("The below warnings about unintended overrides are normal. The override is intended. ;)");
         if (ConfigTFCM.METALS.lithium) {
         	
         	r.register(new Metal(LITHIUM, Metal.Tier.TIER_II, true, 0.25f, ConfigTFCM.MELT_TEMP.lithium, 0xC9CBC3, null, null));
