@@ -12,8 +12,8 @@ import tfcmetallum.util.VeinLoader;
 
 @SuppressWarnings("WeakerAccess")
 @Mod(modid = TFCMetallum.MODID, name = TFCMetallum.NAME, version = TFCMetallum.VERSION, dependencies = "required-after:tfc", certificateFingerprint = TFCMetallum.SIGNING_KEY)
-public class TFCMetallum
-{
+public class TFCMetallum {
+	
     public static final String MODID = "tfcmetallum";
     public static final String NAME = "TFC Metallum";
     public static final String VERSION = "@VERSION@";
@@ -24,14 +24,13 @@ public class TFCMetallum
     
     private final Logger log = LogManager.getLogger(MODID);
     
-    public static Logger getLog()
-	{
+    public static Logger getLog() {
 		return INSTANCE.log;
 	}
     
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event) {
+    	
     	IsObtainable.checkObtanability();
         VeinLoader.INSTANCE.preInit(event.getModConfigurationDirectory());
     }

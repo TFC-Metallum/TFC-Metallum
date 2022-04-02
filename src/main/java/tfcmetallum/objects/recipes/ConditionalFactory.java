@@ -14,66 +14,65 @@ import tfcmetallum.util.IsObtainable;
 
 
 public class ConditionalFactory implements IConditionFactory {
+	
 	@Override
 	public BooleanSupplier parse(JsonContext context, JsonObject json) {
 		
 		String type = JsonUtils.getString(json, "config");
 		
-		if (type == "aluminium") 
-		{
+		if (type == "aluminium") {
 			return () -> ConfigTFCM.METALS.aluminium;
 		}
-		if (type.toString() == "beryllium_copper")
-		{
+		
+		if (type.toString() == "beryllium_copper") {
 			return () -> IsObtainable.beryllim_copper;
 		}
-		if (type == "boron")
-		{
+		
+		if (type == "boron") {
 			return () -> ConfigTFCM.METALS.boron;
 		}
-		if (type == "cobalt")
-		{
+		
+		if (type == "cobalt") {
 			return () -> ConfigTFCM.METALS.cobalt;
 		}
-		if (type == "invar")
-		{
+		
+		if (type == "invar") {
 			return () -> ConfigTFCM.METALS.invar;
 		}
-		if (type == "manyullyn")
-		{
+		
+		if (type == "manyullyn") {
 			return () -> IsObtainable.manyullyn;
 		}
-		if (type == "mithril")
-		{
+		
+		if (type == "mithril") {
 			return () -> IsObtainable.mithril;
 		}
-		if (type == "nickel_silver")
-		{
+		
+		if (type == "nickel_silver") {
 			return () -> ConfigTFCM.METALS.nickel_silver;
 		}
-		if (type == "osmium")
-		{
+		
+		if (type == "osmium") {
 			return () -> ConfigTFCM.METALS.osmium;
 		}
-		if (type == "titanium")
-		{
+		
+		if (type == "titanium") {
 			return () -> ConfigTFCM.METALS.titanum;
 		}
-		if (type == "tungsten")
-		{
+		
+		if (type == "tungsten") {
 			return () -> ConfigTFCM.METALS.tungsten;
 		}
-		if (type == "tungsten_steel")
-		{
+		
+		if (type == "tungsten_steel") {
 			return () -> IsObtainable.tungsten_steel;
 		}
-		if (type == "zircaloy")
-		{
+		
+		if (type == "zircaloy") {
 			return () -> IsObtainable.zircaloy;
-		} 
-		else 
-		{
+		} else {
+			//Fail safe for log spam, should never be used
 			return () -> false;
+			}
 		}
 	}
-}

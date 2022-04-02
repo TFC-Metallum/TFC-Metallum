@@ -13,8 +13,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Config(modid = MODID, category = "")
 @Config.LangKey("config." + MODID)
 @Mod.EventBusSubscriber(modid = MODID)
-public class ConfigTFCM
-{
+public class ConfigTFCM {
     @Config.Comment("Recipe configuration")
     @Config.LangKey("config." + MODID + ".recipes")
     public static Recipes RECIPES = new Recipes();
@@ -47,22 +46,22 @@ public class ConfigTFCM
     public static Veins VEINS = new Veins();
 
     @SubscribeEvent
-    public static void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
-    {
-        if (event.getModID().equals(MODID))
-        {
+    public static void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
+        if (event.getModID().equals(MODID)) {
             ConfigManager.sync(MODID, Config.Type.INSTANCE);
         }
     }
-    public static class Veins
-    {
+    
+    public static class Veins {
+    	
         @Config.Comment({"Dissable this if you are doing custom vein data", "(make sure to remove the ones you no longer need)"})
         @Config.LangKey("config." + MODID + ".manage")
         @Config.RequiresMcRestart
         public boolean manage = true;
     }
-    public static class Recipes
-    {
+    
+    public static class Recipes {
+    	
         @Config.Comment({"Register ardite recipe via bloomery?"})
         @Config.LangKey("config." + MODID + ".recipes.ardite")
         @Config.RequiresMcRestart
@@ -128,8 +127,9 @@ public class ConfigTFCM
         @Config.RequiresMcRestart
         public boolean boron_dust = true;
     }
-    public static class MeltTemps
-    {
+    
+    public static class MeltTemps {
+    	
     	@RangeInt(min = 0)
     	@Config.RequiresMcRestart
     	@Config.Comment({"Melting temp for lithium"})
@@ -310,8 +310,9 @@ public class ConfigTFCM
         @Config.LangKey("config." + MODID + ".melt_temp.tough")
         public float tough = 3000;
     }
-    public static class Metals
-    {
+    
+    public static class Metals {
+    	
     	@Config.Comment({"Enable antimony metal?"})
         @Config.LangKey("config." + MODID + ".metals.antimony")
         @Config.RequiresMcRestart
@@ -462,8 +463,9 @@ public class ConfigTFCM
         @Config.RequiresMcRestart
         public boolean tough_alloy = true;
     }
-    public static class NonMetals
-    {
+    
+    public static class NonMetals {
+    	
     	@Config.Comment({"Enable chromite?"})
         @Config.LangKey("config." + MODID + ".non-metals.chromite")
         @Config.RequiresMcRestart

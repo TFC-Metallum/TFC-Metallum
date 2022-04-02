@@ -13,164 +13,115 @@ import tfcmetallum.ConfigTFCM;
 import tfcmetallum.TFCMetallum;
 
 
-public class VeinDataManager 
-{
+public class VeinDataManager {
+	
 	public static List<String> onList;
 	public static List<String> offList;
 	
 	public static void doVeinList() {
+		
 		List<String> oresOnList = new ArrayList();
 		List<String> oresOffList = new ArrayList();
-		if (ConfigTFCM.NON_METALS.arsenic)
-		{
+		
+		if (ConfigTFCM.NON_METALS.arsenic) {
 			oresOnList.add("arsenic");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("arsenic");
 		}
 		
-		if (ConfigTFCM.METALS.aluminium)
-		{
+		if (ConfigTFCM.METALS.aluminium) {
 			oresOnList.add("bauxite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("bauxite");
 		}
 		
-		if (ConfigTFCM.METALS.cobalt)
-		{
+		if (ConfigTFCM.METALS.cobalt) {
 			oresOnList.add("cobaltite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("cobaltite");
 		}
 		
-		if (ConfigTFCM.NON_METALS.chromite)
-		{
+		if (ConfigTFCM.NON_METALS.chromite) {
 			oresOnList.add("chromite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("chromite");
 		}
 		
-		if (ConfigTFCM.NON_METALS.fluorite)
-		{
+		if (ConfigTFCM.NON_METALS.fluorite) {
 			oresOnList.add("fluorite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("fluorite");
 		}
 		
-		if (ConfigTFCM.METALS.magnesium)
-		{
+		if (ConfigTFCM.METALS.magnesium) {
 			oresOnList.add("magnesite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("magnesite");
 		}
 		
-		if (ConfigTFCM.METALS.ardite)
-		{
+		if (ConfigTFCM.METALS.ardite) {
 			oresOnList.add("native_ardite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("native_ardite");
 		}
 		
-		if (ConfigTFCM.METALS.osmium)
-		{
+		if (ConfigTFCM.METALS.osmium) {
 			oresOnList.add("native_osmium");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("native_osmium");
 		}
 		
-		if (ConfigTFCM.METALS.uranium)
-		{
+		if (ConfigTFCM.METALS.uranium) {
 			oresOnList.add("pitchblende");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("pitchblende");
 		}
 		
-		if (ConfigTFCM.METALS.manganese)
-		{
+		if (ConfigTFCM.METALS.manganese) {
 			oresOnList.add("pyrolusite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("pyrolusite");
 		}
 		
-		if (ConfigTFCM.NON_METALS.rhodochrosite)
-		{
+		if (ConfigTFCM.NON_METALS.rhodochrosite) {
 			oresOnList.add("rhodochrosite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("rhodochrosite");
 		}
 		
-		if (ConfigTFCM.METALS.lithium)
-		{
+		if (ConfigTFCM.METALS.lithium) {
 			oresOnList.add("spodumene");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("spodumene");
 		}
 		
-		if (ConfigTFCM.METALS.antimony)
-		{
+		if (ConfigTFCM.METALS.antimony) {
 			oresOnList.add("stibnite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("stibnite");
 		}
 		
-		if (ConfigTFCM.METALS.thorium)
-		{
+		if (ConfigTFCM.METALS.thorium) {
 			oresOnList.add("thorianite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("thorianite");
 		}
 		
-		if (ConfigTFCM.NON_METALS.villiaumite)
-		{
+		if (ConfigTFCM.NON_METALS.villiaumite) {
 			oresOnList.add("villiaumite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("villiaumite");
 		}
 		
-		if (ConfigTFCM.METALS.tungsten)
-		{
+		if (ConfigTFCM.METALS.tungsten) {
 			oresOnList.add("wolframite");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("wolframite");
 		}
 		
-		if (ConfigTFCM.METALS.zirconium)
-		{
+		if (ConfigTFCM.METALS.zirconium) {
 			oresOnList.add("zircon");
-		}
-		else
-		{
+		} else {
 			oresOffList.add("zircon");
 		}
 		
@@ -178,35 +129,29 @@ public class VeinDataManager
 		VeinDataManager.offList = oresOffList;
 	}
 	
-	public static List<String> getOnList()
-	{
+	public static List<String> getOnList() {
 		return onList;
 	}
 	
-	public static List<String> getOffList()
-	{
+	public static List<String> getOffList() {
 		return offList;
 	}
 	
-	public static void copyVeinFile(String veinFileName, File metallumGenFile) 
-	{
-		try
-		{
-			if (!metallumGenFile.exists())
-			{
+	public static void copyVeinFile(String veinFileName, File metallumGenFile) {
+		try {
+			if (!metallumGenFile.exists()) {
 				TFCMetallum.getLog().info("Copying " + veinFileName + ".json to config\\tfc\\metallum_ores");
 				FileUtils.copyInputStreamToFile(Objects.requireNonNull(VeinRegistry.class.getClassLoader().getResourceAsStream("assets/tfcmetallum/config/" + veinFileName + ".json")), metallumGenFile);
 			}
 		}
-    	catch (IOException e)
-		{
+    	catch (IOException e) {
 			throw new Error("Problem copying " + veinFileName + ".json into TFC config directory.", e);
 		}
 	}
-	public static void removeVein(String veinFileName, File metallumGenFile)
-	{
-		if (metallumGenFile.exists())
-		{
+	
+	public static void removeVeinFile(String veinFileName, File metallumGenFile) {
+		
+		if (metallumGenFile.exists()) {
 			TFCMetallum.getLog().info("Deleting " + veinFileName + ".json");
 			metallumGenFile.delete();
 		}
