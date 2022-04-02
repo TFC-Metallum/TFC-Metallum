@@ -1,4 +1,11 @@
 {
+	"conditions": [
+	{
+		"type": "tfcmetallum:config",
+		"config": "tungsten_steel",
+		"value": "true"
+	}
+	],
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "XXX",

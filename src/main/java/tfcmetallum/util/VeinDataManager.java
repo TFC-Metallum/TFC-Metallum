@@ -29,6 +29,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("arsenic");
 		}
+		
 		if (ConfigTFCM.METALS.aluminium)
 		{
 			oresOnList.add("bauxite");
@@ -37,6 +38,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("bauxite");
 		}
+		
 		if (ConfigTFCM.METALS.cobalt)
 		{
 			oresOnList.add("cobaltite");
@@ -45,6 +47,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("cobaltite");
 		}
+		
 		if (ConfigTFCM.NON_METALS.chromite)
 		{
 			oresOnList.add("chromite");
@@ -53,6 +56,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("chromite");
 		}
+		
 		if (ConfigTFCM.NON_METALS.fluorite)
 		{
 			oresOnList.add("fluorite");
@@ -61,6 +65,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("fluorite");
 		}
+		
 		if (ConfigTFCM.METALS.magnesium)
 		{
 			oresOnList.add("magnesite");
@@ -69,6 +74,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("magnesite");
 		}
+		
 		if (ConfigTFCM.METALS.ardite)
 		{
 			oresOnList.add("native_ardite");
@@ -77,6 +83,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("native_ardite");
 		}
+		
 		if (ConfigTFCM.METALS.osmium)
 		{
 			oresOnList.add("native_osmium");
@@ -85,6 +92,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("native_osmium");
 		}
+		
 		if (ConfigTFCM.METALS.uranium)
 		{
 			oresOnList.add("pitchblende");
@@ -93,6 +101,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("pitchblende");
 		}
+		
 		if (ConfigTFCM.METALS.manganese)
 		{
 			oresOnList.add("pyrolusite");
@@ -101,6 +110,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("pyrolusite");
 		}
+		
 		if (ConfigTFCM.NON_METALS.rhodochrosite)
 		{
 			oresOnList.add("rhodochrosite");
@@ -109,6 +119,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("rhodochrosite");
 		}
+		
 		if (ConfigTFCM.METALS.lithium)
 		{
 			oresOnList.add("spodumene");
@@ -117,6 +128,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("spodumene");
 		}
+		
 		if (ConfigTFCM.METALS.antimony)
 		{
 			oresOnList.add("stibnite");
@@ -125,6 +137,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("stibnite");
 		}
+		
 		if (ConfigTFCM.METALS.thorium)
 		{
 			oresOnList.add("thorianite");
@@ -133,6 +146,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("thorianite");
 		}
+		
 		if (ConfigTFCM.NON_METALS.villiaumite)
 		{
 			oresOnList.add("villiaumite");
@@ -141,6 +155,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("villiaumite");
 		}
+		
 		if (ConfigTFCM.METALS.tungsten)
 		{
 			oresOnList.add("wolframite");
@@ -149,6 +164,7 @@ public class VeinDataManager
 		{
 			oresOffList.add("wolframite");
 		}
+		
 		if (ConfigTFCM.METALS.zirconium)
 		{
 			oresOnList.add("zircon");

@@ -32,7 +32,7 @@ public static boolean tough_alloy;
 		if (ConfigTFCM.METALS.tungsten && ConfigTFCM.RECIPES.tungsten && ConfigTFCM.METALS.tungsten_steel) {
 			tungsten_steel = true;
 		}
-		if ( ConfigTFCM.METALS.zirconium && ConfigTFCM.METALS.zircaloy) {
+		if ( ConfigTFCM.METALS.zirconium && ConfigTFCM.RECIPES.zirconium && ConfigTFCM.METALS.zircaloy) {
 			zircaloy = true;
 		}
 		if (ConfigTFCM.METALS.aluminium && ConfigTFCM.METALS.aluminium_brass) {
