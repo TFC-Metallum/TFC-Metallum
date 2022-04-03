@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "boron",
-		"value": "true"
+		"config": "boron"
 	}
 	],
   "type": "minecraft:crafting_shaped",

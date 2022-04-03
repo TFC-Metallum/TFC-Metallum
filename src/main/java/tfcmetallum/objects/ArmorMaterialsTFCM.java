@@ -7,8 +7,8 @@ import net.dries007.tfc.TerraFirmaCraft;
 import net.dries007.tfc.api.types.IArmorMaterialTFC;
 import net.dries007.tfc.objects.ArmorMaterialTFC;
 
-public final class ArmorMaterialsTFCM
-{
+public final class ArmorMaterialsTFCM {
+	
     public static final IArmorMaterialTFC ALUMINIUM = new ArmorMaterialTFC(EnumHelper.addArmorMaterial("tfcm_aluminium", TerraFirmaCraft.MOD_ID + ":aluminium", 12, new int[] {1, 3, 4, 1}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F), 10, 13, 6.25f);
     public static final IArmorMaterialTFC MITHRIL = new ArmorMaterialTFC(EnumHelper.addArmorMaterial("tfcm_mithril", TerraFirmaCraft.MOD_ID + ":mithril", 24, new int[] {1, 4, 5, 2}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F), 14, 15, 10);
     public static final IArmorMaterialTFC NICKEL_SILVER = new ArmorMaterialTFC(EnumHelper.addArmorMaterial("tfcm_nickel_silver", TerraFirmaCraft.MOD_ID + ":nickel_silver", 32, new int[] {2, 4, 5, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F), 15, 20, 20);

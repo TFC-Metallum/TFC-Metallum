@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "nickel_silver",
-		"value": "true"
+		"config": "nickel_silver"
 	}
 	],
   "type": "minecraft:crafting_shaped",

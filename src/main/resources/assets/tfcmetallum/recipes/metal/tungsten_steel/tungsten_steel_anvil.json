@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "tungsten_steel",
-		"value": "true"
+		"config": "tungsten_steel"
 	}
 	],
   "type": "minecraft:crafting_shaped",

@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "manyullyn",
-		"value": "true"
+		"config": "manyullyn"
 	}
 	],
   "type": "tfc:shaped_skill",

@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "invar",
-		"value": "true"
+		"config": "invar"
 	}
 	],
   "type": "minecraft:crafting_shaped",

@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "titanium",
-		"value": "true"
+		"config": "titanium"
 	}
 	],
   "type": "minecraft:crafting_shaped",

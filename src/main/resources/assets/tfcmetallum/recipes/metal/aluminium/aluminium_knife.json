@@ -2,8 +2,7 @@
   	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "aluminium",
-		"value": "true"
+		"config": "aluminium"
 	}
   	],
   "type": "tfc:shaped_skill",

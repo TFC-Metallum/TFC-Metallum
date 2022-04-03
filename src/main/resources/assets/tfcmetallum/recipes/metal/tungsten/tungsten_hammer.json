@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "tungsten",
-		"value": "true"
+		"config": "tungsten"
 	}
 	],
   "type": "tfc:shaped_skill",

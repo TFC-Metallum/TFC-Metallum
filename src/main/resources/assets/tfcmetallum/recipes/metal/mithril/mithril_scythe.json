@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "mithril",
-		"value": "true"
+		"config": "mithril"
 	}
 	],
   "type": "tfc:shaped_skill",

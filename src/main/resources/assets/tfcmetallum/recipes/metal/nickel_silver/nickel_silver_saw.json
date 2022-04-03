@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "nickel_silver",
-		"value": "true"
+		"config": "nickel_silver"
 	}
 	],
   "type": "tfc:shaped_skill",

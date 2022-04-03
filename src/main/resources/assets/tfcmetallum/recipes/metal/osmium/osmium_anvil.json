@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "osmium",
-		"value": "true"
+		"config": "osmium"
 	}
 	],
   "type": "minecraft:crafting_shaped",

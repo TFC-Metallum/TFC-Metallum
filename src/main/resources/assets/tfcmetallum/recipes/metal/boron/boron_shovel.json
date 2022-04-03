@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "boron",
-		"value": "true"
+		"config": "boron"
 	}
 	],
   "type": "tfc:shaped_skill",

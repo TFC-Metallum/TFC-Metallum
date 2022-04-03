@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "beryllium_copper",
-		"value": "true"
+		"config": "beryllium_copper"
 	}
 	],
   "type": "minecraft:crafting_shaped",

@@ -2,8 +2,7 @@
 	"conditions": [
 	{
 		"type": "tfcmetallum:config",
-		"config": "zircaloy",
-		"value": "true"
+		"config": "zircaloy"
 	}
 	],
   "type": "tfc:shaped_skill",
