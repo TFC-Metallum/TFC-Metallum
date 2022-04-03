@@ -141,10 +141,9 @@ public class VeinDataManager {
 		try {
 			if (!metallumGenFile.exists()) {
 				TFCMetallum.getLog().info("Copying " + veinFileName + ".json to config\\tfc\\metallum_ores");
-				FileUtils.copyInputStreamToFile(Objects.requireNonNull(VeinRegistry.class.getClassLoader().getResourceAsStream("assets/tfcmetallum/config/" + veinFileName + ".json")), metallumGenFile);
+				FileUtils.copyInputStreamToFile(Objects.requireNonNull(VeinRegistry.class.getClassLoader().getResourceAsStream("assets/tfcmetallum/ore_gen_data/" + veinFileName + ".json")), metallumGenFile);
 			}
-		}
-    	catch (IOException e) {
+		}catch (IOException e) {
 			throw new Error("Problem copying " + veinFileName + ".json into TFC config directory.", e);
 		}
 	}
@@ -155,6 +154,5 @@ public class VeinDataManager {
 			TFCMetallum.getLog().info("Deleting " + veinFileName + ".json");
 			metallumGenFile.delete();
 		}
-		
 	}
 }
