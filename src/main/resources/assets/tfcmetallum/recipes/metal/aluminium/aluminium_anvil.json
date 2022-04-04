@@ -1,4 +1,10 @@
 {
+  	"conditions": [
+	{
+		"type": "tfcmetallum:config",
+		"config": "aluminium"
+	}
+  	],
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "XXX",

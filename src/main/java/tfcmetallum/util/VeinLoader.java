@@ -1,39 +1,42 @@
 package tfcmetallum.util;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Objects;
-
-import org.apache.commons.io.FileUtils;
-
-import net.dries007.tfc.world.classic.worldgen.vein.VeinRegistry;
-
 import static net.dries007.tfc.TerraFirmaCraft.MOD_ID;
+
+import java.io.File;
+
+import tfcmetallum.ConfigTFCM;
+import tfcmetallum.TFCMetallum;
 
 public enum VeinLoader
 {
     INSTANCE;
-
-    private static final String DEFAULT_ORE_SPAWN_LOCATION = "assets/tfcmetallum/config/tfc_metallum_ores.json";
-
-    public void preInit(File dir)
-    {
+	
+    public void preInit(File dir) {
+    	
         File tfcDir = new File(dir, MOD_ID);
-        if (!tfcDir.exists() && !tfcDir.mkdir())
-        {
-            throw new Error("Problem creating TFC extra config directory.");
+        if (!tfcDir.exists() && !tfcDir.mkdir()) {
+            throw new Error("Unable to find the TFC directory.");
         }
-        File worldGenFile = new File(tfcDir, "tfc_metallum_ores.json");
-        try
-        {
-            if (worldGenFile.createNewFile())
-            {
-                FileUtils.copyInputStreamToFile(Objects.requireNonNull(VeinRegistry.class.getClassLoader().getResourceAsStream(DEFAULT_ORE_SPAWN_LOCATION)), worldGenFile);
-            }
+        
+        //Old world gen file, vein data is now in multiple files and leaving this old one would print errors in the log.
+        File oldWorldGenFile = new File(tfcDir, "tfc_metallum_ores.json");
+        if (oldWorldGenFile.exists()) {
+        	TFCMetallum.getLog().info("Deleted the old vein json");
+        	oldWorldGenFile.delete();
         }
-        catch (IOException e)
-        {
-            throw new Error("Problem creating default ore vein config file.", e);
+        
+        if (ConfigTFCM.VEINS.manage) {
+        	VeinDataManager.doVeinList();
+        	
+        	for (String veinFileName : VeinDataManager.getOnList()) {
+        		File metallumGenFile = new File(tfcDir, "/metallum_ores/" + veinFileName + ".json");
+        		VeinDataManager.copyVeinFile(veinFileName, metallumGenFile);
+        	}
+        	
+        	for (String veinFileName : VeinDataManager.getOffList()) {
+        		File metallumGenFile = new File(tfcDir, "/metallum_ores/" + veinFileName + ".json");
+        		VeinDataManager.removeVeinFile(veinFileName, metallumGenFile);
+        	}
         }
     }
 }

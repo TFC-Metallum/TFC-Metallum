@@ -1,0 +1,15 @@
+{
+	"chromite": {
+    "ore": "tfc:chromite",
+    "width": 6,
+    "height": 12,
+    "shape": "cluster",
+    "rarity": 140,
+    "minimum_height": 5,
+    "maximum_height": 128,
+    "density": 50,
+    "base_rocks": [
+      "tfc:igneous_intrusive"
+    ]
+  }
+}

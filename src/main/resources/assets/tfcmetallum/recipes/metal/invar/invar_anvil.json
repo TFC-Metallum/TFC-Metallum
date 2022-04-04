@@ -1,4 +1,10 @@
 {
+	"conditions": [
+	{
+		"type": "tfcmetallum:config",
+		"config": "invar"
+	}
+	],
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "XXX",

@@ -1,0 +1,17 @@
+{
+	"wolframite": {
+    "ore": "tfc:wolframite",
+    "loose": "tfc:wolframite",
+    "width": 16,
+    "height": 30,
+    "shape": "cluster",
+    "rarity": 120,
+    "minimum_height": 5,
+    "maximum_height": 128,
+    "density": 70,
+    "base_rocks": [
+      "tfc:metamorphic",
+      "tfc:sedimentary"
+    ]
+  }
+}

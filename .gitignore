@@ -16,6 +16,7 @@ tfc.json
 *.iws
 
 # Eclipse
+/eclipse/
 .classpath
 .settings
 .project
